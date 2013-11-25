@@ -1,0 +1,8 @@
+-create script that runs through .flv and prints tag data...
+ex...
+"TAG FOUND: TYPE - AUDIO, LOCATION - 1239, SIZE - 100"
+also get # of bytes cut off by the last frame. 
+also list if VIDEO tag is a keyframe or not
+-prepend first part of cut off frame onto the next .flv.
+-try playing. (probably won't work because of the nature of frame prediction)
+-try splitting by keyframes

@@ -1,0 +1,1 @@
+livestreamer -O twitch.tv/Scarra best | gst-launch -v fdsrc ! decodebin ! videorate ! video/x-raw-yuv, framerate=\(fraction\)4/1 ! ffmpegcolorspace ! jpegenc ! multifilesink location=img%d.jpg

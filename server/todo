@@ -1,0 +1,8 @@
+-create template for scoreboard
+-create multiple display options
+	-dispaly right below channel_actions bar
+	-bring up a modal
+	-create new window
+-create multiple activation options
+	-click scoreboard
+	-press tab

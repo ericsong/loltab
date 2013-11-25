@@ -1,0 +1,7 @@
+server/node_modules/
+.nfs*
+*.swp
+*.flv
+*.png
+*.mpg
+*.mp4
