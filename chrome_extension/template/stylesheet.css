@@ -1,10 +1,9 @@
-img {
+.template > img {
 	width: 100%;
 	height: auto;
-
 }
 
-.image{
+.template{
 	width: 919px;
 	min-height: 721px;
 	max-height: auto;
@@ -14,7 +13,7 @@ img {
 	position: relative;
 
 	font-family: texgyreherosregular;
-	font-size: 10px;
+	font-size: 14px;
 	color: #B9FEF6;
 }
 
@@ -22,8 +21,81 @@ img {
 	position: absolute;
 	width: 87%;
 	height: 27px;
-	top: 23.8%;
-	left: 8.5%;		
+	top: 23.6%;
+	left: 8.5%;
+}
+
+.player_champ_icon{
+	width: 29px;
+}
+
+.player_level{
+	position: absolute;	
+	font-size: 16px;
+	top: 7%;
+	left: 6%;
+}
+
+.player_names{
+	position: absolute;
+	height: 100%;
+	top: 0px;
+	left: 10%;	
+}
+
+.player_names > .username{
+	margin: 0px 0px;
+	margin-top: -5px;
+}
+
+.player_names > .champion{
+	margin: 0px 0px;
+	margin-top: -7px;
+	display: block;
+}
+
+.player_ss1{
+	position: absolute;
+	left: 35.5%;
+}
+
+.player_ss2{
+	position: absolute;
+	left: 39.5%;
+}
+
+.player_item1{
+	position: absolute;
+	width: 25px;
+	left: 44.3%;
+}
+
+.player_item2{
+	position: absolute;
+}
+
+.player_item3{
+	position: absolute;
+}
+
+
+.player_item4{
+	position: absolute;
+}
+
+
+.player_item5{
+	position: absolute;
+}
+
+
+.player_item6{
+	position: absolute;
+}
+
+
+.player_item7{
+	position: absolute;
 }
 
 h3{
