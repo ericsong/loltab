@@ -1,1 +1,5 @@
--create js injection code to twitch URLs
+
+
+improvements
+-level, kda, cs not actually centered. 
+-change items to use padding between blocks instead of % modifiers

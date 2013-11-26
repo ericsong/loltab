@@ -17,11 +17,51 @@
 	color: #B9FEF6;
 }
 
+#player1{
+	top: 23.6%;
+}
+
+#player2{
+	top: 30.3%;
+}
+
+#player3{
+	top: 37%;
+}
+
+#player4{
+	top: 43.7%;
+}
+
+#player5{
+	top: 50.4%;
+}
+
+#player6{
+	top: 61.1%;
+}
+
+#player7{
+	top: 67.8%;
+}
+
+#player8{
+	top: 74.5%;
+}
+
+#player9{
+	top: 81.25%;
+}
+
+#player10{
+	top: 88%;
+}
+
 .player_strip{
 	position: absolute;
 	width: 87%;
 	height: 27px;
-	top: 23.6%;
+	top: 0%;
 	left: 8.5%;
 }
 
@@ -33,7 +73,7 @@
 	position: absolute;	
 	font-size: 16px;
 	top: 7%;
-	left: 6%;
+	left: 5.5%;
 }
 
 .player_names{
@@ -54,59 +94,93 @@
 	display: block;
 }
 
-.player_ss1{
+.player_summoners{
 	position: absolute;
+	height: 100%;
+	top: 0px;
 	left: 35.5%;
 }
 
-.player_ss2{
-	position: absolute;
+.player_summoners img{
+	width: 29px;
+}
+
+.player_summoners > .summoner1{
+	left: 0px;
+}
+
+.player_summoners > .summoner2{
 	left: 39.5%;
 }
 
-.player_item1{
+.player_items{
 	position: absolute;
-	width: 25px;
+	height: 100%;
+	width: 26%;
+	top: 0px;
 	left: 44.3%;
 }
 
-.player_item2{
-	position: absolute;
+.player_items img{
+	width: 25px;
+	margin-top: 2px;
+	margin-left: 2px;
 }
 
-.player_item3{
+.player_items > .item1{
 	position: absolute;
+	left: 0px;
 }
 
-
-.player_item4{
+.player_items > .item2{
 	position: absolute;
-}
-
-
-.player_item5{
-	position: absolute;
-}
-
-
-.player_item6{
-	position: absolute;
+	left: 14.2%;
 }
 
 
-.player_item7{
+.player_items > .item3{
 	position: absolute;
+	left: 28.6%;
 }
 
-h3{
-	font-family: texgyreherosregular;
-	font-size: 10px;
-	color: #B9FEF6;
+
+.player_items > .item4{
 	position: absolute;
-	margin: 0px;
-	top: 24%;
-	left: 13%;
+	left: 43%;
 }
+
+
+.player_items > .item5{
+	position: absolute;
+	left: 57.4%;
+}
+
+
+.player_items > .item6{
+	position: absolute;
+	left: 71.8%;
+}
+
+
+.player_items > .item7{
+	position: absolute;
+	left: 86.2%;
+}
+
+.player_kda{
+	position: absolute;	
+	font-size: 16px;
+	top: 7%;
+	left: 72%;
+}
+
+.player_cs{
+	position: absolute;	
+	font-size: 16px;
+	top: 7%;
+	left: 85%;
+}
+
 
 @font-face {
     font-family: 'texgyreheroscnregular';
