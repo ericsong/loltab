@@ -93,29 +93,15 @@ var loltabber = {
 
 // Run our kitten generation script as soon as the document's DOM is ready.
 document.addEventListener('DOMContentLoaded', function () {
-  kittenGenerator.requestKittens();
+	kittenGenerator.requestKittens();
 	console.log("what's upzz");
 
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function(data){
-			if(xhr.readyState == 4 && xhr.status == 200){
-				console.log(data.currentTarget.responseText);
-			}
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(data){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			console.log(data.currentTarget.responseText);
 		}
-		xhr.open("GET", "http://man.cs.rutgers.edu:8000/getScoreboardData?streamer=Scarra", true);
-		xhr.send();
-
-
-//	loltabber.requestData();
-/*
-	$.get(
-		"man.cs.rutgers.edu:8000/getScoreboardData",
-		{ streamer: "Scarra" }, 
-		function(data){
-			console.log("data sent");
-			console.log("Return data: " + data);
-		},
-		"json"
-	);
-*/
+	}
+	xhr.open("GET", "http://localhost:8000/getScoreboardData?streamer=Scarra", true);
+	xhr.send();
 });
