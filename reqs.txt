@@ -1,0 +1,12 @@
+python
+  -livestreamer
+mongodb
+nodejs
+
+gstreamer
+  -base
+  -good
+  -good-plugins
+  -bad
+  -bad-plugins
+  -ffmpeg
