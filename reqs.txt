@@ -10,3 +10,6 @@ gstreamer
   -bad
   -bad-plugins
   -ffmpeg
+
+openCV
+cmake
