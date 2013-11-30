@@ -1,0 +1,20 @@
+In order to make some images, first:
+
+	cmake .
+	make
+
+then, run the program by:
+
+	./DisplayImage <name of image>
+
+and then enter in the four values which compromise the area of the picture you want to evaluate. The program should try to make images based off of the numbers, and then try to make a guess as to what they are.
+
+Any numbers that are guessed incorrectly, place with a unique name into their respective folders in the folder:
+
+	../1080p/characters/
+	
+	or
+
+	../1080p/faded_characters/
+
+and check to see if it works by running the program again.
