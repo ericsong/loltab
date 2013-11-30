@@ -1,3 +1,5 @@
+$('body').append(createTemplate());
+
 document.getElementById("update_button").onclick = updateScoreboard;
 
 function updateScoreboard(streamer){
@@ -67,6 +69,100 @@ function updateScoreboard(streamer){
 		}
 	}
 
-	xhr.open("GET", "http://localhost:8000/getScoreboardData?streamer=Scarra", true);
+	xhr.open("GET", "http://162.243.95.66/getScoreboardData?streamer=Scarra", true);
 	xhr.send();
+}
+
+function createTemplate(){
+	var base = $('<div></div>');
+	base.addClass('template');
+		var template_img = $('<img></img>');
+		base.append(template_img);
+		template_img.attr('src', 'scoreboard_template.jpg');
+
+		for(var i = 1; i <= 10; i++){
+			var player_strip = createPlayerStrip(i);
+			base.append(player_strip);
+		}	
+	
+	return base;
+}
+
+function createPlayerStrip(num){
+	var idname = 'player' + num;
+
+	var player_strip = $('<div></div>');
+	player_strip.attr('id',	idname);
+	player_strip.addClass('player_strip');
+		var player_champ_icon = $('<img></img>');
+		player_strip.append(player_champ_icon);
+		player_champ_icon.addClass('player_champ_icon');
+		player_champ_icon.attr('src', '/home/reggi/Downloads/champions/Lux.png');
+		var player_level = $('<div></div>');
+		player_strip.append(player_level);
+		player_level.addClass('player_level');
+		player_level.text('10');
+		var player_names = $('<div></div>');
+		player_strip.append(player_names);
+		player_names.addClass('player_names');
+			var player_username = $('<p></p>');
+			player_names.append(player_username);
+			player_username.addClass('username');
+			player_username.text('regonics');
+			var player_champion = $('<p></p>');
+			player_names.append(player_champion);
+			player_champion.addClass('champion');
+			player_champion.text('Lux');
+		var player_summoners = $('<div></div>');
+		player_strip.append(player_summoners);
+		player_summoners.addClass('player_summoners');
+			var summoner1 = $('<img></img>');
+			player_summoners.append(summoner1);
+			summoner1.addClass('summoner1');
+			summoner1.attr('src', '/home/reggi/Downloads/summoners/Revive.png');
+			var summoner2 = $('<img></img>');
+			player_summoners.append(summoner2);
+			summoner2.addClass('summoner2');
+			summoner2.attr('src', '/home/reggi/Downloads/summoners/Revive.png');
+		var player_items = $('<div></div>');
+		player_strip.append(player_items);
+		player_items.addClass('player_items');
+			var item1 = $('<img></img>');
+			player_items.append(item1);
+			item1.addClass('item1');
+			item1.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+			var item2 = $('<img></img>');
+			player_items.append(item2);
+			item2.addClass('item2');
+			item2.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+			var item3 = $('<img></img>');
+			player_items.append(item3);
+			item3.addClass('item3');
+			item3.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+			var item4 = $('<img></img>');
+			player_items.append(item4);
+			item4.addClass('item4');
+			item4.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+			var item5 = $('<img></img>');
+			player_items.append(item5);
+			item5.addClass('item5');
+			item5.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+			var item6 = $('<img></img>');
+			player_items.append(item6);
+			item6.addClass('item6');
+			item6.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+			var item7 = $('<img></img>');
+			player_items.append(item7);
+			item7.addClass('item7');
+			item7.attr('src', "/home/reggi/Downloads/items/Rabadon's Deathcap.png");
+		var player_kda = $('<div></div');
+		player_strip.append(player_kda);
+		player_kda.addClass('player_kda');
+		player_kda.text('20/0/10');
+		var player_cs =  $('<div></div');
+		player_strip.append(player_cs);
+		player_cs.addClass('player_cs');
+		player_cs.text('314');
+
+	return player_strip;
 }

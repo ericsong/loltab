@@ -8,7 +8,8 @@
   "content_scripts": [
     {
       "matches": ["http://www.twitch.tv/*"],
-      "js": ["injection.js"]
+      "css": ["scoreboard.css"],
+      "js": ["jquery-1.10.2.min.js", "injection.js"]
     }
   ],
 
@@ -17,8 +18,19 @@
     "default_popup": "popup.html"
   },
 
+  "web_accessible_resources": [
+    "jquery-1.10.2.min.js",
+    "jquery-1.10.2.min.map",
+    "texgyreheros-regular-webfont.*",
+    "scoreboard.css",
+    "scoreboard_template.jpg",
+    "champions/*.png",
+    "items/*.png",
+    "summoners/*.png"
+  ],
+
   "permissions": [
     "https://secure.flickr.com/",
-	"http://man.cs.rutgers.edu/"
+    "http://man.cs.rutgers.edu/"
   ]
 }
