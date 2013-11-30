@@ -17,7 +17,6 @@
                     "cs": 111,
                     "muted": false,
                     "ally": true,
-                    "_id": "529695158d68219c08000003",
                     "items": [
                         "Boots of Speed",
                         "Vampiric Scepter",
@@ -40,7 +39,6 @@
                     "cs": 101,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000004",
                     "items": [
                         "Berserker's Greaves",
                         "The Bloodthirster",
@@ -63,7 +61,6 @@
                     "cs": 112,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000005",
                     "items": [
                         "Locket of the Iron Solari",
                         "n/a",
@@ -86,7 +83,6 @@
                     "cs": 128,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000006",
                     "items": [
                         "Blade of the Ruined King",
                         "Stealth Ward",
@@ -109,7 +105,6 @@
                     "cs": 13,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000007",
                     "items": [
                         "Frost Queen's Claim",
                         "Boots of Mobility",
@@ -132,7 +127,6 @@
                     "cs": 143,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c08000008",
                     "items": [
                         "Deathfire Grasp",
                         "Doran's Ring",
@@ -155,7 +149,6 @@
                     "cs": 145,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c08000009",
                     "items": [
                         "Trinity Force",
                         "Doran's Blade",
@@ -178,7 +171,6 @@
                     "cs": 70,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000a",
                     "items": [
                         "Haunting Guise",
                         "Sorcerer's Shoes",
@@ -201,7 +193,6 @@
                     "cs": 109,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000b",
                     "items": [
                         "The Bloodthirster",
                         "Boots of Speed",
@@ -224,7 +215,6 @@
                     "cs": 31,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000c",
                     "items": [
                         "Sorcerer's Shoes",
                         "Haunting Guise",
@@ -258,7 +248,6 @@
                     "cs": 111,
                     "muted": false,
                     "ally": true,
-                    "_id": "529695158d68219c08000003",
                     "items": [
                         "Boots of Speed",
                         "Vampiric Scepter",
@@ -281,7 +270,6 @@
                     "cs": 101,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000004",
                     "items": [
                         "Berserker's Greaves",
                         "The Bloodthirster",
@@ -304,7 +292,6 @@
                     "cs": 112,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000005",
                     "items": [
                         "Locket of the Iron Solari",
                         "n/a",
@@ -327,7 +314,6 @@
                     "cs": 128,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000006",
                     "items": [
                         "Blade of the Ruined King",
                         "Stealth Ward",
@@ -350,7 +336,6 @@
                     "cs": 13,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000007",
                     "items": [
                         "Frost Queen's Claim",
                         "Boots of Mobility",
@@ -373,7 +358,6 @@
                     "cs": 143,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c08000008",
                     "items": [
                         "Deathfire Grasp",
                         "Doran's Ring",
@@ -396,7 +380,6 @@
                     "cs": 145,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c08000009",
                     "items": [
                         "Trinity Force",
                         "Doran's Blade",
@@ -419,7 +402,6 @@
                     "cs": 70,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000a",
                     "items": [
                         "Haunting Guise",
                         "Sorcerer's Shoes",
@@ -442,7 +424,6 @@
                     "cs": 109,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000b",
                     "items": [
                         "The Bloodthirster",
                         "Boots of Speed",
@@ -465,7 +446,6 @@
                     "cs": 31,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000c",
                     "items": [
                         "Sorcerer's Shoes",
                         "Haunting Guise",
@@ -499,7 +479,6 @@
                     "cs": 111,
                     "muted": false,
                     "ally": true,
-                    "_id": "529695158d68219c08000003",
                     "items": [
                         "Boots of Speed",
                         "Vampiric Scepter",
@@ -522,7 +501,6 @@
                     "cs": 101,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000004",
                     "items": [
                         "Berserker's Greaves",
                         "The Bloodthirster",
@@ -545,7 +523,6 @@
                     "cs": 112,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000005",
                     "items": [
                         "Locket of the Iron Solari",
                         "n/a",
@@ -568,7 +545,6 @@
                     "cs": 128,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000006",
                     "items": [
                         "Blade of the Ruined King",
                         "Stealth Ward",
@@ -591,7 +567,6 @@
                     "cs": 13,
                     "muted": true,
                     "ally": true,
-                    "_id": "529695158d68219c08000007",
                     "items": [
                         "Frost Queen's Claim",
                         "Boots of Mobility",
@@ -614,7 +589,6 @@
                     "cs": 143,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c08000008",
                     "items": [
                         "Deathfire Grasp",
                         "Doran's Ring",
@@ -637,7 +611,6 @@
                     "cs": 145,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c08000009",
                     "items": [
                         "Trinity Force",
                         "Doran's Blade",
@@ -660,7 +633,6 @@
                     "cs": 70,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000a",
                     "items": [
                         "Haunting Guise",
                         "Sorcerer's Shoes",
@@ -683,7 +655,6 @@
                     "cs": 109,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000b",
                     "items": [
                         "The Bloodthirster",
                         "Boots of Speed",
@@ -706,7 +677,6 @@
                     "cs": 31,
                     "muted": true,
                     "ally": false,
-                    "_id": "529695158d68219c0800000c",
                     "items": [
                         "Sorcerer's Shoes",
                         "Haunting Guise",

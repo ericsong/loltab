@@ -9,7 +9,7 @@ while True:
     f = open('/dev/shm/loltab_pipe')
     jsonstring = ""
     for line in f.readlines():
-        if(line == "!!!!!\n"):
+        if("!!!!!" in line):
             decoded = json.loads(jsonstring)
             print(scoreboards.insert(decoded))
             jsonstring = ""
