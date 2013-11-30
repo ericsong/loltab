@@ -1,5 +1,6 @@
 python
   -livestreamer
+  -pymongo
 mongodb
 nodejs
 
