@@ -1,0 +1,23 @@
+blue team
+scarra
+riven
+p1
+lux
+p2
+lux
+p3
+lux
+p4
+lux
+
+red team
+p6
+draven
+p7
+draven
+p8
+draven
+p9
+draven
+p10
+draven
