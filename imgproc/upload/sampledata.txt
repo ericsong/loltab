@@ -1,0 +1,723 @@
+{
+        "streamer": "Scarra",
+        "time": "2013-11-28T00:57:57.961Z",
+        "data": {
+            "redKills": 11,
+            "blueKills": 6,
+            "players": [
+                {
+                    "name": "scarra",
+                    "champion": "Riven",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Ignite",
+                    "kills": 0,
+                    "deaths": 4,
+                    "assists": 1,
+                    "cs": 111,
+                    "muted": false,
+                    "ally": true,
+                    "_id": "529695158d68219c08000003",
+                    "items": [
+                        "Boots of Speed",
+                        "Vampiric Scepter",
+                        "Stealth Ward",
+                        "The Brutalizer",
+                        "n/a",
+                        "Doran's Shield",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Rekeri",
+                    "champion": "Jinx",
+                    "level": 10,
+                    "spell1": "Barrier",
+                    "spell2": "Flash",
+                    "kills": 3,
+                    "deaths": 1,
+                    "assists": 2,
+                    "cs": 101,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000004",
+                    "items": [
+                        "Berserker's Greaves",
+                        "The Bloodthirster",
+                        "n/a",
+                        "Health Potion",
+                        "Relic Shield",
+                        "Doran's Blade",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Kroatik",
+                    "champion": "Shyvana",
+                    "level": 11,
+                    "spell1": "Smite",
+                    "spell2": "Flash",
+                    "kills": 2,
+                    "deaths": 0,
+                    "assists": 1,
+                    "cs": 112,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000005",
+                    "items": [
+                        "Locket of the Iron Solari",
+                        "n/a",
+                        "Mercury's Treads",
+                        "n/a",
+                        "Spirit of the Ancient Golem",
+                        "n/a",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "hi im jaysun",
+                    "champion": "Vayne",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Barrier",
+                    "kills": 0,
+                    "deaths": 3,
+                    "assists": 0,
+                    "cs": 128,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000006",
+                    "items": [
+                        "Blade of the Ruined King",
+                        "Stealth Ward",
+                        "Health Potion",
+                        "Berserker's Greaves",
+                        "Dagger",
+                        "n/a",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "aGambit",
+                    "champion": "Thresh",
+                    "level": 9,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 1,
+                    "deaths": 3,
+                    "assists": 5,
+                    "cs": 13,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000007",
+                    "items": [
+                        "Frost Queen's Claim",
+                        "Boots of Mobility",
+                        "Sightstone",
+                        "Rejuvenation Bead",
+                        "Cloth Armor",
+                        "Null-Magic Mantle",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Yusui",
+                    "champion": "Tristana",
+                    "level": 12,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 3,
+                    "deaths": 0,
+                    "assists": 2,
+                    "cs": 143,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c08000008",
+                    "items": [
+                        "Deathfire Grasp",
+                        "Doran's Ring",
+                        "Doran's Ring",
+                        "Sorcerer's Shoes",
+                        "Doran's Ring",
+                        "Amplifying Tome",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Panchie",
+                    "champion": "Jax",
+                    "level": 12,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 4,
+                    "deaths": 0,
+                    "assists": 0,
+                    "cs": 145,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c08000009",
+                    "items": [
+                        "Trinity Force",
+                        "Doran's Blade",
+                        "Doran's Shield",
+                        "n/a",
+                        "Boots of Speed",
+                        "Cloth Armor",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Pletkon",
+                    "champion": "Elise",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Smite",
+                    "kills": 2,
+                    "deaths": 0,
+                    "assists": 3,
+                    "cs": 70,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000a",
+                    "items": [
+                        "Haunting Guise",
+                        "Sorcerer's Shoes",
+                        "Amplifying Tome",
+                        "Spirit of the Ancient Golem",
+                        "n/a",
+                        "n/a",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Damian",
+                    "champion": "Caitlyn",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Barrier",
+                    "kills": 2,
+                    "deaths": 4,
+                    "assists": 0,
+                    "cs": 109,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000b",
+                    "items": [
+                        "The Bloodthirster",
+                        "Boots of Speed",
+                        "n/a",
+                        "Emblem of Valor",
+                        "Doran's Blade",
+                        "Doran's Blade",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "wc Hero",
+                    "champion": "Zyra",
+                    "level": 8,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 0,
+                    "deaths": 2,
+                    "assists": 2,
+                    "cs": 31,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000c",
+                    "items": [
+                        "Sorcerer's Shoes",
+                        "Haunting Guise",
+                        "Total Biscuit of Rejuvenation",
+                        "n/a",
+                        "n/a",
+                        "n/a",
+                        "Warding Totem (Trinket)"
+                    ]
+                }
+            ]
+        }
+}
+!!!!!
+{
+        "streamer": "Scarra",
+        "time": "2013-11-28T00:57:57.961Z",
+        "data": {
+            "redKills": 11,
+            "blueKills": 6,
+            "players": [
+                {
+                    "name": "scarra",
+                    "champion": "Riven",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Ignite",
+                    "kills": 0,
+                    "deaths": 4,
+                    "assists": 1,
+                    "cs": 111,
+                    "muted": false,
+                    "ally": true,
+                    "_id": "529695158d68219c08000003",
+                    "items": [
+                        "Boots of Speed",
+                        "Vampiric Scepter",
+                        "Stealth Ward",
+                        "The Brutalizer",
+                        "n/a",
+                        "Doran's Shield",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Rekeri",
+                    "champion": "Jinx",
+                    "level": 10,
+                    "spell1": "Barrier",
+                    "spell2": "Flash",
+                    "kills": 3,
+                    "deaths": 1,
+                    "assists": 2,
+                    "cs": 101,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000004",
+                    "items": [
+                        "Berserker's Greaves",
+                        "The Bloodthirster",
+                        "n/a",
+                        "Health Potion",
+                        "Relic Shield",
+                        "Doran's Blade",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Kroatik",
+                    "champion": "Shyvana",
+                    "level": 11,
+                    "spell1": "Smite",
+                    "spell2": "Flash",
+                    "kills": 2,
+                    "deaths": 0,
+                    "assists": 1,
+                    "cs": 112,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000005",
+                    "items": [
+                        "Locket of the Iron Solari",
+                        "n/a",
+                        "Mercury's Treads",
+                        "n/a",
+                        "Spirit of the Ancient Golem",
+                        "n/a",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "hi im jaysun",
+                    "champion": "Vayne",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Barrier",
+                    "kills": 0,
+                    "deaths": 3,
+                    "assists": 0,
+                    "cs": 128,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000006",
+                    "items": [
+                        "Blade of the Ruined King",
+                        "Stealth Ward",
+                        "Health Potion",
+                        "Berserker's Greaves",
+                        "Dagger",
+                        "n/a",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "aGambit",
+                    "champion": "Thresh",
+                    "level": 9,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 1,
+                    "deaths": 3,
+                    "assists": 5,
+                    "cs": 13,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000007",
+                    "items": [
+                        "Frost Queen's Claim",
+                        "Boots of Mobility",
+                        "Sightstone",
+                        "Rejuvenation Bead",
+                        "Cloth Armor",
+                        "Null-Magic Mantle",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Yusui",
+                    "champion": "Tristana",
+                    "level": 12,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 3,
+                    "deaths": 0,
+                    "assists": 2,
+                    "cs": 143,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c08000008",
+                    "items": [
+                        "Deathfire Grasp",
+                        "Doran's Ring",
+                        "Doran's Ring",
+                        "Sorcerer's Shoes",
+                        "Doran's Ring",
+                        "Amplifying Tome",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Panchie",
+                    "champion": "Jax",
+                    "level": 12,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 4,
+                    "deaths": 0,
+                    "assists": 0,
+                    "cs": 145,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c08000009",
+                    "items": [
+                        "Trinity Force",
+                        "Doran's Blade",
+                        "Doran's Shield",
+                        "n/a",
+                        "Boots of Speed",
+                        "Cloth Armor",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Pletkon",
+                    "champion": "Elise",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Smite",
+                    "kills": 2,
+                    "deaths": 0,
+                    "assists": 3,
+                    "cs": 70,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000a",
+                    "items": [
+                        "Haunting Guise",
+                        "Sorcerer's Shoes",
+                        "Amplifying Tome",
+                        "Spirit of the Ancient Golem",
+                        "n/a",
+                        "n/a",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Damian",
+                    "champion": "Caitlyn",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Barrier",
+                    "kills": 2,
+                    "deaths": 4,
+                    "assists": 0,
+                    "cs": 109,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000b",
+                    "items": [
+                        "The Bloodthirster",
+                        "Boots of Speed",
+                        "n/a",
+                        "Emblem of Valor",
+                        "Doran's Blade",
+                        "Doran's Blade",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "wc Hero",
+                    "champion": "Zyra",
+                    "level": 8,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 0,
+                    "deaths": 2,
+                    "assists": 2,
+                    "cs": 31,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000c",
+                    "items": [
+                        "Sorcerer's Shoes",
+                        "Haunting Guise",
+                        "Total Biscuit of Rejuvenation",
+                        "n/a",
+                        "n/a",
+                        "n/a",
+                        "Warding Totem (Trinket)"
+                    ]
+                }
+            ]
+        }
+}
+!!!!!
+{
+        "streamer": "Scarra",
+        "time": "2013-11-28T00:57:57.961Z",
+        "data": {
+            "redKills": 11,
+            "blueKills": 6,
+            "players": [
+                {
+                    "name": "scarra",
+                    "champion": "Riven",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Ignite",
+                    "kills": 0,
+                    "deaths": 4,
+                    "assists": 1,
+                    "cs": 111,
+                    "muted": false,
+                    "ally": true,
+                    "_id": "529695158d68219c08000003",
+                    "items": [
+                        "Boots of Speed",
+                        "Vampiric Scepter",
+                        "Stealth Ward",
+                        "The Brutalizer",
+                        "n/a",
+                        "Doran's Shield",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Rekeri",
+                    "champion": "Jinx",
+                    "level": 10,
+                    "spell1": "Barrier",
+                    "spell2": "Flash",
+                    "kills": 3,
+                    "deaths": 1,
+                    "assists": 2,
+                    "cs": 101,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000004",
+                    "items": [
+                        "Berserker's Greaves",
+                        "The Bloodthirster",
+                        "n/a",
+                        "Health Potion",
+                        "Relic Shield",
+                        "Doran's Blade",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Kroatik",
+                    "champion": "Shyvana",
+                    "level": 11,
+                    "spell1": "Smite",
+                    "spell2": "Flash",
+                    "kills": 2,
+                    "deaths": 0,
+                    "assists": 1,
+                    "cs": 112,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000005",
+                    "items": [
+                        "Locket of the Iron Solari",
+                        "n/a",
+                        "Mercury's Treads",
+                        "n/a",
+                        "Spirit of the Ancient Golem",
+                        "n/a",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "hi im jaysun",
+                    "champion": "Vayne",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Barrier",
+                    "kills": 0,
+                    "deaths": 3,
+                    "assists": 0,
+                    "cs": 128,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000006",
+                    "items": [
+                        "Blade of the Ruined King",
+                        "Stealth Ward",
+                        "Health Potion",
+                        "Berserker's Greaves",
+                        "Dagger",
+                        "n/a",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "aGambit",
+                    "champion": "Thresh",
+                    "level": 9,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 1,
+                    "deaths": 3,
+                    "assists": 5,
+                    "cs": 13,
+                    "muted": true,
+                    "ally": true,
+                    "_id": "529695158d68219c08000007",
+                    "items": [
+                        "Frost Queen's Claim",
+                        "Boots of Mobility",
+                        "Sightstone",
+                        "Rejuvenation Bead",
+                        "Cloth Armor",
+                        "Null-Magic Mantle",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Yusui",
+                    "champion": "Tristana",
+                    "level": 12,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 3,
+                    "deaths": 0,
+                    "assists": 2,
+                    "cs": 143,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c08000008",
+                    "items": [
+                        "Deathfire Grasp",
+                        "Doran's Ring",
+                        "Doran's Ring",
+                        "Sorcerer's Shoes",
+                        "Doran's Ring",
+                        "Amplifying Tome",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Panchie",
+                    "champion": "Jax",
+                    "level": 12,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 4,
+                    "deaths": 0,
+                    "assists": 0,
+                    "cs": 145,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c08000009",
+                    "items": [
+                        "Trinity Force",
+                        "Doran's Blade",
+                        "Doran's Shield",
+                        "n/a",
+                        "Boots of Speed",
+                        "Cloth Armor",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Pletkon",
+                    "champion": "Elise",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Smite",
+                    "kills": 2,
+                    "deaths": 0,
+                    "assists": 3,
+                    "cs": 70,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000a",
+                    "items": [
+                        "Haunting Guise",
+                        "Sorcerer's Shoes",
+                        "Amplifying Tome",
+                        "Spirit of the Ancient Golem",
+                        "n/a",
+                        "n/a",
+                        "Sweeping Lens (Trinket)"
+                    ]
+                },
+                {
+                    "name": "Damian",
+                    "champion": "Caitlyn",
+                    "level": 10,
+                    "spell1": "Flash",
+                    "spell2": "Barrier",
+                    "kills": 2,
+                    "deaths": 4,
+                    "assists": 0,
+                    "cs": 109,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000b",
+                    "items": [
+                        "The Bloodthirster",
+                        "Boots of Speed",
+                        "n/a",
+                        "Emblem of Valor",
+                        "Doran's Blade",
+                        "Doran's Blade",
+                        "Warding Totem (Trinket)"
+                    ]
+                },
+                {
+                    "name": "wc Hero",
+                    "champion": "Zyra",
+                    "level": 8,
+                    "spell1": "Ignite",
+                    "spell2": "Flash",
+                    "kills": 0,
+                    "deaths": 2,
+                    "assists": 2,
+                    "cs": 31,
+                    "muted": true,
+                    "ally": false,
+                    "_id": "529695158d68219c0800000c",
+                    "items": [
+                        "Sorcerer's Shoes",
+                        "Haunting Guise",
+                        "Total Biscuit of Rejuvenation",
+                        "n/a",
+                        "n/a",
+                        "n/a",
+                        "Warding Totem (Trinket)"
+                    ]
+                }
+            ]
+        }
+}
+!!!!!

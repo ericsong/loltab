@@ -1,7 +1,7 @@
 from livestreamer import Livestreamer
 livestreamer = Livestreamer()
 
-plugin = livestreamer.resolve_url("http://twitch.tv/tsm_dyrus")
+plugin = livestreamer.resolve_url("http://twitch.tv/wingsofdeath")
 
 streams = plugin.get_streams()
 stream = streams.get('best')

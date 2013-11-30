@@ -69,7 +69,7 @@ function updateScoreboard(streamer){
 		}
 	}
 
-	xhr.open("GET", "http://162.243.95.66/getScoreboardData?streamer=Scarra", true);
+	xhr.open("GET", "http://localhost:8000/getScoreboardData?streamer=Scarra", true);
 	xhr.send();
 }
 
