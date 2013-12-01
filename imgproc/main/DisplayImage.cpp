@@ -39,25 +39,29 @@ void blit(Mat, Mat, int, int);
 double matchString(Mat, char *, int);
 int *getBlob(Mat, int, int, char **);
 char *readSubExpression(Mat, int);
-char *readExpression(Mat, int, int, int, int, char *, int *);
+char *readExpression(Mat, int, int, int, int, char, int *);
 
-int *findLocation(Mat, Mat);
-char *identifyChampion(Mat);
+int *findLocation(Mat, Mat, int, int, int, int);
 char *identifyItem(Mat);
+char *identifyFadedItem(Mat);
 char *identifySummoner(Mat);
+char *identifyFadedSummoner(Mat);
+
+int topBar(Mat);
+int leftBar(Mat);
+int rightBar(Mat);
 
 Mat CHARACTERS[11][20];
 Mat FADED_CHARACTERS[11][20];
 int CHARACTERS_LENGTH[11];
 int FADED_CHARACTERS_LENGTH[11];
-#define CHAMPIONS_LENGTH 116
-Mat CHAMPIONS[CHAMPIONS_LENGTH];
-char *CHAMPIONS_NAME[CHAMPIONS_LENGTH];
-#define ITEMS_LENGTH 173
+#define ITEMS_LENGTH 178
 Mat ITEMS[ITEMS_LENGTH];
+Mat FADED_ITEMS[ITEMS_LENGTH];
 char *ITEMS_NAME[ITEMS_LENGTH];
 #define SUMMONERS_LENGTH 13
 Mat SUMMONERS[SUMMONERS_LENGTH];
+Mat FADED_SUMMONERS[SUMMONERS_LENGTH];
 char *SUMMONERS_NAME[SUMMONERS_LENGTH];
 
 void display(Mat image) {
@@ -67,9 +71,8 @@ void display(Mat image) {
 }
 
 int main(int argc, char **argv) {
-	// NOTE: YOU WILL HAVE TO CACHE IMAGES LATER ON TO MAKE THIS FASTER
 	char buffer[100];
-	if (argc != 2) {
+	if (argc != 5) {
 		cout << "Bad args.\n";
 		return 1;
 	}
@@ -81,101 +84,134 @@ int main(int argc, char **argv) {
 	DIR *dp;
 	struct dirent *dirItem;
 
-	// BUILD IMAGE CACHE
-	cout << "loading cache" << endl;
-	char directory[] = "../1080p/characters/?/";
-	char charSet[] = "0123456789%";
-	for (int i = 0; i < 11; i++) {
-		directory[20] = charSet[i];
-		dp = opendir(directory);
-		int offset = 0;
-		while ((dirItem = readdir(dp)) != NULL) {
-			if (dirItem->d_name[0] == '.') {
-				continue;
-			}
-			CHARACTERS[i][offset] = imread(concatStr(directory, dirItem->d_name), 1);
-			CHARACTERS_LENGTH[i]++;
-			offset++;
-		}
-		closedir(dp);
-	}
-	char faded_directory[] = "../1080p/faded_characters/?/";
-	for (int i = 0; i < 11; i++) {
-		faded_directory[26] = charSet[i];
-		dp = opendir(faded_directory);
-		int offset = 0;
-		while ((dirItem = readdir(dp)) != NULL) {
-			if (dirItem->d_name[0] == '.') {
-				continue;
-			}
-			FADED_CHARACTERS[i][offset] = imread(concatStr(faded_directory, dirItem->d_name), 1);
-			FADED_CHARACTERS_LENGTH[i]++;
-			offset++;
-		}
-		closedir(dp);
-	}
-	dp = opendir("../champions/");
-	for (int i = 0; i < CHAMPIONS_LENGTH; i++) {
-		dirItem = readdir(dp);
-		while (dirItem->d_name[0] == '.') {
-			dirItem = readdir(dp);
-		}
-		CHAMPIONS[i] = resizeImage(imread(concatStr("../champions/", dirItem->d_name), 1), 28, 28);
-		CHAMPIONS_NAME[i] = copyStr(dirItem->d_name);//, 0, lenStr(dirItem->d_name - 4));
-	}
-	closedir(dp);
-	dp = opendir("../items/");
-	for (int i = 0; i < ITEMS_LENGTH; i++) {
-		dirItem = readdir(dp);
-		while (dirItem->d_name[0] == '.') {
-			dirItem = readdir(dp);
-		}
-		ITEMS[i] = resizeImage(imread(concatStr("../items/", dirItem->d_name), 1), 28, 28);
-		ITEMS_NAME[i] = copyStr(dirItem->d_name);//, 0, lenStr(dirItem->d_name - 4));
-	}
-	closedir(dp);
-	dp = opendir("../summoners/");
-	for (int i = 0; i < SUMMONERS_LENGTH; i++) {
-		dirItem = readdir(dp);
-		while (dirItem->d_name[0] == '.') {
-			dirItem = readdir(dp);
-		}
-		SUMMONERS[i] = resizeImage(imread(concatStr("../summoners/", dirItem->d_name), 1), 28, 28);
-		SUMMONERS_NAME[i] = copyStr(dirItem->d_name);//, 0, lenStr(dirItem->d_name - 4));
-	}
-	closedir(dp);
+	/*Mat new_image;
+	if (image.rows == 1080) {
+		new_image = imread("../ICON1080p.bmp", 1);
+	} else if (image.rows == 720) {
+		new_image = imread("../ICON720p.bmp", 1);
+	}*/
 
-	cout << "cache loaded" << endl;
 
-	// ACQUIRE DATA
-	//int x1 = 650, x2 = 700, y1 = 175, y2 = 200;
-	//int x1 = 1180, y1 = 350, x2 = 1337, y2 = 384;
-	//cout << compareImage(resizeImage(imread("../champions/Karma.png", 1), 28, 28), subImage(image, 604, 360, 604 + 28, 360 + 28)) << endl;
-	/*cout << "upper left hand corner x value: ";
-	cin.getline(buffer, 100);
-	x1 = atoi(buffer);
-	cout << "upper left hand corner y value: ";
-	cin.getline(buffer, 100);
-	y1 = atoi(buffer);
-	cout << "bot right hand corner x value: ";
-	cin.getline(buffer, 100);
-	x2 = atoi(buffer);
-	cout << "bot right hand corner y value: ";
-	cin.getline(buffer, 100);
-	y2 = atoi(buffer);
-
-	char faded = 0;
-	int index = 0;
-	char *expression = readExpression(image, x1, y1, x2, y2, &faded, &index);
-	cout << expression << endl;*/
-
-	Mat new_image = imread("../IMG.bmp", 1);
-	//display(new_image);
-	//display(image);
-	int *coords = findLocation(image, imread("../IMG.bmp", 1));
+	int *coords = (int *)calloc(2, sizeof(int));
+	coords[0] = atoi(argv[2]);
+	coords[1] = atoi(argv[3]);
+	int rightSideValue = atoi(argv[4]);
+	//printf("COORDS: %d %d\n", coords[0], coords[1]);
 	int found = coords[0] != -1 && coords[1] != -1;
 	if (found) {
-		int cx1_offset = -7, cy1_offset = 50;
+		// BUILD IMAGE CACHE
+		char directory[] = "../characters/?/";
+		char charSet[] = "0123456789%";
+		for (int i = 0; i < 11; i++) {
+			directory[14] = charSet[i];
+			dp = opendir(directory);
+			int offset = 0;
+			while ((dirItem = readdir(dp)) != NULL) {
+				if (dirItem->d_name[0] == '.') {
+					continue;
+				}
+				CHARACTERS[i][offset] = imread(concatStr(directory, dirItem->d_name), 1);
+
+			/*Mat IMG = imread(concatStr(directory, dirItem->d_name), 1);
+			for (int y = 0; y < IMG.rows; y++) {
+				for (int x = 0; x < IMG.cols; x++) {
+					for (int c = 0; c < IMG.channels(); c++) {
+						IMG.at<Vec3b>(y, x)[c] = (IMG.at<Vec3b>(y, x)[c] + 0) / 3 + 16;
+					}
+				}
+			}
+
+			char fd[] = "../faded_characters/?/";
+			fd[20] = charSet[i];
+			imwrite(concatStr(fd, dirItem->d_name), IMG);*/
+
+				CHARACTERS_LENGTH[i]++;
+				offset++;
+			}
+			closedir(dp);
+		}
+		char faded_directory[] = "../faded_characters/?/";
+		for (int i = 0; i < 11; i++) {
+			faded_directory[20] = charSet[i];
+			dp = opendir(faded_directory);
+			int offset = 0;
+			while ((dirItem = readdir(dp)) != NULL) {
+				if (dirItem->d_name[0] == '.') {
+					continue;
+				}
+				FADED_CHARACTERS[i][offset] = imread(concatStr(faded_directory, dirItem->d_name), 1);
+				FADED_CHARACTERS_LENGTH[i]++;
+				offset++;
+			}
+			closedir(dp);
+		}
+
+		dp = opendir("../items/");
+		for (int i = 0; i < ITEMS_LENGTH; i++) {
+			dirItem = readdir(dp);
+			while (dirItem->d_name[0] == '.') {
+				dirItem = readdir(dp);
+			}
+			ITEMS[i] = resizeImage(imread(concatStr("../items/", dirItem->d_name), 1), 28, 28);
+			/*Mat IMG = imread(concatStr("../items/", dirItem->d_name), 1);
+			for (int y = 0; y < IMG.rows; y++) {
+				for (int x = 0; x < IMG.cols; x++) {
+					for (int c = 0; c < IMG.channels(); c++) {
+						IMG.at<Vec3b>(y, x)[c] = (IMG.at<Vec3b>(y, x)[c] + 0) / 3 + 24;
+					}
+				}
+			}
+			imwrite(concatStr("../faded_items/", dirItem->d_name), IMG);*/
+			FADED_ITEMS[i] = resizeImage(imread(concatStr("../faded_items/", dirItem->d_name), 1), 28, 28);
+			ITEMS_NAME[i] = copyStr(dirItem->d_name);//, 0, lenStr(dirItem->d_name - 4));
+		}
+		closedir(dp);
+		dp = opendir("../summoners/");
+		for (int i = 0; i < SUMMONERS_LENGTH; i++) {
+			dirItem = readdir(dp);
+			while (dirItem->d_name[0] == '.') {
+				dirItem = readdir(dp);
+			}
+			SUMMONERS[i] = resizeImage(imread(concatStr("../summoners/", dirItem->d_name), 1), 28, 28);
+			FADED_SUMMONERS[i] = resizeImage(imread(concatStr("../faded_summoners/", dirItem->d_name), 1), 28, 28);
+			SUMMONERS_NAME[i] = copyStr(dirItem->d_name);//, 0, lenStr(dirItem->d_name - 4));
+		}
+		closedir(dp);
+
+
+
+	/*
+
+	14
+	17
+	47
+	87
+	172
+	222
+	340
+	526
+	728
+	740
+	811
+	1073
+	1083
+	1202
+	1227
+	1246
+	1331
+	1339
+	1681
+	1712
+	1742
+	1766
+	1810
+	2338
+	2351
+*/
+	
+		float ratio = (rightSideValue - coords[0]) / 800.0;
+
+		int cx1_offset = 68, cy1_offset = 162;
 		int height = 28;
 		int x1 = coords[0] + cx1_offset, y1 = coords[1] + cy1_offset;
 		int offset1 = 49, offset2 = 272;
@@ -184,9 +220,15 @@ int main(int argc, char **argv) {
 		int s1 = 289, s2 = 321;
 		int itemLocations[7] = {356, 386, 416, 446, 476, 506, 536};
 
+		//int cx1_offset = -5, cy1_offset = 33;
+		//int height = 20;
+		//int x1 = coords[0] + cx1_offset, y1 = coords[1] + cy1_offset;
+		//int offset1 = 33, offset2 = ;
+		//
+
+
 		int index = 0;
 		for (int i = 0; i < 10; i++) {
-			cout << " ================================================== \n";
 			int top = y1 + (offset1 * i), bot = top + height;
 			if (i >= 5) {
 				int delta = offset2 - (5 * offset1);
@@ -194,23 +236,90 @@ int main(int argc, char **argv) {
 				bot += delta;
 			}
 			char faded = 0;
-			char *champion = identifyChampion(subImage(image, x1, top, x1 + height, bot));
-			char *summoner1 = identifySummoner(subImage(image, x1 + s1, top, x1 + s1 + height, bot));
-			char *summoner2 = identifySummoner(subImage(image, x1 + s2, top, x1 + s2 + height, bot));
+			if (averageColor(extremifyImage(subImage(image, x1 + g2, top, x1 + l2, bot), 128)) < 33) {
+				faded = 1;
+			}
+			char *summoner1;
+			if (!faded) {
+				summoner1 = identifySummoner(subImage(image, x1 + s1, top, x1 + s1 + height, bot));
+			} else {
+				summoner1 = identifyFadedSummoner(subImage(image, x1 + s1, top, x1 + s1 + height, bot));
+			}
+			char *summoner2;
+			if (!faded) {
+				summoner2 = identifySummoner(subImage(image, x1 + s2, top, x1 + s2 + height, bot));
+			} else {
+				summoner2 = identifyFadedSummoner(subImage(image, x1 + s2, top, x1 + s2 + height, bot));
+			}
 			char *items[7];
 			for (int n = 0; n < 7; n++) {
-				items[n] = identifyItem(subImage(image, x1 + itemLocations[n], top, x1 + itemLocations[n] + height, bot));
+				if (!faded) {
+					items[n] = identifyItem(subImage(image, x1 + itemLocations[n], top, x1 + itemLocations[n] + height, bot));
+				} else {
+					items[n] = identifyFadedItem(subImage(image, x1 + itemLocations[n], top, x1 + itemLocations[n] + height, bot));
+				}
 			}
-			char *level = readExpression(image, x1 + g1, top, x1 + l1, bot, &faded, &index);
-			char *KDR = readExpression(image, x1 + g2, top, x1 + l2, bot, &faded, &index);
-			char *cs = readExpression(image, x1 + g3, top, x1 + l3, bot, &faded, &index);
-			printf("champion: %s, summoners: %s %s, level: %s, KDR: %s, cs: %s, items:\n", champion, summoner1, summoner2, level, KDR, cs);
+			char *level = readExpression(image, x1 + g1, top, x1 + l1, bot, faded, &index);
+			char *KDR = readExpression(image, x1 + g2, top, x1 + l2, bot, faded, &index);
+			int numSlash = 0;
+			for (int n = 0; KDR[n] != '\0'; n++) {
+				if (KDR[n] == '/') {
+					numSlash++;
+				}
+			}
+			int kills;
+			int deaths;
+			int assists;
+			if (numSlash != 2) {
+				kills = -1;
+				deaths = -1;
+				assists = -1;
+			} else {
+				int a = 0;
+				int b = 0;
+				for (int n = 0; KDR[n] != '\0'; n++) {
+					if (KDR[n] == '/') {
+						if (a == 0) {
+							a = n;
+						} else {
+							b = n;
+						}
+					}
+				}
+				kills = atoi(subStr(KDR, 0, a));
+				deaths = atoi(subStr(KDR, a + 1, b));
+				assists = atoi(subStr(KDR, b + 1, lenStr(KDR)));
+			}
+			char *cs = readExpression(image, x1 + g3, top, x1 + l3, bot, faded, &index);
+			if (lenStr(cs) > 3) {
+				cs[3] = '\0';
+			}
+			printf("{\n\t\"name\": \"???\",\n");
+			printf("\t\"champion\": \"???\",\n");
+			printf("\t\"level\": %s,\n", level);
+			printf("\t\"spell1\": \"%s\",\n", subStr(summoner1, 0, lenStr(summoner1) - 4));
+			printf("\t\"spell2\": \"%s\",\n", subStr(summoner2, 0, lenStr(summoner2) - 4));
+			printf("\t\"kills\": %d,\n", kills);
+			printf("\t\"deaths\": %d,\n", deaths);
+			printf("\t\"assists\": %d,\n", assists);
+			printf("\t\"cs\": %s,\n", cs);
+			printf("\t\"muted\": false,\n");
+			printf("\t\"ally\": %s,\n", i < 5 ? "true" : "false");
+			printf("\t\"items\": [\n");
 			for (int n = 0; n < 7; n++) {
-				printf("%s\n", items[n]);
+				printf("\t\t\"%s\"", subStr(items[n], 0, lenStr(items[n]) - 4));
+				if (n != 6) {
+					printf(",");
+				}
+				printf("\n");
 			}
+			printf("\t]\n}");
+			if (i != 9) {
+				printf(",");
+			}
+			printf("\n");
 		}
 	}
-
 
 	return 1;
 }
@@ -492,7 +601,6 @@ char isValidForMatch(char c) {
 }
 
 double matchString(Mat image, char str[], int faded) {
-	// oh boy (use getNumber as inspiration)
 	double error = 1.0;
 	int i, length = 0;
 	for (i = 0; str[i] != '\0'; i++) {
@@ -541,13 +649,15 @@ double matchString(Mat image, char str[], int faded) {
 		for (digit = 0; digit < length; digit++) {
 			int n = index[digit];
 			if (!faded) {
-				blit(word, CHARACTERS[n][combination % CHARACTERS_LENGTH[n]], offset, 0);
+				Mat pnum = CHARACTERS[n][combination % CHARACTERS_LENGTH[n]];
+				blit(word, resizeImage(pnum, pnum.cols, image.rows), offset, 0);
 				combination /= CHARACTERS_LENGTH[n];
-				offset += CHARACTERS[n][combination % CHARACTERS_LENGTH[n]].cols;
+				offset += pnum.cols;
 			} else {
-				blit(word, FADED_CHARACTERS[n][combination % FADED_CHARACTERS_LENGTH[n]], offset, 0);
+				Mat pnum = FADED_CHARACTERS[n][combination % FADED_CHARACTERS_LENGTH[n]];
+				blit(word, resizeImage(pnum, pnum.cols, image.rows), offset, 0);
 				combination /= FADED_CHARACTERS_LENGTH[n];
-				offset += FADED_CHARACTERS[n][combination % FADED_CHARACTERS_LENGTH[n]].cols;
+				offset += pnum.cols;
 			}
 		}
 		word = resizeImage(word, image.cols, word.rows);
@@ -580,7 +690,6 @@ char *copyStr(char *str) {
 char *readSubExpression(Mat image, int faded) {
 	char *expression = (char *)calloc(4, sizeof(char));
 	expression[1] = '\0';
-	// try to do only numbers first
 	double error = 1.0;
 	char expr[] = "?";
 	char charSet[] = "0123456789/";
@@ -615,22 +724,15 @@ char *readSubExpression(Mat image, int faded) {
 	return expression;
 }
 
-char *readExpression(Mat image, int x1, int y1, int x2, int y2, char *faded, int *indexER) {
+char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded, int *indexER) {
 	Mat new_image;
 	int brightness = 0;
 	float contrast = 1.5;
 	new_image = subImage(image, x1, y1, x2, y2);
 	new_image = recolorImage(new_image, brightness, contrast);
-	int avg = 0;
-	if ((avg = averageColor(extremifyImage(new_image, 128))) < 33) {
-		*faded = 1;
-	}
-	printf("Average: %d\n", avg);
-	if (!(*faded)) {
-		cout << "128\n";
+	if (!faded) {
 		new_image = extremifyImage(new_image, 128);
 	} else {
-		cout << "64\n";
 		new_image = extremifyImage(new_image, 64);
 	}
 		
@@ -651,10 +753,10 @@ char *readExpression(Mat image, int x1, int y1, int x2, int y2, char *faded, int
 				new_image.at<Vec3b>(y, x)[2] == 255)) {
 				int *coords = getBlob(new_image, x, y, visited);
 				Mat pnum = subImage(image, x1 + coords[0], y1 + coords[1], x1 + coords[2], y1 + coords[3]);
-				if (pnum.rows < 4) {
+				if (pnum.rows < 4 || pnum.cols > 20) {
 					continue;
 				}
-				char *n = readSubExpression(pnum, *faded);
+				char *n = readSubExpression(pnum, faded);
 				for (int i = 0; n[i] != '\0'; i++) {
 					buffer[offset] = n[i];
 					offset++;
@@ -665,8 +767,8 @@ char *readExpression(Mat image, int x1, int y1, int x2, int y2, char *faded, int
 					fname[7 - i] = temp % 10 + '0';
 					temp /= 10;
 				}
-				printf("%s: %s\n", fname, n);
-				imwrite(fname, pnum);
+				//printf("%s: %s\n", fname, n);
+				//imwrite(fname, pnum);
 			}
 			visited[y][x] = 1;
 		}
@@ -676,10 +778,8 @@ char *readExpression(Mat image, int x1, int y1, int x2, int y2, char *faded, int
 	return buffer;
 }
 
-int *findLocation(Mat image, Mat base) {
+int *findLocation(Mat image, Mat base, int x1, int y1, int x2, int y2) {
 	Mat new_image = extremifyImage(recolorImage(image, 0, 2.0), 128);
-	//imwrite("ext.bmp", new_image);
-
 	int *coords = (int *)calloc(2, sizeof(int));
 	coords[0] = -1;
 	coords[1] = -1;
@@ -688,8 +788,8 @@ int *findLocation(Mat image, Mat base) {
 	for (int i = 0; i < image.rows; i++) {
 		visited[i] = (char *)calloc(image.cols, sizeof(char));
 	}
-	for (int y = 100; y < image.rows / 3; y++) {
-		for (int x = 100; x < image.cols / 2; x++) {
+	for (int y = y1; y < y2; y++) {
+		for (int x = x1; x < x2; x++) {
 			if (new_image.at<Vec3b>(y, x)[0] == 255 && new_image.at<Vec3b>(y, x)[1] == 255 && new_image.at<Vec3b>(y, x)[2] == 255 && !visited[y][x]) {
 				visited[y][x] = 1;
 				int *c = getBlob(new_image, x, y, visited);
@@ -700,7 +800,6 @@ int *findLocation(Mat image, Mat base) {
 				}
 				Mat other = subImage(image, c[0], c[1], c[2], c[3]);
 				float error = compareImage(other, base);
-				//printf("%d %d %d %d %f\n", c[0], c[1], c[2], c[3], error);
 				if (error < 0.05) {
 					lowest = error;
 					coords[0] = c[0];
@@ -710,30 +809,100 @@ int *findLocation(Mat image, Mat base) {
 			}
 		}
 	}
-	//cout << "LOWEST: " << lowest << endl;
 	return coords;
 }
 
-char *identifyChampion(Mat image) {
-	display(image);
-	char *championName = "";
-	float total_error = 1.0;
-	for (int i = 0; i < CHAMPIONS_LENGTH; i++) {
-		float error = compareImage(CHAMPIONS[i], image);
-		//printf("CHAMPION: %s, ERROR: %f\n", CHAMPIONS_NAME[i], error);
-		if (error < total_error) {
-			total_error = error;
-			championName = CHAMPIONS_NAME[i];
+int topBar(Mat image) {
+	int *hist = (int *)calloc(image.rows / 2, sizeof(int));
+	int xvalue = 0;
+	int yvalue = 0;
+	for (int y = 0; y < image.rows / 2; y++) {
+		for (int x = 0; x < image.cols; x++) {
+			int r = image.at<Vec3b>(y, x)[2];
+			int g = image.at<Vec3b>(y, x)[1];
+			int b = image.at<Vec3b>(y, x)[0];
+			if ((r < 150 && r > 115) && (g < 150 && g > 115) && (b > 115 && b < 150)) {
+				hist[y]++;
+			}
+		}
+		if (hist[y] > yvalue) {
+			yvalue = hist[y];
+			xvalue = y;
 		}
 	}
-	return championName;
+	if (yvalue < 100) {
+		xvalue = -1;
+	}
+	return xvalue;
+}
+
+int leftBar(Mat image) {
+	int *hist = (int *)calloc(image.cols / 2, sizeof(int));
+	int xvalue = 0;
+	int yvalue = 0;
+	for (int x = 0; x < image.cols / 2; x++) {
+		for (int y = 0; y < image.rows; y++) {
+			int r = image.at<Vec3b>(y, x)[2];
+			int g = image.at<Vec3b>(y, x)[1];
+			int b = image.at<Vec3b>(y, x)[0];
+			if ((r < 170 && r > 140) && (g < 135 && g > 110) && (b > 65 && b < 80)) {
+				hist[x]++;
+			}
+		}
+		if (hist[x] > yvalue) {
+			yvalue = hist[x];
+			xvalue = x;
+		}
+	}
+	if (yvalue < 100) {
+		xvalue = -1;
+	}
+	return xvalue;
+}
+
+int rightBar(Mat image) {
+	int *hist = (int *)calloc(image.cols , sizeof(int));
+	int xvalue = 0;
+	int yvalue = 0;
+	for (int x = image.cols / 2; x < image.cols; x++) {
+		for (int y = 0; y < image.rows; y++) {
+			int r = image.at<Vec3b>(y, x)[2];
+			int g = image.at<Vec3b>(y, x)[1];
+			int b = image.at<Vec3b>(y, x)[0];
+			if ((r < 160 && r > 130) && (g < 140 && g > 120) && (b > 70 && b < 85)) {
+				hist[x]++;
+			}
+		}
+		if (hist[x] > yvalue) {
+			yvalue = hist[x];
+			xvalue = x;
+		}
+	}
+	if (yvalue < 100) {
+		xvalue = -1;
+	}
+	return xvalue;
 }
 
 char *identifyItem(Mat image) {
+	display(image);
 	char *itemName = "";
 	float total_error = 1.0;
 	for (int i = 0; i < ITEMS_LENGTH; i++) {
 		float error = compareImage(ITEMS[i], image);
+		if (error < total_error) {
+			total_error = error;
+			itemName = ITEMS_NAME[i];
+		}
+	}
+	return itemName;
+}
+
+char *identifyFadedItem(Mat image) {
+	char *itemName = "";
+	float total_error = 1.0;
+	for (int i = 0; i < ITEMS_LENGTH; i++) {
+		float error = compareImage(FADED_ITEMS[i], image);
 		if (error < total_error) {
 			total_error = error;
 			itemName = ITEMS_NAME[i];
@@ -747,6 +916,19 @@ char *identifySummoner(Mat image) {
 	float total_error = 1.0;
 	for (int i = 0; i < SUMMONERS_LENGTH; i++) {
 		float error = compareImage(SUMMONERS[i], image);
+		if (error < total_error) {
+			total_error = error;
+			summonerName = SUMMONERS_NAME[i];
+		}
+	}
+	return summonerName;
+}
+
+char *identifyFadedSummoner(Mat image) {
+	char *summonerName = "";
+	float total_error = 1.0;
+	for (int i = 0; i < SUMMONERS_LENGTH; i++) {
+		float error = compareImage(FADED_SUMMONERS[i], image);
 		if (error < total_error) {
 			total_error = error;
 			summonerName = SUMMONERS_NAME[i];
