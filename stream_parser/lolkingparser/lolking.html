@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+	
+			<meta name="description" content="Create &amp; discover new Champion builds/strategies, check your Summoner statistics and try our powerful LoL charts." />
+		<meta name="keywords" content="league of legends,lol,champion guides,champion strategy,champion builds,guides,builds,summoner stats,lol summoners,top summoners,best champions" />
+		
+	<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><title>League of Legends Summoner Stats &amp; Champion Build Guides - LolKing</title>
+	
+	<script>
+		
+		window.LOLKING = {};
+		
+        LOLKING.regions = {"na":"North America","euw":"Europe West","eune":"Europe Nordic &amp; East","br":"Brazil","tr":"Turkey","ru":"Russia","lan":"Latin America North","las":"Latin America South","oce":"Oceania"};
+        
+        LOLKING.champions = {"aatrox":{"name":"Aatrox","file":"aatrox","champion_id":"266","internal_name":"aatrox"},"ahri":{"name":"Ahri","file":"ahri","champion_id":"103","internal_name":"ahri"},"akali":{"name":"Akali","file":"akali","champion_id":"84","internal_name":"akali"},"alistar":{"name":"Alistar","file":"alistar","champion_id":"12","internal_name":"alistar"},"amumu":{"name":"Amumu","file":"amumu","champion_id":"32","internal_name":"amumu"},"anivia":{"name":"Anivia","file":"anivia","champion_id":"34","internal_name":"anivia"},"annie":{"name":"Annie","file":"annie","champion_id":"1","internal_name":"annie"},"ashe":{"name":"Ashe","file":"ashe","champion_id":"22","internal_name":"ashe"},"blitzcrank":{"name":"Blitzcrank","file":"blitzcrank","champion_id":"53","internal_name":"blitzcrank"},"brand":{"name":"Brand","file":"brand","champion_id":"63","internal_name":"brand"},"caitlyn":{"name":"Caitlyn","file":"caitlyn","champion_id":"51","internal_name":"caitlyn"},"cassiopeia":{"name":"Cassiopeia","file":"cassiopeia","champion_id":"69","internal_name":"cassiopeia"},"cho&#39;gath":{"name":"Cho&#39;Gath","file":"chogath","champion_id":"31","internal_name":"cho&#39;gath"},"corki":{"name":"Corki","file":"corki","champion_id":"42","internal_name":"corki"},"darius":{"name":"Darius","file":"darius","champion_id":"122","internal_name":"darius"},"diana":{"name":"Diana","file":"diana","champion_id":"131","internal_name":"diana"},"dr. mundo":{"name":"Dr. Mundo","file":"drmundo","champion_id":"36","internal_name":"dr. mundo"},"draven":{"name":"Draven","file":"draven","champion_id":"119","internal_name":"draven"},"elise":{"name":"Elise","file":"elise","champion_id":"60","internal_name":"elise"},"evelynn":{"name":"Evelynn","file":"evelynn","champion_id":"28","internal_name":"evelynn"},"ezreal":{"name":"Ezreal","file":"ezreal","champion_id":"81","internal_name":"ezreal"},"fiddlesticks":{"name":"Fiddlesticks","file":"fiddlesticks","champion_id":"9","internal_name":"fiddlesticks"},"fiora":{"name":"Fiora","file":"fiora","champion_id":"114","internal_name":"fiora"},"fizz":{"name":"Fizz","file":"fizz","champion_id":"105","internal_name":"fizz"},"galio":{"name":"Galio","file":"galio","champion_id":"3","internal_name":"galio"},"gangplank":{"name":"Gangplank","file":"gangplank","champion_id":"41","internal_name":"gangplank"},"garen":{"name":"Garen","file":"garen","champion_id":"86","internal_name":"garen"},"gragas":{"name":"Gragas","file":"gragas","champion_id":"79","internal_name":"gragas"},"graves":{"name":"Graves","file":"graves","champion_id":"104","internal_name":"graves"},"hecarim":{"name":"Hecarim","file":"hecarim","champion_id":"120","internal_name":"hecarim"},"heimerdinger":{"name":"Heimerdinger","file":"heimerdinger","champion_id":"74","internal_name":"heimerdinger"},"irelia":{"name":"Irelia","file":"irelia","champion_id":"39","internal_name":"irelia"},"janna":{"name":"Janna","file":"janna","champion_id":"40","internal_name":"janna"},"jarvan iv":{"name":"Jarvan IV","file":"jarvaniv","champion_id":"59","internal_name":"jarvan iv"},"jax":{"name":"Jax","file":"jax","champion_id":"24","internal_name":"jax"},"jayce":{"name":"Jayce","file":"jayce","champion_id":"126","internal_name":"jayce"},"jinx":{"name":"Jinx","file":"jinx","champion_id":"222","internal_name":"jinx"},"karma":{"name":"Karma","file":"karma","champion_id":"43","internal_name":"karma"},"karthus":{"name":"Karthus","file":"karthus","champion_id":"30","internal_name":"karthus"},"kassadin":{"name":"Kassadin","file":"kassadin","champion_id":"38","internal_name":"kassadin"},"katarina":{"name":"Katarina","file":"katarina","champion_id":"55","internal_name":"katarina"},"kayle":{"name":"Kayle","file":"kayle","champion_id":"10","internal_name":"kayle"},"kennen":{"name":"Kennen","file":"kennen","champion_id":"85","internal_name":"kennen"},"kha&#39;zix":{"name":"Kha&#39;Zix","file":"khazix","champion_id":"121","internal_name":"kha&#39;zix"},"kog'maw":{"name":"Kog'Maw","file":"kogmaw","champion_id":"96","internal_name":"kog'maw"},"leblanc":{"name":"LeBlanc","file":"leblanc","champion_id":"7","internal_name":"leblanc"},"lee sin":{"name":"Lee Sin","file":"leesin","champion_id":"64","internal_name":"lee sin"},"leona":{"name":"Leona","file":"leona","champion_id":"89","internal_name":"leona"},"lissandra":{"name":"Lissandra","file":"lissandra","champion_id":"127","internal_name":"lissandra"},"lucian":{"name":"Lucian","file":"lucian","champion_id":"236","internal_name":"lucian"},"lulu":{"name":"Lulu","file":"lulu","champion_id":"117","internal_name":"lulu"},"lux":{"name":"Lux","file":"lux","champion_id":"99","internal_name":"lux"},"malphite":{"name":"Malphite","file":"malphite","champion_id":"54","internal_name":"malphite"},"malzahar":{"name":"Malzahar","file":"malzahar","champion_id":"90","internal_name":"malzahar"},"maokai":{"name":"Maokai","file":"maokai","champion_id":"57","internal_name":"maokai"},"master yi":{"name":"Master Yi","file":"masteryi","champion_id":"11","internal_name":"master yi"},"miss fortune":{"name":"Miss Fortune","file":"missfortune","champion_id":"21","internal_name":"miss fortune"},"mordekaiser":{"name":"Mordekaiser","file":"mordekaiser","champion_id":"82","internal_name":"mordekaiser"},"morgana":{"name":"Morgana","file":"morgana","champion_id":"25","internal_name":"morgana"},"nami":{"name":"Nami","file":"nami","champion_id":"267","internal_name":"nami"},"nasus":{"name":"Nasus","file":"nasus","champion_id":"75","internal_name":"nasus"},"nautilus":{"name":"Nautilus","file":"nautilus","champion_id":"111","internal_name":"nautilus"},"nidalee":{"name":"Nidalee","file":"nidalee","champion_id":"76","internal_name":"nidalee"},"nocturne":{"name":"Nocturne","file":"nocturne","champion_id":"56","internal_name":"nocturne"},"nunu":{"name":"Nunu","file":"nunu","champion_id":"20","internal_name":"nunu"},"olaf":{"name":"Olaf","file":"olaf","champion_id":"2","internal_name":"olaf"},"orianna":{"name":"Orianna","file":"orianna","champion_id":"61","internal_name":"orianna"},"pantheon":{"name":"Pantheon","file":"pantheon","champion_id":"80","internal_name":"pantheon"},"poppy":{"name":"Poppy","file":"poppy","champion_id":"78","internal_name":"poppy"},"quinn":{"name":"Quinn","file":"quinn","champion_id":"133","internal_name":"quinn"},"rammus":{"name":"Rammus","file":"rammus","champion_id":"33","internal_name":"rammus"},"renekton":{"name":"Renekton","file":"renekton","champion_id":"58","internal_name":"renekton"},"rengar":{"name":"Rengar","file":"rengar","champion_id":"107","internal_name":"rengar"},"riven":{"name":"Riven","file":"riven","champion_id":"92","internal_name":"riven"},"rumble":{"name":"Rumble","file":"rumble","champion_id":"68","internal_name":"rumble"},"ryze":{"name":"Ryze","file":"ryze","champion_id":"13","internal_name":"ryze"},"sejuani":{"name":"Sejuani","file":"sejuani","champion_id":"113","internal_name":"sejuani"},"shaco":{"name":"Shaco","file":"shaco","champion_id":"35","internal_name":"shaco"},"shen":{"name":"Shen","file":"shen","champion_id":"98","internal_name":"shen"},"shyvana":{"name":"Shyvana","file":"shyvana","champion_id":"102","internal_name":"shyvana"},"singed":{"name":"Singed","file":"singed","champion_id":"27","internal_name":"singed"},"sion":{"name":"Sion","file":"sion","champion_id":"14","internal_name":"sion"},"sivir":{"name":"Sivir","file":"sivir","champion_id":"15","internal_name":"sivir"},"skarner":{"name":"Skarner","file":"skarner","champion_id":"72","internal_name":"skarner"},"sona":{"name":"Sona","file":"sona","champion_id":"37","internal_name":"sona"},"soraka":{"name":"Soraka","file":"soraka","champion_id":"16","internal_name":"soraka"},"swain":{"name":"Swain","file":"swain","champion_id":"50","internal_name":"swain"},"syndra":{"name":"Syndra","file":"syndra","champion_id":"134","internal_name":"syndra"},"talon":{"name":"Talon","file":"talon","champion_id":"91","internal_name":"talon"},"taric":{"name":"Taric","file":"taric","champion_id":"44","internal_name":"taric"},"teemo":{"name":"Teemo","file":"teemo","champion_id":"17","internal_name":"teemo"},"thresh":{"name":"Thresh","file":"thresh","champion_id":"412","internal_name":"thresh"},"tristana":{"name":"Tristana","file":"tristana","champion_id":"18","internal_name":"tristana"},"trundle":{"name":"Trundle","file":"trundle","champion_id":"48","internal_name":"trundle"},"tryndamere":{"name":"Tryndamere","file":"tryndamere","champion_id":"23","internal_name":"tryndamere"},"twisted fate":{"name":"Twisted Fate","file":"twistedfate","champion_id":"4","internal_name":"twisted fate"},"twitch":{"name":"Twitch","file":"twitch","champion_id":"29","internal_name":"twitch"},"udyr":{"name":"Udyr","file":"udyr","champion_id":"77","internal_name":"udyr"},"urgot":{"name":"Urgot","file":"urgot","champion_id":"6","internal_name":"urgot"},"varus":{"name":"Varus","file":"varus","champion_id":"110","internal_name":"varus"},"vayne":{"name":"Vayne","file":"vayne","champion_id":"67","internal_name":"vayne"},"veigar":{"name":"Veigar","file":"veigar","champion_id":"45","internal_name":"veigar"},"vi":{"name":"Vi","file":"vi","champion_id":"254","internal_name":"vi"},"viktor":{"name":"Viktor","file":"viktor","champion_id":"112","internal_name":"viktor"},"vladimir":{"name":"Vladimir","file":"vladimir","champion_id":"8","internal_name":"vladimir"},"volibear":{"name":"Volibear","file":"volibear","champion_id":"106","internal_name":"volibear"},"warwick":{"name":"Warwick","file":"warwick","champion_id":"19","internal_name":"warwick"},"wukong":{"name":"Wukong","file":"monkeyking","champion_id":"62","internal_name":"wukong"},"xerath":{"name":"Xerath","file":"xerath","champion_id":"101","internal_name":"xerath"},"xin zhao":{"name":"Xin Zhao","file":"xinzhao","champion_id":"5","internal_name":"xin zhao"},"yorick":{"name":"Yorick","file":"yorick","champion_id":"83","internal_name":"yorick"},"zac":{"name":"Zac","file":"zac","champion_id":"154","internal_name":"zac"},"zed":{"name":"Zed","file":"zed","champion_id":"238","internal_name":"zed"},"ziggs":{"name":"Ziggs","file":"ziggs","champion_id":"115","internal_name":"ziggs"},"zilean":{"name":"Zilean","file":"zilean","champion_id":"26","internal_name":"zilean"},"zyra":{"name":"Zyra","file":"zyra","champion_id":"143","internal_name":"zyra"}};
+        
+		LOLKING.createCookie = function(name, val, time) {
+			var expires = "";
+			if( time ) {
+				var date = new Date();
+				date.setTime(date.getTime()+(time*1000));
+				expires = "; expires="+date.toGMTString();
+			}
+
+			document.cookie = name+"="+val+expires+"; path=/; domain=.lolking.net";
+		}
+
+		LOLKING.getCookie = function(name) {
+			name += '=';
+			var parts = document.cookie.split(/;\s*/);
+			for (var i = 0; i < parts.length; i++)
+			{
+				var part = parts[i];
+				if (part.indexOf(name) == 0)
+					return part.substring(name.length)
+			}
+			return null;
+		}
+
+		LOLKING.log = new function() {
+	        this.view = function(category, label) {
+	            if (category && label) {
+	                if (typeof _gaq != 'undefined') {
+	                    _gaq.push(['_trackEvent', category, 'Impression', label]);
+	                } else {
+	                    setTimeout(function() { LOLKING.log.view(category, label) }, 100);
+	                }
+	            }
+	        }
+	
+	        this.click = function(category, label) {
+	            if (category && label) {
+	                if (typeof _gaq != 'undefined') {
+	                    _gaq.push(['_trackEvent', category, 'Clickthrough', label]);
+	                } else {
+	                    setTimeout(function() { LOLKING.log.click(category, label) }, 100);
+	                }
+	            }
+	        }
+
+            /**
+             * Log a custom track event in GA. Will keep trying until GA is available.
+             *
+             * @param category
+             * @param action
+             * @param label
+             */
+            this.custom = function (category, action, label) {
+                if (category && action && label) {
+                    if (typeof _gaq != 'undefined') {
+                        _gaq.push(['_trackEvent', category, action, label]);
+                    } else {
+                        setTimeout(function () { LOLKING.log.custom(category, action, label) }, 100);
+                    }
+                }
+            }
+	    };
+
+		// left: 37, up: 38, right: 39, down: 40,
+		// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+
+		function preventDefault(e) {
+		  e = e || window.event;
+		  if (e.preventDefault)
+			  e.preventDefault();
+		  e.returnValue = false;  
+		}
+
+		function wheel(e) {
+		  preventDefault(e);
+		}
+
+		function disable_scroll() {
+		  if (window.addEventListener) {
+			  window.addEventListener('DOMMouseScroll', wheel, false);
+		  }
+		  window.onmousewheel = document.onmousewheel = wheel;
+		  //document.onkeydown = keydown;
+		}
+
+		function enable_scroll() {
+			if (window.removeEventListener) {
+				window.removeEventListener('DOMMouseScroll', wheel, false);
+			}
+			window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+		}		
+		
+	</script>
+	
+    <link rel="shortcut icon" href="//lkstatic.zamimg.com/favicon.ico" />	
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Marmelad" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Kreon" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    
+    
+	<script src="//lkjs.zamimg.com/shared/js/compiled.js?1385422819"></script>
+    <link rel="stylesheet" type="text/css" href="//lkcss.zamimg.com/shared/css/compiled.css?1385422822" />
+		<script>
+		$(function(){
+            if( $('.pw-widget').length ) {
+                var d=document,
+                h=d.getElementsByTagName('head')[0],
+                s=d.createElement('script');
+                s.type='text/javascript';
+                s.src='http://i.po.st/share/script/post-widget.js#publisherKey=grbj7387pmltff2pc0cm';
+                h.appendChild(s);
+            }
+
+		});
+	</script>
+	
+	<style>
+	
+		#notification-shim {
+			display: none;
+			background: #000;
+			z-index: 9000;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			opacity: 0.7;		
+		}
+	
+		#notification {
+			display: none;
+			padding: 10px;
+			z-index: 99999;
+			text-align: center;
+			max-width: 500px;
+			min-width: 300px;
+		}
+		
+		#notification-content {
+			background: #1A1A1A;
+			padding: 10px;
+			border-radius: 6px;
+			box-shadow: 0 0 2px #000 inset;
+		}
+		
+		#notification-buttonbar {
+			margin-top: 10px;
+			text-align: center;
+		}
+	
+	</style>
+
+	<script>
+	
+		jQuery.fn.center = function () {
+			this.css("position","absolute");
+			this.css("top", Math.max(0, (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop()) + "px");
+			this.css("left", Math.max(0, (($(window).width() - this.outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+			return this;
+		}
+		
+		
+		window.alert = function(msg) {
+
+			$('#notification-shim, #notification').remove();
+			$('body').append('<div id="notification-shim" style=""></div>');
+			$('body').append([
+				'<div class="pane" id="notification">',
+					'<div id="notification-content">',
+						msg,
+						'<div id="notification-buttonbar">',
+							'<button class="blue" onclick="$(\'#notification-shim\').click();">Close</button>',
+						'</div>',
+					'</div>',
+				'</div>'
+			].join(''));
+	
+			$('#notification').center();
+			$('#notification-shim').show();
+			$('#notification').fadeIn(500);
+		
+			$('#notification-shim').click(function(){
+			
+				$('#notification-shim, #notification').remove();
+			
+			});
+		
+		}
+		
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->	
+
+    <!-- start: openx #1 -->
+    
+    <style>
+        .header-box iframe {height:90px;width:728px}
+        .block-box iframe {height:250px;width:300px}
+        .sidebar-box iframe {height:600px;width:160px}
+    </style>
+
+    <script>
+    var ads = new function() {
+        var scriptCalled = false;
+        var queue = [];
+
+        this.load = function(id, channelId) {
+            queue.push({
+                auid: id,
+                slot_id: 'slot' + id,
+                tid: channelId
+            });
+            ads.init();
+        };
+
+        this.init = function() {
+            if (!scriptCalled) {
+                scriptCalled = true;
+                $.getScript('http://ox-d.zam.com/w/1.0/jstag');
+            }
+            if (typeof OX == 'undefined') {
+                setTimeout(ads.init, 50);
+                return;
+            }
+            window.ox_instances = window.ox_instances || {};
+            var ad, ad_i = window['ox_instances'], inst;
+            while((ad = queue.shift())){
+                inst = ad_i[ad.auid] = OX(ad);
+                inst.addHook(ads.onLoad, OX.Hooks.ON_ADUNIT_INITIALIZED);
+                inst.load();
+            }
+        };
+
+        this.onLoad = function(unit) {
+            var r_advs = {'':1,119398:1,118043:1},
+                ns = 'ox_instances',
+                inst = window[ns] && window[ns][unit.get('adunit_id')] || null,
+                adv_id = unit.get('adv_id'),
+                adv_id = adv_id.substr(adv_id.indexOf(':') + 1);
+                
+            if ( !( adv_id in r_advs || unit.get('adv_id').indexOf('-') > -1 ) ) {
+                if (inst) inst.setRefreshMax(0);
+            }
+                    };
+    };
+    </script>
+    <!-- end: openx #1 -->
+
+    <script src="//pagead2.googlesyndication.com/pagead/js/google_top_exp.js"></script>
+    <link rel="stylesheet" type="text/css" href="//lkcss.zamimg.com/css/suggestive-search.css?1384826000" />
+
+</head>
+
+
+<body>
+
+    <!-- start: facebook -->
+	<div id="fb-root"></div>
+	<script>
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=225666384117395";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+    <!-- end: facebook -->
+
+    <!-- start: openx #2 -->
+
+    <div id="skin-wrap"></div>
+            <div class="pixel-box" style="text-align: center;">
+        <div id="slot443521">
+        <noscript>
+        <iframe id="693044443521" name="693044443521" src="http://ox-d.zam.com/w/1.0/afr?auid=443521&tid=52,505&cb=97821228" frameBorder="0" frameSpacing="0" scrolling="no">
+        <a href="http://ox-d.zam.com/w/1.0/rc?cs=693044443521&tid=52,505&cb=97821228"><img src="http://ox-d.zam.com/w/1.0/ai?auid=443521&cs=693044443521&tid=52,505&cb=97821228" border="0" alt=""></a>
+        </iframe>
+        </noscript>
+        </div>
+        <script>ads.load(443521, '52,505');</script>
+        </div> <!-- openx: skin/dashboard -->
+
+    <script>
+	
+    var skinSplitLoaded = false;
+	function addSkinSplit() {
+		$('body').css('background-color', '#000');
+		$detach1 = $('#container').children().first().detach();
+		$('#container').css('margin-top', '182px').prepend('<div style="height: 10px;"></div>');
+		$detach2 = $('#container #container_inner').children().slice(0, 2).detach();
+		$('#container').parent().prepend($('<div id="container" class="container-1"><div id="container_inner" class="container_inner-1"></div><div style="height: 5px;"></div></div>'));
+		$('.container-1').prepend($detach1);
+		$('.container_inner-1').append($detach2);
+	}
+
+    function postSkinSetup(campaignId) {
+        if (campaignId && !skinSplitLoaded) {
+            skinSplitLoaded = true;
+			if( $.isReady ) {
+				addSkinSplit();
+			} else {
+				$(function(){
+					addSkinSplit();
+				});
+			}
+        }
+    }
+    </script>
+    <!-- end: openx #2 -->
+
+	<noscript>
+		<div id="noscript-bg"></div>
+		<div id="noscript-text">
+			<div id="noscript-text-img"></div>
+			<b>This site makes extensive use of JavaScript.</b><br />Please <a href="https://www.google.com/support/adsense/bin/answer.py?answer=12654" target="_blank">enable JavaScript</a> in your browser.
+		</div>
+	</noscript>
+
+	<div id="container">
+	
+		<!-- start: server status -->
+		
+		<div style="margin: 0px auto 10px; padding: 8px 4px 8px 4px; font-size: 13px; text-align: center; font-family: 'Tahoma'; opacity: 1; border: 1px solid rgb(0, 0, 0); box-shadow: 0px 0px 1px rgb(0, 0, 0) inset; color: rgb(255, 235, 124); float: right; width: 335px; background: linear-gradient(center top , rgb(51, 51, 51) 0%, rgb(17, 17, 17) 100%) repeat scroll 0px 0px transparent; right: 21px; position: absolute; top: 0px; border-radius: 0px 0px 6px 6px;" class="pane">
+            <span style="color: #EEE">Server Status:</span>
+            <span id="online_servers" style="margin: 0 12px; color: #77DD00; cursor: pointer;">9 Online</span>
+            <span id="offline_servers" style="color: #EE2222; cursor: pointer;"> 0 Offline</span>
+		</div>
+
+        <script type="text/javascript">
+
+            $(function(){
+                                $('#online_servers').tipsy({fallback: 'NA EUW EUNE BR TR RU LAN LAS OCE', gravity: 'n', fade: true, offset: 0});
+                
+                            });
+
+        </script>
+		<!-- end: server status -->
+
+
+		
+		<div id="container_inner">
+	
+			
+			
+			
+			
+			
+<div style="height: 180px;">
+			
+				
+				<div style="width: 380px; float: left; z-index: 100; position: relative;">
+					<div style="width: 400px; overflow: hidden; height: 180px; background: url(&quot;//lkimg.zamimg.com/images/logo-urf.png&quot;) no-repeat scroll 20px 12px transparent;">
+						<a href="/" style="width: 400px; height: 180px; display: block;"></a>
+					</div>
+				</div>
+			
+				<div style="float: left; padding-top: 20px; padding-bottom: 20px; text-align: center; width: 400px; position: relative;">
+				
+					<a href="/"><img height="70" width="333" src="//lkimg.zamimg.com/images/logo-text.png"></a>
+
+					
+					
+					<div class="suggestive-search-container">
+						
+							<form action="/search" method="get">
+								
+								<input autofocus="autofocus" type="text" name="name" autocomplete="off" placeholder="Summoner name..." value="" tabindex="0">
+
+								<select class="tselect" name="region">
+
+																		<option value="NA" data-tselect-selected-label="NA">North America</option>
+																		<option value="EUW" data-tselect-selected-label="EUW">Europe West</option>
+																		<option value="EUNE" data-tselect-selected-label="EUNE">Europe Nordic &amp; East</option>
+																		<option value="BR" data-tselect-selected-label="BR">Brazil</option>
+																		<option value="TR" data-tselect-selected-label="TR">Turkey</option>
+																		<option value="RU" data-tselect-selected-label="RU">Russia</option>
+																		<option value="LAN" data-tselect-selected-label="LAN">Latin America North</option>
+																		<option value="LAS" data-tselect-selected-label="LAS">Latin America South</option>
+																		<option value="OCE" data-tselect-selected-label="OCE">Oceania</option>
+									
+								</select>
+
+								<button style="float: right;">Search</button>
+
+							</form>
+						
+							<ul class="search-suggestions-container" style="display: none;">
+
+							</ul>						
+						
+                            <img id="select-your-region-callout" style="display: none; position: absolute; right: 118px; top: 100%; margin-top: -2px;" src="//lkimg.zamimg.com/images/select-your-region.png" />
+						
+					</div>
+
+                    
+					
+
+					<script>
+					
+					$(function(){                        
+                        
+						//https://github.com/odhyan/trie/blob/master/trie.js
+						Trie=function(){this.words=0;this.prefixes=0;this.children=[]};Trie.prototype={insert:function(e,t){if(e.length==0){return}var n=this,r,i;if(t===undefined){t=0}if(t===e.length){n.words++;return}n.prefixes++;r=e[t];if(n.children[r]===undefined){n.children[r]=new Trie}i=n.children[r];i.insert(e,t+1)},remove:function(e,t){if(e.length==0){return}var n=this,r,i;if(t===undefined){t=0}if(n===undefined){return}if(t===e.length){n.words--;return}n.prefixes--;r=e[t];i=n.children[r];i.remove(e,t+1)},update:function(e,t){if(e.length==0||t.length==0){return}this.remove(e);this.insert(t)},countWord:function(e,t){if(e.length==0){return 0}var n=this,r,i,s=0;if(t===undefined){t=0}if(t===e.length){return n.words}r=e[t];i=n.children[r];if(i!==undefined){s=i.countWord(e,t+1)}return s},countPrefix:function(e,t){if(e.length==0){return 0}var n=this,r,i,s=0;if(t===undefined){t=0}if(t===e.length){return n.prefixes}var r=e[t];i=n.children[r];if(i!==undefined){s=i.countPrefix(e,t+1)}return s},find:function(e){if(e.length==0){return false}if(this.countWord(e)>0){return true}else{return false}},getAllWords:function(e){var t=this,n,r,i=[];if(e===undefined){e=""}if(t===undefined){return[]}if(t.words>0){i.push(e)}for(n in t.children){r=t.children[n];i=i.concat(r.getAllWords(e+n))}return i},autoComplete:function(e,t){if(e.length==0){return[]}var n=this,r,i;if(t===undefined){t=0}r=e[t];i=n.children[r];if(i===undefined){return[]}if(t===e.length-1){return i.getAllWords(e)}return i.autoComplete(e,t+1)}}
+
+						//http://stackoverflow.com/questions/460070/detecting-mistyped-email-addresses-in-javascript#answer-460102
+						levenshteinenator=function(e,t){var n;var r=e.length;var i=t.length;if(r<i){var s=e;e=t;t=s;var o=r;r=i;i=o}var u=new Array;u[0]=new Array;for(var s=0;s<i+1;s++){u[0][s]=s}for(var a=1;a<r+1;a++){u[a]=new Array;u[a][0]=a;for(var f=1;f<i+1;f++){n=e.charAt(a-1)==t.charAt(f-1)?0:1;u[a][f]=minimator(u[a-1][f]+1,u[a][f-1]+1,u[a-1][f-1]+n)}}return u[r][i]};minimator=function(e,t,n){if(e<t&&e<n)return e;if(t<e&&t<n)return t;return n}
+
+						var T = new Trie();
+
+						$.each(LOLKING.champions, function(i, o) {
+                            T.insert(o.internal_name.toLowerCase());
+                        });
+
+                        var regions = LOLKING.regions;
+                        var cookie_name = 'default-region';
+                        var initial_region = Cookies.get(cookie_name) || 'none';
+
+                        var $region = $('.tselect-container ul li[data-tselect-value="' + initial_region.toUpperCase() + '"]');
+                        
+                        var hasPickedRegion = $region.length != 0;
+                        
+                        if( !hasPickedRegion ) {
+                        
+                            initial_region = 'na';
+                            $('#select-your-region-callout').fadeIn();
+                            $region = $('.tselect-container ul li[data-tselect-value="' + initial_region.toUpperCase() + '"]');
+                        
+                        }
+                        
+                        var selectedText = $region.attr('data-tselect-selected-label') || $(this).text();
+                        var selectedValue = $region.attr('data-tselect-value') || $(this).text();
+                        $region.parent().children().first().text(selectedText);
+                        $region.parent().parent().find('[type="hidden"]').val(selectedValue);                        
+                        
+                        $('.tselect-container ul li:gt(0)').click(function(){
+                        
+                            Cookies.set(cookie_name, $(this).attr('data-tselect-value').toLowerCase(), {expires: 31536000});
+                            $('.suggestive-search-container [name="name"]').trigger('keyup').focus();
+                        
+                        });
+
+						$('.suggestive-search-container [name="name"]').bind('focus', function(e){
+							if( $('#search-suggestions-container').children().length > 0 ) {
+								$('#search-suggestions-container').fadeIn();
+                                $('.suggestive-search-container').addClass('suggestive-search-container-open');
+                                if( !hasPickedRegion ) $('#select-your-region-callout').hide();
+							}
+						});
+
+						$('.suggestive-search-container [name="name"]').bind('keyup', function(e){
+                        
+                            if (e.ctrlKey && e.keyCode == 13) {
+                                window.location = $('.search-suggestions-container li:eq(0) a').attr('href');
+                                return;
+                            }
+                        
+							if( e.keyCode && e.keyCode == 27 ) {
+								$(this).blur();
+								return;
+							}
+
+							var str = $("<div/>").text($(this).val()).html();
+							var slug = str.toLowerCase().replace(/[^a-z]/g, "");
+							var champion_slug = null;
+
+							var rows = [];
+
+							if( slug.length ) {
+
+								var trie_matches = T.autoComplete(slug);
+
+								if( trie_matches.length ) {
+
+									champion_slug = trie_matches.sort(function (a, b) { return a.length - b.length; })[0];
+
+								} else {
+
+									var closest_champion;
+									var closest_champion_score = 10;
+
+									$.each(LOLKING.champions, function(i, o) {
+										var score = levenshteinenator(slug, o.internal_name);
+										if( score < closest_champion_score ) {
+											closest_champion_score = score;
+											closest_champion = o.internal_name;
+										}
+
+									});
+
+									if( closest_champion_score <= 3 ) {
+										champion_slug = closest_champion;
+									}
+
+								}
+								
+								if( str.length >= 2) {
+								
+									var html = [
+									'<li>',
+										'<a style="position: relative;" href="/now/' + $('.suggestive-search-container [name="region"]').val().toLowerCase()  + '/' + str + '">',
+											'<div style="text-align: left; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);">Active Game Search</div>',
+											'<p>View current game details for <strong style="color: #FFCD03; font: bold 14px \'Open Sans\';">' + str +'</strong>.</p>',
+                                            '<span style="font: 11px \'Trebuchet Ms\'; color: #DDD; position: absolute; top: 4px; right: 6px;">' + (navigator.platform.toUpperCase().indexOf('MAC')>=0 ? 'OPTION+ENTER' : 'CTRL+ENTER') + '</span>', 
+										'</a>',
+									'</li>',
+									'<li>',
+										'<a href="/search?name=' + str + '">',
+											'<div style="text-align: left; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);">Search All Regions</div>',
+											'<p>See profiles from all supported regions.</p>',
+										'</a>',
+									'</li>'
+									].join('');
+									
+									rows.push(html);
+								
+								}
+								
+								
+								if( champion_slug && LOLKING.champions[champion_slug] ) {
+
+									var html = [
+									'<li>',
+										'<div>',
+											'<div style="width: 48px; height: 48px; background: url(//lkimg.zamimg.com/shared/riot/images/champions/' + LOLKING.champions[champion_slug].champion_id + '_64.png) center; border-radius: 6px; box-shadow: 0 0 2px #000; float: left; margin-right: 10px;"></div>',
+											'<div style="float: left;">',
+												'<div style="text-align: left; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);">' + LOLKING.champions[champion_slug].name + '</div>',
+												'<p>Check out <a href="/guides/list.php?champion=' + champion_slug + '">guides</a>, <a href="/models/?champion=' + LOLKING.champions[champion_slug].champion_id + '&skin=0">3D models</a>, and <a href="/champions/' + champion_slug + '#statistics">statistics</a>.</p>',
+											'</div>',
+										'</div>',
+									'</li>'
+									].join('');
+									
+									rows.push(html);
+
+								}
+							}
+
+							$('.search-suggestions-container').empty().html(rows.join(''));
+
+							if( $('.search-suggestions-container').children().length > 0 ) {
+								$('.search-suggestions-container').fadeIn();
+                                $('.suggestive-search-container').addClass('suggestive-search-container-open');
+                                if( !hasPickedRegion ) $('#select-your-region-callout').hide();
+							} else {
+								$('.search-suggestions-container').hide();
+                                $('.suggestive-search-container').removeClass('suggestive-search-container-open');
+                                if( !hasPickedRegion ) $('#select-your-region-callout').fadeIn();
+							}
+
+						});
+
+             
+                        if(window.location.hash) {
+                            if( $(window.location.hash).length ) {
+                                $('html,body').scrollTop($(window.location.hash).offset().top);
+                            }
+                        }
+		
+
+					});
+					</script>				
+
+				</div>
+				
+				<div style="float: left; width: 400px;">
+				
+								<form style="width: 340px; float: right; margin-top: 50px;" class="pane" method="POST">
+					<input type="hidden" name="action" value="login" />
+					<div class="pane_inner">
+					<div><input placeholder="Email Address" style="" type="text" class="small" name="email" value=""> <input placeholder="Password" style="" type="password" class="small" name="password" value=""> <button class="formbtn" style="font-size: 12px; padding: 4px 6px 5px">Login</button></div>
+					
+					<span class="inline-message" id="lastname-message"></span>
+					
+					<div style="font-size: 11px; margin-top: 4px;">
+						<label><input type="checkbox" name="remember_me" checked="checked" value="1"> Remember Me <a href="javascript:alert('Checking this before you log in will keep you logged in for up to 7 days.');" style="font-size: 12px;">(?)</a></label>
+					</div>
+					<div style="font-size: 11px; margin-top: 4px;">
+						<div style="float: left;">Need an account? <a href="/account/register">Register Now.</a></div>
+						<div style="float: right;"><a href="/account/support/login-support">Having login issues?</a></div>
+					</div>
+					</div>
+				</form>
+								</div>
+				
+			</div>			
+			
+			
+			
+			
+			
+
+			<div id="nav-bar" style="position: relative; z-index: 11000; overflow: visible;">
+				<ul style="overflow: visible;">
+					
+					
+					<li><a href="/" style="border-left: 0;">Home</a></li>
+					<li><a style="color: #FFDB4C;" href="http://now.lolking.net">LolKing Now</a></li>
+					<li><a href="/charts">Charts</a></li>
+					<li><a href="/streams">Streams</a></li>
+					<li><a href="/champions">Champions</a></li>
+					<li><a href="/items">Items</a></li>
+					<li><a href="/models">Model Viewer</a></li>
+					<li><a href="/contests">Contests</a></li>
+					
+					
+					<li style="position: relative;" onmouseover="$(this).find('div').show();" onmouseout="$(this).find('div').hide();"><a href="/guides">Champion Guides</a>
+						
+						<div style="display: none; position: absolute; top: 0px; left: 0px; margin-top: 42px; width: 100%; background: none repeat scroll 0% 0% rgb(17, 17, 17); border-bottom: 1px solid rgb(34, 34, 34); border-right: 1px solid rgb(34, 34, 34);">
+														<a href="/guides/new">Create a Guide</a>
+						</div>
+						
+					</li>
+					
+
+				</ul>
+
+				<div style="position: absolute; right: 10px; top: 10px;" class="fb-like" data-href="https://www.facebook.com/LoLking" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="trebuchet ms" data-colorscheme="dark"></div>
+
+			</div>
+			
+			
+						
+	
+						
+
+
+
+
+<a href="http://now.lolking.net"><img src="//lkimg.zamimg.com/images/beta_flag.png" style="z-index: 1000; position: absolute; top: 0px; left: 0px; width: 92px"></a>
+
+    
+    <div style="overflow: hidden;">
+
+        <div style="float: left; margin-left: 2px; margin-right: 18px; margin-top: 2px; width: 860px;">
+        
+            	<div style="text-align: center; margin-bottom: 10px; overflow: hidden;">
+		<!-- START: 728x90 -->
+        <div class="leaderboard-box" style="text-align: center;">
+        <div id="slot443514">
+        <noscript>
+        <iframe id="657419443514" name="657419443514" src="http://ox-d.zam.com/w/1.0/afr?auid=443514&tid=52,505&cb=57436314" frameBorder="0" frameSpacing="0" scrolling="no">
+        <a href="http://ox-d.zam.com/w/1.0/rc?cs=657419443514&tid=52,505&cb=57436314"><img src="http://ox-d.zam.com/w/1.0/ai?auid=443514&cs=657419443514&tid=52,505&cb=57436314" border="0" alt=""></a>
+        </iframe>
+        </noscript>
+        </div>
+        <script>ads.load(443514, '52,505');</script>
+        </div><!-- END: 728x90 -->	</div>
+            
+            <section>
+
+                <div class="section-header">
+
+                    <ul class="breadcrumb">
+                        <li><a href="http://now.lolking.net">LolKing Now</a></li>
+                        <li>&raquo;</li>
+                        <li>Game Details</li>
+                    </ul>
+
+                    <h3>Active Game Details for Lolily</h3>
+
+                </div>
+
+                <div class="section-body">
+		
+					                    <div id="poll-status-bar" class="progress-bar">We're searching for this summoner in all active games, please wait...</div>
+					
+                    <div class="quotebox1" style="color: #CCC; margin: 60px;">
+                        <h3>Did You Know...</h3>
+                        <p>You can search for a summoner in an active game using the search bar at the top of every page. Just type the summoner name in the search box and select the appropriate region in the suggestive search.</p>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <div style="box-shadow: 0px 0px 5px rgb(0, 0, 0) inset; background: url(&quot;//lkimg.zamimg.com/images/active-game-search-tip.png&quot;) repeat scroll 0% 0% transparent; display: inline-block; height: 389px; width: 458px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+			            <script>
+            
+            var maxAttempts = 5;
+            var attempts = 0;
+            var delay = 1750;
+            var region = "na";
+            var summonerName = "lolily";
+            //var endpoint = '/game/' + region + '/' + summonerName;
+			var endpoint = '/service/lknow/status?region=' + region + '&summonerName=' + summonerName;
+
+            (function poll() {
+                setTimeout(function(){
+                    attempts++;
+                    $.ajax({
+                        url: endpoint,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(response) {
+
+							$('#poll-status-bar').addClass('progress-bar-success').text('Summoner data found! Reloading...');
+                            window.location.reload(true);
+
+                        },
+                        error: function(xhr) {
+                            var response = $.parseJSON(xhr.responseText);
+                            if( response && response.summonerStatusCode == -1 ) {
+                                $('#poll-status-bar').addClass('progress-bar-failure').text('We are having trouble looking up this summoner. Please try again in a few minutes.');
+                            } else if( response && response.summonerStatusCode == 0 ) {
+                                $('#poll-status-bar').addClass('progress-bar-failure').text('This summoner does not exist.');
+                            } else if( response && response.summonerStatusCode == 2 ) {
+                                $('#poll-status-bar').addClass('progress-bar-failure').text('This summoner is not currently in a game.');
+                            } else if( response && response.summonerStatusCode == 3 ) {
+                                $('#poll-status-bar').addClass('progress-bar-failure').text('This summoner\'s game has not started.');
+                            } else if( response && response.summonerStatusCode == 5 ) {
+                                $('#poll-status-bar').addClass('progress-bar-failure').text('This summoner\'s game is not observable.');
+                            } else {
+                        
+                                if( attempts+1 > maxAttempts ) {
+                                    $('#poll-status-bar').addClass('progress-bar-failure').text('We are having trouble looking up this summoner. Please try again in a few minutes.');
+                                } else {
+                                    poll();
+                                }
+                            }
+                        },
+                        timeout: delay
+                    });
+                }, delay);
+            })();
+            </script>
+			
+            
+        </div>
+
+        
+				<div style="float: left; width: 300px; margin-right: 0px;">
+
+					<!-- START: 300x250 -->
+<div style="margin-bottom: 10px;">
+        <div class="med_rect_01-box" style="text-align: center;">
+        <div id="slot443497">
+        <noscript>
+        <iframe id="573945443497" name="573945443497" src="http://ox-d.zam.com/w/1.0/afr?auid=443497&tid=52,505&cb=13649476" frameBorder="0" frameSpacing="0" scrolling="no">
+        <a href="http://ox-d.zam.com/w/1.0/rc?cs=573945443497&tid=52,505&cb=13649476"><img src="http://ox-d.zam.com/w/1.0/ai?auid=443497&cs=573945443497&tid=52,505&cb=13649476" border="0" alt=""></a>
+        </iframe>
+        </noscript>
+        </div>
+        <script>ads.load(443497, '52,505');</script>
+        </div></div>
+<!-- END: 300x250 -->	
+					
+	
+					<style>
+					
+						.right_panel_tabs {
+							list-style: none;
+							margin: 0;
+							padding: 0;
+							overflow: hidden;
+						}
+					
+						.right_panel_tabs li {
+							display: inline-block;
+						}
+						
+						.right_panel_tabs li a {
+							background-color: #333333;
+							border-radius: 5px 5px 0 0;
+							box-shadow: 0 0 5px #000000;
+							color: #EEEEEE;
+							display: inline-block;
+							height: 25px;
+							line-height: 26px;
+							margin: 2px 2px 1px;
+							opacity: 0.7;
+							padding: 6px 12px;
+							text-align: center;
+							text-decoration: none;
+						}
+					
+						.right_panel_tabs li a.selected {
+							height: auto;
+							margin: 2px 2px 0;
+							opacity: 1;
+							cursor: default;
+						}
+					
+					
+					</style>
+			
+					<script>
+					
+						$(function(){
+
+							$('.right_panel_tabs').each(function(){
+
+								$(this).find('li a').click(function(e){
+
+									var hash = $(this).attr('href');
+								
+									if( hash.charAt(0) == '#' ) {
+										e.preventDefault();
+										
+										$tab = $(hash);
+										$tab.parent().children().hide();
+										$tab.show();
+
+										$(this).addClass('selected').parent().siblings().find('a').removeClass('selected');
+									}
+
+								}).first().trigger('click');
+
+							});
+
+						});
+					
+					</script>
+			
+
+										<ul class="right_panel_tabs">
+						<li><a href="#top-streams" class="selected">&nbsp;&nbsp;Top Streams&nbsp;&nbsp;</a></li>
+						<li><a href="/streams">&nbsp;&nbsp;All Streams&nbsp;&nbsp;</a></li>
+					</ul>				
+			
+					<div class="pane" style="margin-bottom: 20px; border-radius: 0px 0px 6px 6px; margin-top: 0pt; margin-left: 2px;">
+
+						<div>
+							<ul class="streamlist" id="top-streams">
+																<li>
+									<a href="/summoner/euw/20820067#stream">
+										<div style="border: 1px solid #111; margin-right: 5px; float: left; height: 45px; width: 80px; background: url(http://static-cdn.jtvnw.net/previews-ttv/live_user_guardsmanbob-320x200.jpg); background-size: 80px auto; background-position: center center;"></div>
+										<div class="summoner_name">Guardsman Bob</div>
+										<div class="stream_stats">
+											<i class="twitter-icon-white twitter-icon-eye"></i> 2,637											<div class="lolking_score_tt" style="margin-left: 2px; display: inline-block; vertical-align: middle; width: 19px; background: url(&quot;http://common.zam.com/i/tmp/lk/stars.png&quot;) repeat scroll 0px 0px / 78px auto transparent; height: 16px;"></div> 2518										</div>
+									</a>
+								</li>
+																<li>
+									<a href="/summoner/na/19717808#stream">
+										<div style="border: 1px solid #111; margin-right: 5px; float: left; height: 45px; width: 80px; background: url(http://static-cdn.jtvnw.net/previews-ttv/live_user_sirhcez-320x200.jpg); background-size: 80px auto; background-position: center center;"></div>
+										<div class="summoner_name">SirhcEz</div>
+										<div class="stream_stats">
+											<i class="twitter-icon-white twitter-icon-eye"></i> 2,466											<div class="lolking_score_tt" style="margin-left: 2px; display: inline-block; vertical-align: middle; width: 19px; background: url(&quot;http://common.zam.com/i/tmp/lk/stars.png&quot;) repeat scroll 0px 0px / 78px auto transparent; height: 16px;"></div> 2526										</div>
+									</a>
+								</li>
+																<li>
+									<a href="/summoner/na/31417807#stream">
+										<div style="border: 1px solid #111; margin-right: 5px; float: left; height: 45px; width: 80px; background: url(http://static-cdn.jtvnw.net/previews-ttv/live_user_sllverlady1-320x200.jpg); background-size: 80px auto; background-position: center center;"></div>
+										<div class="summoner_name">Sllver Lady</div>
+										<div class="stream_stats">
+											<i class="twitter-icon-white twitter-icon-eye"></i> 2,032											<div class="lolking_score_tt" style="margin-left: 2px; display: inline-block; vertical-align: middle; width: 19px; background: url(&quot;http://common.zam.com/i/tmp/lk/stars.png&quot;) repeat scroll 0px 0px / 78px auto transparent; height: 16px;"></div> 1958										</div>
+									</a>
+								</li>
+																<li>
+									<a href="/summoner/na/605766#stream">
+										<div style="border: 1px solid #111; margin-right: 5px; float: left; height: 45px; width: 80px; background: url(http://static-cdn.jtvnw.net/previews-ttv/live_user_behkuhtv-320x200.jpg); background-size: 80px auto; background-position: center center;"></div>
+										<div class="summoner_name">Behkuh</div>
+										<div class="stream_stats">
+											<i class="twitter-icon-white twitter-icon-eye"></i> 1,090											<div class="lolking_score_tt" style="margin-left: 2px; display: inline-block; vertical-align: middle; width: 19px; background: url(&quot;http://common.zam.com/i/tmp/lk/stars.png&quot;) repeat scroll 0px 0px / 78px auto transparent; height: 16px;"></div> 2060										</div>
+									</a>
+								</li>
+																<li>
+									<a href="/summoner/na/22660586#stream">
+										<div style="border: 1px solid #111; margin-right: 5px; float: left; height: 45px; width: 80px; background: url(http://static-cdn.jtvnw.net/previews-ttv/live_user_gleebglarb1-320x200.jpg); background-size: 80px auto; background-position: center center;"></div>
+										<div class="summoner_name">HyoIyn</div>
+										<div class="stream_stats">
+											<i class="twitter-icon-white twitter-icon-eye"></i> 314											<div class="lolking_score_tt" style="margin-left: 2px; display: inline-block; vertical-align: middle; width: 19px; background: url(&quot;http://common.zam.com/i/tmp/lk/stars.png&quot;) repeat scroll 0px 0px / 78px auto transparent; height: 16px;"></div> 2723										</div>
+									</a>
+								</li>
+																<li>
+									<a href="/summoner/tr/458669#stream">
+										<div style="border: 1px solid #111; margin-right: 5px; float: left; height: 45px; width: 80px; background: url(http://static-cdn.jtvnw.net/previews-ttv/live_user_zeeoon-320x200.jpg); background-size: 80px auto; background-position: center center;"></div>
+										<div class="summoner_name">zeoNNN</div>
+										<div class="stream_stats">
+											<i class="twitter-icon-white twitter-icon-eye"></i> 126											<div class="lolking_score_tt" style="margin-left: 2px; display: inline-block; vertical-align: middle; width: 19px; background: url(&quot;http://common.zam.com/i/tmp/lk/stars.png&quot;) repeat scroll 0px 0px / 78px auto transparent; height: 16px;"></div> 2292										</div>
+									</a>
+								</li>
+															</ul>
+						</div>
+
+					</div>
+					
+                    <!-- START: 300x250 -->
+<div style="margin-bottom: 10px;">
+        <div class="med_rect_02-box" style="text-align: center;">
+        <div id="slot443523">
+        <noscript>
+        <iframe id="298746443523" name="298746443523" src="http://ox-d.zam.com/w/1.0/afr?auid=443523&tid=52,505&cb=85172075" frameBorder="0" frameSpacing="0" scrolling="no">
+        <a href="http://ox-d.zam.com/w/1.0/rc?cs=298746443523&tid=52,505&cb=85172075"><img src="http://ox-d.zam.com/w/1.0/ai?auid=443523&cs=298746443523&tid=52,505&cb=85172075" border="0" alt=""></a>
+        </iframe>
+        </noscript>
+        </div>
+        <script>ads.load(443523, '52,505');</script>
+        </div></div>
+<!-- END: 300x250 -->
+                                            <ul class="right_panel_tabs">
+                            	<li><a href="#champion-sales" class="selected">Champion Sales</a></li>                            <li><a href="#skin-sales" >&nbsp;&nbsp;Skin Sales&nbsp;&nbsp;</a></li>                        </ul>
+
+                        <div class="pane" style="margin-bottom: 20px; border-radius: 0px 0px 6px 6px; margin-top: 0pt; margin-left: 2px;">
+
+                            <div>
+                                                                    <ul id="champion-sales" class="streamlist">
+                                                                                    <li>
+                                                <a href="/champions/ziggs#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/115_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Ziggs</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 487</div>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="/champions/cassiopeia#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/69_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Cassiopeia</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 440</div>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="/champions/leblanc#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/7_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">LeBlanc</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 395</div>
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                                                                                    <ul id="skin-sales" class="streamlist">
+                                                                                    <li>
+                                                <a href="/champions/jax#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/24_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Angler Jax</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 487</div>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="/champions/annie#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/1_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Annie in Wonderland</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 910</div>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="/champions/viktor#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/112_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Full Machine Viktor</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 487</div>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="/champions/vayne#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/67_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Aristocrat Vayne</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 260</div>
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a href="/champions/lux#store">
+                                                    <div style="float: left; background-position: center center !important; border: 1px solid #111111; border-radius: 4px 4px 4px 4px; box-shadow: 0 0 2px #000000; height: 28px; background:url(//lkimg.zamimg.com/shared/riot/images/champions/99_32.png); width: 28px; margin-right: 5px;"></div>
+                                                    <div style="float: left; font-size: 14px; margin-top: 3px; width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" class="summoner_name">Spellthief Lux</div>
+                                                    <div style="float: right; font-size: 14px; line-height: 20px; margin-top: 5px;"><img width="18" class="champion-price-icon" style="width: 18px; border: none; margin: 0; margin-right: 2px;" src="//lkimg.zamimg.com/images/rp_logo.png"> 375</div>
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                                            </div>
+
+                        </div>
+                    
+
+                </div>    
+    </div>        
+
+    
+
+<script>
+
+$(function(){
+    $('.toggle-btn').click(function(){
+
+      var start = 0;
+      var end = 35;
+      var animate_from = [95, 171, 57];
+      var animate_to = [50, 50, 50]; // paint it black    
+
+      var $block = $(this);
+      if( $block.is(':animated') ) return;
+
+      if( $block.attr('data-toggle') == "off" ) {
+         start = 35;
+         end = -35;
+         animate_to = [95, 171, 57];
+         animate_from = [50, 50, 50];
+         $block.attr('data-toggle', "on");
+
+        $('#table-mode').hide();
+        $('#interactive-mode').show();
+
+        //Cookies.set(cookie_name, 'interactive', {expires: 31536000});
+
+       } else {
+         $block.attr('data-toggle', "off");
+
+        $('#table-mode').show();
+        $('#interactive-mode').hide();
+
+        //Cookies.set(cookie_name, 'table', {expires: 31536000});
+
+       }
+     
+       var $toggle = $(this).find('.toggle-btn-switch');
+ 
+       $block.css({ orphans: 0 })
+         .animate({ orphans: 1 }, {
+           step: function(n, fx) {
+ 
+             $toggle.css('left', (start+(end*n)) + 'px');
+ 
+             var rgb = [
+               Math.floor(animate_from[0] + ((animate_to[0] - animate_from[0]) * n)),
+               Math.floor(animate_from[1] + ((animate_to[1] - animate_from[1]) * n)),
+               Math.floor(animate_from[2] + ((animate_to[2] - animate_from[2]) * n))
+             ];
+ 
+             $block.css('backgroundColor', 'rgb(' + rgb.join(',') + ')');
+ 
+           },
+           easing: 'easeInOutCirc',
+           duration: 200
+         });
+ 
+     });
+
+});
+
+</script>
+
+
+<style>
+
+
+
+/* spoiler toggle button */
+.toggle-btn { 
+        vertical-align: middle; width: 70px; height: 30px; position: relative; box-shadow: 0px 0px 2px rgb(0, 0, 0); display: inline-block; border-radius: 6px 6px 6px 6px; 
+        background: #5FAB39;
+        cursor: pointer;
+}
+
+.toggle-btn .toggle-btn-switch {
+        border-radius: 6px 6px 6px 6px; background: linear-gradient(#888, #666); box-shadow: 0px 0px 2px rgb(0, 0, 0); height: 30px; left: 0px; position: absolute; top: 0px; width: 35px;        
+}
+
+.toggle-btn .toggle-btn-label {
+        font: 12px/30px 'Trebuchet Ms'; width: 50%; text-align: center; text-transform: uppercase; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+.toggle-btn .toggle-btn-label-on {
+        float: right;
+}
+
+.toggle-btn .toggle-btn-label-off {
+        float: left;
+        color: #BBB;
+}
+
+.toggle-btn:hover .toggle-btn-switch {
+        background: linear-gradient(#BBB, #999);
+}
+
+.toggle-btn[data-toggle="off"] {
+        background: rgb(50, 50, 50);
+}
+
+.toggle-btn[data-toggle="off"] .toggle-btn-switch {
+        left: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+table.lknow-team-table {
+	width: 100%;
+	box-shadow: inset 0 0 5px #000;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	border-collapse: collapse;
+	border: 1px solid #111;
+}
+
+
+table.lknow-team-table thead tr th {
+    color: #DDDDDD;
+    font-size: 14px;
+	padding: 4px 8px;
+	border-right: 1px solid rgba(0, 0, 0, 0.4);
+	border-bottom: 1px solid #111;
+}
+
+table.lknow-team-table tbody tr td {
+	background: #222222;
+	border-right: 1px solid #141414;
+	
+	padding: 4px 8px;
+	border-bottom: 1px solid #111111;
+	text-align: center;
+}
+
+table.lknow-team-table tbody tr td:nth-child(2) {
+	text-align: left;
+}
+
+table.lknow-team-table tbody tr:nth-child(2n) td {
+	background: #171717;
+	border-right: 1px solid #0e0e0e;
+}
+
+table.purple-team thead tr th {
+	background: linear-gradient(#814092, #44224D);
+}
+
+table.blue-team thead tr th {
+	background: linear-gradient(#0381BB, #023E59);
+}
+
+table.lknow-team-table tbody tr.highlight td {
+	background: #223344;
+}
+
+
+
+
+
+
+/* fix for the view runes tooltips */
+.tipsy-inner { max-width: none !important; }
+
+.blue-team .summoner-frame, .blue-team .lk-row-heading {
+    background: linear-gradient(#0381BB, #023E59);
+}
+
+.purple-team .summoner-frame, .purple-team .lk-row-heading {
+    background: linear-gradient(#814092, #44224D);
+}
+
+.blue-team .champion-name {
+    color: #0496da;
+}
+
+.purple-team .champion-name {
+    color: #a150b6;
+}
+
+.queued_alone {
+    width: 24px;
+    height: 24px;
+    background: url(//lkimg.zamimg.com/images/lknow/queued-alone.png) center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.queued_together {
+    width: 24px;
+    height: 24px;
+    background: url(//lkimg.zamimg.com/images/lknow/queued-together.png) center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.queued_together2, .queued_together4 {
+    background: url(//lkimg.zamimg.com/images/lknow/queued-together2.png) center;
+}
+
+section * {
+    font: 14px 'Open Sans', Arial;
+}
+
+section .section-header {
+    padding: 0 10px;
+    border-bottom: 1px solid #111;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+section .section-body {
+    padding: 0 10px;    
+}
+
+section h3 {
+    font: 24px 'Trebuchet Ms';
+    margin-bottom: 10px;    
+}
+
+section p {
+    font: 14px 'Open Sans';
+    margin-bottom: 10px;
+}
+
+
+section ul.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #999;
+    font-size: 0;
+}
+
+section ul.breadcrumb li {
+    display: inline-block;
+    margin: 0;    
+    padding: 0 3px;
+}
+
+section ul.breadcrumb li, section ul.breadcrumb li a {
+    font: 11px 'Open Sans', Arial;
+    text-transform: uppercase;
+}
+
+
+.quotebox1 {
+    background: #1A1A1A;
+    box-shadow: 0 0 5px #000 inset;
+    padding: 20px;
+}
+
+.progress-bar {
+    font: 14px/38px 'Open Sans';
+    border: 1px solid #111111;
+    box-shadow: 0px 0px 2px #000000 inset;
+    margin: 10px 0px;
+    padding: 0px;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    height: 38px;
+}
+
+.progress-bar-success {
+    background: #224400 !important;
+    color: #AD8 !important;
+}
+
+.progress-bar-failure {
+    background: #770000 !important;
+    color: #FBB !important;
+}
+.progress-bar {
+    color: #999999;
+
+    animation: 3s linear 0s normal none infinite animate-stripes;
+    background-size: 30px 30px;
+    -webkit-transition: width .4s ease-in-out;
+    -moz-transition: width .4s ease-in-out;
+    -ms-transition: width .4s ease-in-out;
+    -o-transition: width .4s ease-in-out;
+    transition: width .4s ease-in-out;
+    -webkit-background-size: 30px 30px;
+    -moz-background-size: 30px 30px;
+    background-size: 30px 30px;
+    background-image: -webkit-gradient(linear, left top, right bottom,
+        color-stop(.25, rgba(255, 255, 255, .10)), color-stop(.25, transparent),
+        color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .10)),
+        color-stop(.75, rgba(255, 255, 255, .10)), color-stop(.75, transparent),
+        to(transparent));
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%,
+        transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%,
+        transparent 75%, transparent);
+    background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%,
+        transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%,
+        transparent 75%, transparent);
+    background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%,
+        transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%,
+        transparent 75%, transparent);
+    background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%,
+        transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%,
+        transparent 75%, transparent);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .10) 25%, transparent 25%,
+        transparent 50%, rgba(255, 255, 255, .10) 50%, rgba(255, 255, 255, .10) 75%,
+        transparent 75%, transparent);
+    -webkit-animation: animate-stripes 3s linear infinite;
+    -moz-animation: animate-stripes 3s linear infinite;
+    background-color: #060606;
+
+}
+
+@-webkit-keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+@-moz-keyframes animate-stripes {
+    0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+</style>
+
+
+	<!-- START: 728x90 -->
+        <div class="footerboard-box" style="text-align: center;">
+        <div id="slot443522">
+        <noscript>
+        <iframe id="185574443522" name="185574443522" src="http://ox-d.zam.com/w/1.0/afr?auid=443522&tid=52,505&cb=6423647" frameBorder="0" frameSpacing="0" scrolling="no">
+        <a href="http://ox-d.zam.com/w/1.0/rc?cs=185574443522&tid=52,505&cb=6423647"><img src="http://ox-d.zam.com/w/1.0/ai?auid=443522&cs=185574443522&tid=52,505&cb=6423647" border="0" alt=""></a>
+        </iframe>
+        </noscript>
+        </div>
+        <script>ads.load(443522, '52,505');</script>
+        </div><!-- END: 728x90 -->
+		</div>
+<footer>
+                        <div id="footer-logo">
+                <a class="logo" href="http://www.zam.com">
+                    <img alt="ZAM Network" src="//lkimg.zamimg.com/images/zam-white.png">
+                </a>
+                <div class="copyright">
+                    &copy; 2012 ZAM Network LLC
+                </div>
+            </div>
+			<div id="footer-network">
+					<div>
+						<h3>ZAM Network</h3>
+						<ul>
+							<li class="first"><a target="_blank" href="http://www.zam.com/">ZAM.com</a></li>
+							<li><a href="http://www.wowhead.com/" target="_blank" title="Wowhead">Wowhead</a></li>
+							<li><a href="http://www.lolking.net/" target="_blank" title="League of Legends Statistics and Database">LolKing</a></li>
+							<li><a href="http://www.dayzdb.com/" target="_blank" title="DayZ Map and Database">DayZDB</a></li>
+							<li><a href="http://www.guildhead.com/" target="_blank" title="Guild Wars 2 Database">Guildhead</a></li>
+							<li><a href="http://www.torhead.com/" target="_blank" title="Torhead">Torhead</a></li>
+							<li><a href="http://www.rifthead.com/" target="_blank" title="Rifthead">Rifthead</a></li>
+							<li><a href="http://www.d3db.com/" target="_blank" title="Diablo 3 Database">D3DB</a></li>
+							<li><a href="http://thottbot.com/" target="_blank" title="Thottbot">Thottbot</a></li>
+							<li><a href="http://www.mmoui.com/" target="_blank" title="MMOUI">MMOUI</a></li>
+							<li><a href="http://www.tankspot.com/" target="_blank" title="Tankspot">TankSpot</a></li>
+							<li><a href="http://www.sc2ranks.com/" target="_blank" title="SC2 Rankings">Starcraft 2 Rankings</a></li>
+							<li><a href="http://www.vindictusdb.com/" target="_blank" title="VindictusDB">VindictusDB</a></li>
+							<li><a href="http://www.torchlightarmory.com/" target="_blank" title="Torchlight Armory">Torchlight Armory</a></li>
+							<li class="last"><a target="_blank" href="http://www.dnarmory.com/" title="Dragon Nest Armory">Dragon Nest Armory</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Game Sites</h3>
+						<ul>
+							<li class="first"><a target="_blank" href="http://www.wowhead.com/">World of Warcraft</a></li>
+							<li><a target="_blank" href="http://www.guildhead.com/">Guild Wars 2</a></li>                                
+							<li><a target="_blank" href="http://www.bl2db.com/">Borderlands 2</a></li>                
+							<li><a target="_blank" href="http://www.teratome.com/">TERA</a></li>                
+							<li><a target="_blank" href="http://www.lolking.net/">League of Legends</a></li>
+							<li><a target="_blank" href="http://www.dayzdb.com/">DayZ</a></li>
+							<li><a target="_blank" href="http://d3db.com/">Diablo 3</a></li>
+							<li><a target="_blank" href="http://rift.zam.com/">Rift</a></li>
+							<li><a target="_blank" href="http://everquest.allakhazam.com/">EverQuest</a></li>
+							<li><a target="_blank" href="http://eq2.zam.com/">EverQuest 2</a></li>
+							<li><a target="_blank" href="http://www.torchlightarmory.com/">Torchlight</a></li>
+							<li class="last"><a target="_blank" href="http://www.sc2ranks.com/">Starcraft 2</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Addon Sites</h3>
+						<ul>
+							<li class="first"><a target="_blank" href="http://www.mmoui.com/">MMOUI</a></li>
+							<li><a target="_blank" href="http://www.wowinterface.com/">World of Warcraft</a></li>
+							<li><a target="_blank" href="http://www.riftui.com/">Rift</a></li>
+							<li><a target="_blank" href="http://www.swtorui.com/">Star Wars: The Old Republic</a></li>
+							<li><a target="_blank" href="http://www.eqinterface.com/">EverQuest</a></li>
+							<li><a target="_blank" href="http://www.eq2interface.com/">EverQuest II</a></li>
+							<li><a target="_blank" href="http://www.lotrointerface.com/">Lord of the Rings Online</a></li>
+							<li class="last"><a target="_blank" href="http://www.vginterface.com/">Vanguard</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3>Community</h3>
+						<ul>
+							<li class="first"><a target="_blank" href="http://www.zam.com/forum.html">ZAM Forums</a></li>
+							<li><a target="_blank" href="http://www.wowhead.com/forums">Wowhead Forums</a></li>
+							<li><a target="_blank" href="http://www.zam.com/news.html">ZAM News</a></li>
+							<li><a target="_blank" href="http://www.wowhead.com/news">Wowhead News</a></li>
+							<li><a target="_blank" href="http://www.facebook.com/LolKing">Facebook</a></li>                
+							<li><a target="_blank" href="http://twitter.com/LolKingDotNet">Twitter</a></li>                
+							<li class="last"><a target="_blank" href="http://www.youtube.com/ZAMOfficial">YouTube</a></li>
+						</ul>
+					</div>
+                <div>
+                    <h3>LolKing General</h3>
+                    <ul>
+                        <li class="first"><a href="/about">About LolKing</a></li>
+						<li><a href="/contact">Contact LolKing</a></li>
+                        <li><a href="/contact#faq">FAQ</a></li>
+                        <li class="last"><a href="/privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </footer>
+</div>
+<script>
+
+	(function($) {
+
+		$.tCarousel = function(element, options) {
+
+			var defaults = {
+				delay: 7000,
+				onFoo: function() {}
+			}
+
+			var plugin = this;
+
+			plugin.settings = {}
+
+			var $element = $(element),
+				 element = element,
+				 timerId;
+
+			var $li = $element.find('li');
+			var $ul = $element.find('ul');				 
+			
+			var width, slideWidth;
+			
+			var $next = $('<a class="tcarousel-next" href="#">&rsaquo;</a>');
+			var $prev = $('<a class="tcarousel-prev" href="#">&lsaquo;</a>');
+			var $carouselNav = $('<ul class="tcarousel-nav" />');
+			
+			$li.show(); //they are hidden initially so slow browsers don't look bad
+			
+			$next.click(function(e){
+			
+				e.preventDefault();
+				var left = -parseInt($ul.css('left'));
+				
+				plugin.goto(width > (left+slideWidth) ? (left+slideWidth)/slideWidth : 0 );				
+			
+			});
+			
+			$prev.click(function(e){
+			
+				e.preventDefault();
+				var left = -parseInt($ul.css('left'));
+
+				
+				plugin.goto(0 <= (left-slideWidth) ? (left-slideWidth)/slideWidth : $li.length - 1 );				
+			
+			});
+			
+			plugin.init = function() {
+				plugin.settings = $.extend({}, defaults, options);
+				// code goes here
+				
+				width = $li.outerWidth()*$li.length;
+				slideWidth = parseInt($li.css('width'));							
+				
+				$carouselNav.empty();
+				
+				$li.find('img').each(function(){
+
+					$carouselNav.append('<li style="background-image: url(' + $(this).attr('src') + ');"></li>');
+
+				});
+				
+				$carouselNav.children().click(function(e){
+				
+					e.preventDefault();
+					plugin.goto($(this).index());
+				
+				});
+				
+				$carouselNav.children().first().addClass('selected');
+				
+				$element.append($carouselNav);
+				$element.append($next);
+				$element.append($prev);
+				
+				$element.mouseenter(function(){
+				
+					plugin.stop();
+				
+				});
+				
+				$element.mouseleave(function(){
+				
+					plugin.start();
+				
+				});				
+				
+				$ul.addClass('tcarousel-slider');
+				
+				$ul.css({
+
+					'width': width + 'px'
+				});
+				
+				plugin.start();
+
+			}
+
+			plugin.goto = function(slideIndex) {
+			
+				var newLeft = slideIndex*slideWidth;
+			
+				if( slideIndex <= $li.length-1 ) {
+					
+					$ul.animate({left: -newLeft});
+					$carouselNav.children().removeClass('selected').eq(slideIndex).addClass('selected');
+					
+				}
+
+			}
+			
+			plugin.stop = function() {
+				window.clearInterval(timerId);
+			}
+
+			plugin.start = function() {
+				window.clearInterval(timerId);
+				timerId = window.setInterval(function(){
+				
+					var left = -parseInt($ul.css('left'));
+					
+					plugin.goto(width > (left+slideWidth) ? (left+slideWidth)/slideWidth : 0 );
+				
+				}, plugin.settings.delay);
+			}			
+			
+			var foo_private_method = function() {
+				// code goes here
+			}
+
+			plugin.init();
+
+		}
+
+		$.fn.tCarousel = function(options) {
+
+			return this.each(function() {
+				if (undefined == $(this).data('tCarousel')) {
+					var plugin = new $.tCarousel(this, options);
+					$(this).data('tCarousel', plugin);
+				}
+			});
+
+		}
+
+	})(jQuery);
+	
+	
+	
+	$(function(){
+
+		$('.fancybox').fancybox();
+	
+		$('.tcarousel').tCarousel();
+		
+		// var homepage_carousel = new Carousel();
+		
+		
+		
+		// $('.carousel').mouseenter(homepage_carousel.pause);
+		// $('.carousel').mouseleave(homepage_carousel.resume);
+		
+		// $('.carouselnav').children().click(function(){
+		
+			// var index = $(this).index();
+			// homepage_carousel.goTo(index);
+		
+		// });
+		
+		$('input.focusblur').each(function(){
+		
+			$(this).focus(function(){
+			
+				if( $(this).val() == $(this).attr('title') ) {
+					$(this).val('');
+				}
+			
+			});
+			
+			$(this).blur(function(){
+			
+				if( $(this).val() == '' ) {
+					$(this).val($(this).attr('title'));
+				}
+			
+			});			
+		
+		});
+		
+		$('.nicescroll').niceScroll({cursorcolor:"#111", cursorborder: "1px solid #000", cursoropacitymin: 0.2, cursoropacitymax: 0.8 });
+		
+		$('[data-hoverswitch]').each(function(){
+		
+			$(this).attr('data-hoverswitchorig', $(this).text());
+		
+			$(this).hover(function(){
+			
+				$(this).text($(this).attr('data-hoverswitch'));
+			
+			}, function(){
+			
+				$(this).text($(this).attr('data-hoverswitchorig'));
+			
+			});
+		
+		});
+		
+		$.fn.streamplayer = function(type, id){
+			if( type == 'twitch' ) {
+				$(this).replaceWith([
+					'<object width="100%" height="100%" bgcolor="#000000" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=' + id + '" id="live_embed_player_flash" type="application/x-shockwave-flash">',
+						'<param value="true" name="allowFullScreen">',
+						'<param value="always" name="allowScriptAccess">',
+						'<param value="all" name="allowNetworking">',
+						'<param value="http://www.twitch.tv/widgets/live_embed_player.swf" name="movie">',
+						'<param value="hostname=www.twitch.tv&amp;channel=' + id + '&amp;auto_play=true&amp;start_volume=25" name="flashvars">',
+					'</object>'
+				].join(''));
+			} else {
+				$(this).replaceWith([
+					'<object width="100%" height="100%">',
+						'<param name="movie" value="http://www.own3d.tv/livestream/' + id + ';autoplay=true" />',
+						'<param name="allowscriptaccess" value="always" />',
+						'<param name="allowfullscreen" value="true" />',
+						'<param name="wmode" value="transparent" />',
+						'<embed src="http://www.own3d.tv/livestream/' + id + ';autoplay=true" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="100%" height="100%" wmode="transparent"></embed>',
+					'</object>'
+				].join(''));			
+			
+			
+			}
+		
+		}
+
+		//tabs
+		var stream_tab_initted = false;
+		$('.tabs2').each(function() {
+		
+			$(this).children().not('[data-notab]').click(function(e){
+		
+				//e.preventDefault();
+				$(this).addClass('selected').siblings().removeClass('selected');
+				
+				var index = $(this).index();
+				
+				$(this).parent().next().children().each(function(){
+				
+					if( index == $(this).index() ) {
+
+						$(this).show();
+					
+						if( $(this).is('[id="stream_tab"]') ) {
+							
+							if( stream_tab_initted ) {
+
+								$(this).css({
+									'z-index': '1',
+									'height': 'inherit',
+									'width': 'inherit'
+								});
+								
+							} else {
+							
+								var stream_player_ctr = $(this).find('.stream_player');
+								stream_player_ctr.streamplayer(stream_player_ctr.attr('data-type'), stream_player_ctr.attr('data-id'));
+								$(this).show();
+								
+							}
+							stream_tab_initted = true;
+						
+						} else if( $(this).is('[id="leagues_tab"]') ) {
+
+							$('#league_iframe').trigger('load');
+
+						}						
+						$(this).find('.nicescroll').niceScroll({cursorcolor:"#111", cursorborder: "1px solid #000", cursoropacitymin: 0.2, cursoropacitymax: 0.8 });
+
+					} else {
+					
+						if( $(this).is('[id="stream_tab"]') ) {
+							
+							if( stream_tab_initted ) {
+
+								$(this).css({
+									'z-index': '-1',
+									'height': '0px',
+									'width': '0px'
+								});
+							
+							} else {
+								
+								$(this).hide();
+							}
+						
+						} else {
+						
+							$(this).hide();
+						
+						}
+					
+						$(this).find('.nicescroll').getNiceScroll().remove();
+				
+					}
+				
+				});
+				
+			}).first().click();
+			
+			$('#stream_tab').hide();
+			
+		});
+	
+		$('.pagination_tabs').each(function(){
+		
+			$(this).children().not('[data-notab]').click(function(e){
+		
+				e.preventDefault();
+				$(this).addClass('selected').siblings().removeClass('selected');
+				$(this).parent().next().children().hide().eq($(this).index()).show();
+		
+			}).first().click();		
+		
+		});
+		
+		
+		
+	
+		$('.match_win, .match_loss').click(function(e){
+
+			if( $(e.target).is('a') ) return;
+		
+			var match = $(this);
+			
+			if( match.hasClass('open') ) {
+				match.removeClass('open');
+				
+				match.css({ height: 94 });		
+
+				match.find('.match_show_full_details_btn').text('Show Details');
+
+                document.location.hash = 'history';
+			} else {
+				match.addClass('open');
+				
+				match.css({ height: 354 });
+				
+				match.find('.match_show_full_details_btn').text('Hide Details');
+
+                document.location.hash = 'history/' + match.data('game-id');
+			}
+			
+
+
+
+		
+		
+		});
+		
+		
+        var down_triangle = '&#x25BC;';
+        var up_triangle = '&#x25B2;';
+        
+        $('table.clientsort').each(function(){
+        
+            var table = $(this);
+        
+            $(this).find('th').each(function(){
+            
+                $(this).data('label', $(this).text());
+            
+            }).click(function(e){
+            
+                e.preventDefault();
+                
+                var sortIndex = $(this).index();
+                
+                if( $(this).hasClass('sort-desc') ) {
+                    $(this).html($(this).data('label') + ' ' + up_triangle);
+                    $(this).removeClass('sort-desc').addClass('sort-asc');
+                    
+                    table.append(table.find('tr').not(':first').remove().sort((function(index){ return function(a, b){
+                        var a = $(a).find('td:eq(' + index + ')');
+                        var b = $(b).find('td:eq(' + index + ')');                    
+                        if( a.attr('data-sorttype') == 'string' ) {
+                            return (a.attr('data-sortval') || a.text()) < (b.attr('data-sortval') || b.text()) ? -1 : 1;
+                        } else { 
+                            return (a.attr('data-sortval') || a.text()) - (b.attr('data-sortval') || b.text());
+                        }
+                    }; })(sortIndex)));                    
+                   
+                    
+                } else {
+                    $(this).parent().children('.sort-desc').each(function(){
+                        $(this).removeClass('sort-desc');
+                        $(this).text($(this).data('label'));
+                    });
+                    $(this).parent().children('.sort-asc').each(function(){
+                        $(this).removeClass('sort-asc');
+                        $(this).text($(this).data('label'));
+                    });
+                    
+                    $(this).addClass('sort-desc');
+                    $(this).html($(this).data('label') + ' ' + down_triangle);
+                
+                    table.append(table.find('tr').not(':first').remove().sort((function(index){ return function(a, b){
+                        var a = $(a).find('td:eq(' + index + ')');
+                        var b = $(b).find('td:eq(' + index + ')');
+                        if( a.attr('data-sorttype') == 'string' ) {
+                            return (b.attr('data-sortval') || b.text()) < (a.attr('data-sortval') || a.text()) ? -1 : 1;
+                        } else { 
+                            return (b.attr('data-sortval') || b.text()) - (a.attr('data-sortval') || a.text());
+                        }
+                    }; })(sortIndex))); 
+                    
+                }
+                
+                table.find('tr:odd').removeClass('even').addClass('odd');
+                table.find('tr:even').removeClass('odd').addClass('even');
+            
+            
+            });
+        
+        
+        
+        });		
+
+		var hash = (document.location.hash||'#').substring(1);
+            hash = hash.match(/([^/]+)\/?(.*)/);
+
+        if (hash) {
+            var hashObj = $('#hash-' + hash[1]);
+
+            if( hashObj.length ) {
+                hashObj.click();
+
+                if (hash.length >= 2 && hash[1] === 'history' && hash[2] !== '') {
+                    var match = $('div[data-game-id="' + hash[2] + '"]');
+
+                    match.click();
+                    $('html,body').animate({scrollTop: match.offset().top});
+                }
+            }
+        }
+	});
+		
+		
+
+
+</script>
+
+        <script>
+	    var _gaq = _gaq || [];
+	    _gaq.push(['_setAccount', 'UA-1459431-57'],
+            ['_setDomainName', 'lolking.net'],
+            ['_setAllowLinker', true],
+            ['_trackPageview']);
+        _gaq.push(['_setAccount', 'UA-28095441-1'],
+            ['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!-- Start of Woopra Code -->
+	<script>
+	(function(){
+	var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+	})("woopra");
+	woopra.config(
+	{ domain: 'lolking.com' }
+	);
+	woopra.track();
+	</script>
+	<!-- End of Woopra Code -->
+
+	<!-- Quantcast Tag -->
+	<script type="text/javascript">
+	var _qevents = _qevents || [];
+
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+
+	_qevents.push({
+	qacct:"p-80xBzMhbKolFI"
+	});
+	</script>
+
+	<noscript>
+	<div style="display:none;">
+	<img src="//pixel.quantserve.com/pixel/p-80xBzMhbKolFI.gif" border="0" height="1" width="1" alt="Quantcast"/>
+	</div>
+	</noscript>
+	<!-- End Quantcast tag -->
+	
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-3.newrelic.com","742d3191af","1733439","ZgBQbUADXEEFWk1eWl9KZ0tbTVxdExZeVlhUS0JRQg==",0,98,new Date().getTime(),"","","","",""]);</script></body>
+
+
+
+
+
+
+
+
+
+</html>

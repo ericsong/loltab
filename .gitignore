@@ -1,4 +1,6 @@
 server/node_modules/
+imgproc/detection/*.jpg
+stream_parser/lolkingparser/node_modules/
 .nfs*
 *.swp
 *.flv
