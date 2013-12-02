@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project( DisplayImage )
+project( test_cv )
 find_package( OpenCV REQUIRED )
-add_executable( DisplayImage DisplayImage.cpp )
-target_link_libraries( DisplayImage ${OpenCV_LIBS} )
+add_executable( test_cv test_cv.cpp )
+target_link_libraries( test_cv ${OpenCV_LIBS} )

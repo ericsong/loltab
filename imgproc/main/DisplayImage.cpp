@@ -885,7 +885,7 @@ int rightBar(Mat image) {
 }
 
 char *identifyItem(Mat image) {
-	display(image);
+//	display(image);
 	char *itemName = "";
 	float total_error = 1.0;
 	for (int i = 0; i < ITEMS_LENGTH; i++) {

@@ -1,5 +1,5 @@
 server/node_modules/
-imgproc/detection/*.jpg
+imgproc/detection/img/*.jpg
 stream_parser/lolkingparser/node_modules/
 .nfs*
 *.swp
