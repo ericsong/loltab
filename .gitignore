@@ -1,5 +1,15 @@
 server/node_modules/
 imgproc/detection/img/*.jpg
+
+imgproc/main/CMakeFiles/
+imgproc/detection/main/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+detect_sb
+test_cv
+
 stream_parser/lolkingparser/node_modules/
 .nfs*
 *.swp
