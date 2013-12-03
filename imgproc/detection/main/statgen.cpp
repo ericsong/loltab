@@ -188,8 +188,9 @@ int main(int argc, char* argv[])
 	printf("Average/std b: %f, %f\n", b_mean, b_std);
 	printf("Range/Low/High l: %f, %f, %f\n", (double) (highest_l - lowest_l) / 255 * 100, (double)lowest_R/255*100, (double)highest_R/255*100);
 	printf("Range/Low/High a: %d, %d, %d\n", highest_a - lowest_a, lowest_a-128, highest_a-128);
-	printf("Range/Low/High b: %d, %d, %d\n", highest_b - lowest_b, lowest_b-128, highest_b-128);
-	
+	printf("Range/Low/High b: %d, %d, %d\n\n", highest_b - lowest_b, lowest_b-128, highest_b-128);
+
+	printf("****************************\n");	
 	return 0;	
 }
 
