@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project( testcv )
+project( statgen )
 find_package( OpenCV REQUIRED )
-add_executable( testcv testcv.cpp )
-target_link_libraries( testcv ${OpenCV_LIBS} )
+add_executable( statgen statgen.cpp )
+target_link_libraries( statgen ${OpenCV_LIBS} )

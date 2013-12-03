@@ -30,22 +30,40 @@ int main(int argc, char* argv[])
 	int highest_b = -1;
 	int lowest_b = 1000;
 
-	for(int y = 0; y < 1080; y++){
-		for(int x = 0; x < 1920; x++){
-			double L = (double) imglab.at<Vec3b>(y,x)[0] / 255 * 100;	
-			double a = imglab.at<Vec3b>(y,x)[1]-128;	
-			double b = imglab.at<Vec3b>(y,x)[2]-128;
+	int lab_l_sum = 0;
+	int lab_a_sum = 0;
+	int lab_b_sum = 0;
+	
+	int rgb_r_sum = 0;
+	int rgb_g_sum = 0;
+	int rgb_b_sum = 0;
+
+	int count = 0;
+
+	for(int y = 205; y < 206; y++){
+		for(int x = 560; x < 1400; x++){
+			int L = imglab.at<Vec3b>(y,x)[0];	
+			int a = imglab.at<Vec3b>(y,x)[1];	
+			int b = imglab.at<Vec3b>(y,x)[2];
 	
 			int R = image.at<Vec3b>(y,x)[2];	
 			int G = image.at<Vec3b>(y,x)[1];	
 			int B = image.at<Vec3b>(y,x)[0];
 	
+			lab_l_sum += L;
+			lab_a_sum += a;
+			lab_b_sum += b;
+			
+			rgb_r_sum += R;
+			rgb_g_sum += G;
+			rgb_b_sum += B;
 	
-			printf("(%d,%d)\n", x, y); 
-			printf("Lab: %f, %f, %f\n", L, a, b);	
-			printf("rgb: %d, %d, %d\n", R, G, B);	
+			count++;	
 		}
 	}
+
+	printf("RGB averages: %f, %f, %f\n", (double) rgb_r_sum/count, (double) rgb_r_sum/count, (double) rgb_b_sum/count);
+	printf("Lab averages: %f, %f, %f\n", (double) lab_l_sum/count / 255 * 100, (double) lab_a_sum/count -128 , (double) lab_b_sum/count - 128);
 /*
 	printf("Average Red: %f\n", (double)rsum/count);
 	printf("Average Green: %f\n", (double)gsum/count);

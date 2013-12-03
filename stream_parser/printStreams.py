@@ -1,7 +1,7 @@
 from livestreamer import Livestreamer
 livestreamer = Livestreamer()
 
-plugin = livestreamer.resolve_url("http://twitch.tv/gstv1")
+plugin = livestreamer.resolve_url("http://twitch.tv/froggen")
 
 streams = plugin.get_streams()
 stream = streams.get('best')
