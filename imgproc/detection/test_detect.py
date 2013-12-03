@@ -6,5 +6,6 @@ for img in os.listdir('img'):
 
     output = subprocess.check_output(['./detect_sb', imgpath]).decode('utf-8')
 
-    if('scoreboard' in output):
+    if('top' in output):
         print(imgpath)
+        print(output)
