@@ -7,6 +7,7 @@ imgproc/detection/stats/CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+*.a
 
 detect_sb
 test_cv

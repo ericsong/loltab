@@ -2,10 +2,15 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <stdio.h>
+#include <math.h>
 #include "sbcolors.h"
 #include "sb_imglib.h"
 
 using namespace cv;
+
+double calcColorDiff(int a1, int b1, int c1, int a2, int b2, int c2){
+	return sqrt((a1-a2)*(a1-a2) + (b1-b2)*(b1-b2) + (c1-c2)*(c1-c2));	
+}
 
 int getRed(Mat *image, int x, int y){
 	return image->at<Vec3b>(y, x)[2];
@@ -29,6 +34,48 @@ int geta(Mat *image, int x, int y){
 
 int getb(Mat *image, int x, int y){
 	return image->at<Vec3b>(y, x)[2];
+}
+
+bool isTopBorder(int l, int a, int b, int resolution){
+	//different thresholds used for 720p and 1080p
+	double diff; 
+	
+	if(resolution == 720)
+		diff = calcColorDiff(TOP_720_l_MEAN, TOP_720_a_MEAN, TOP_720_b_MEAN, l, a, b);
+	else if(resolution == 1080)
+		diff = calcColorDiff(TOP_1080_l_MEAN, TOP_1080_a_MEAN, TOP_1080_b_MEAN, l, a, b);
+
+	if(diff < 20)
+		return true;
+	else
+		return false;
+/*
+ * comparison version
+	if(resolution == 720){
+		if(	(l > TOP_720_l_MEAN - TOP_720_l_DIFF) &&
+			(l < TOP_720_l_MEAN + TOP_720_l_DIFF) &&
+			(a > TOP_720_a_MEAN - TOP_720_a_DIFF) &&
+			(a < TOP_720_a_MEAN + TOP_720_a_DIFF) &&
+			(b > TOP_720_b_MEAN - TOP_720_b_DIFF) &&
+			(b < TOP_720_b_MEAN + TOP_720_b_DIFF) )
+		{
+			return true;	
+		}
+	}else if(resolution == 1080){
+		if(	(l > TOP_1080_l_MEAN - TOP_1080_l_DIFF) &&
+			(l < TOP_1080_l_MEAN + TOP_1080_l_DIFF) &&
+			(a > TOP_1080_a_MEAN - TOP_1080_a_DIFF) &&
+			(a < TOP_1080_a_MEAN + TOP_1080_a_DIFF) &&
+			(b > TOP_1080_b_MEAN - TOP_1080_b_DIFF) &&
+			(b < TOP_1080_b_MEAN + TOP_1080_b_DIFF) )
+		{
+			return true;	
+		}
+	}
+
+	return false;
+
+*/
 }
 
 int getScoreboardLeft(Mat *image, int guess = -1){
