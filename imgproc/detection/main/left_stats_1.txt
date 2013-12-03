@@ -1,6 +1,0 @@
-Average Red: 230.696923
-Average Green: 189.126154
-Average Blue: 137.526154
-Low/High red: 214, 243
-Low/High green: 181, 194
-Low/High blue: 128, 145
