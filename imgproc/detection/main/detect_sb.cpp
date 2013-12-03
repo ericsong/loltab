@@ -10,23 +10,12 @@
 #define LEFT_BLUE_LOW 128
 #define LEFT_BLUE_HIGH 145
 
-/*
-#define TOP_RED_LOW 142
-#define TOP_RED_HIGH 164
-#define TOP_GREEN_LOW 148
-#define TOP_GREEN_HIGH 160
-#define TOP_BLUE_LOW 137
-#define TOP_BLUE_HIGH 165
-*/
-
 #define TOP_RED_LOW 122
 #define TOP_RED_HIGH 184
 #define TOP_GREEN_LOW 128
 #define TOP_GREEN_HIGH 180
 #define TOP_BLUE_LOW 137
 #define TOP_BLUE_HIGH 185
-
-
 #define RIGHT_RED_LOW 178
 #define RIGHT_RED_HIGH 218
 #define RIGHT_GREEN_LOW 167
@@ -41,6 +30,23 @@
 #define BOTTOM_BLUE_LOW 172
 #define BOTTOM_BLUE_HIGH 201
 
+/*
+ * 1080p
+#define TOP_l_MEAN 165.66
+#define TOP_l_DIFF 10
+#define TOP_a_MEAN 126.849 
+#define TOP_a_DIFF 6
+#define TOP_b_MEAN 129.915
+#define TOP_b_DIFF 6
+*/
+
+#define TOP_l_MEAN 145.07906
+#define TOP_l_DIFF 10
+#define TOP_a_MEAN 126.849 
+#define TOP_a_DIFF 5
+#define TOP_b_MEAN 129.915
+#define TOP_b_DIFF 5
+
 using namespace cv;
 
 int getRed(Mat *image, int x, int y){
@@ -53,6 +59,18 @@ int getGreen(Mat *image, int x, int y){
 
 int getBlue(Mat *image, int x, int y){
 	return image->at<Vec3b>(y, x)[0];
+}
+
+int getl(Mat *image, int x, int y){
+	return image->at<Vec3b>(y, x)[0];
+}
+
+int geta(Mat *image, int x, int y){
+	return image->at<Vec3b>(y, x)[1];
+}
+
+int getb(Mat *image, int x, int y){
+	return image->at<Vec3b>(y, x)[2];
 }
 
 int getScoreboardLeft(Mat *image, int guess = -1){
@@ -174,6 +192,8 @@ int getScoreboardBottom(Mat *image, int guess = -1){
 int main(int argc, char* argv[]) 
 {
 	Mat image = imread(argv[1], 1);
+	Mat imglab;
+	cvtColor(image, imglab, CV_BGR2Lab);
 
 	int x_low = .25 * image.cols;
 	int x_high = .75 * image.cols;
@@ -183,16 +203,21 @@ int main(int argc, char* argv[])
 	for(int y = y_low; y < y_high; y++){
 		int count = 0;
 		for(int x = x_low; x < x_high; x++){
-			int r = getRed(&image, x, y);
-			int g = getGreen(&image, x, y);
-			int b = getBlue(&image, x, y);
-
-			if( (r > TOP_RED_LOW && r < TOP_RED_HIGH) && (b > TOP_BLUE_LOW && b < TOP_BLUE_HIGH) && (g > TOP_GREEN_LOW && g < TOP_GREEN_HIGH) )
+			int l = getl(&imglab, x, y);
+			int a = geta(&imglab, x, y);
+			int b = getb(&imglab, x, y);
+			
+			if( (l > TOP_l_MEAN - TOP_l_DIFF && l < TOP_l_MEAN + TOP_l_DIFF) &&  (a > TOP_a_MEAN - TOP_a_DIFF && a < TOP_a_MEAN + TOP_a_DIFF) &&  (b > TOP_b_MEAN - TOP_b_DIFF && b < TOP_b_MEAN + TOP_b_DIFF) ){
 				count++;
-		}
-	
-		printf("%d: %d\n", y, count);
+			}
 
+
+		}
+
+		if(count > ((x_high - x_low)*.5))	
+			printf("%d: %d\n", y, count);
+
+		/*
 		if(count > ((x_high-x_low)*.5) ){
 			//at this point the image is very likely to be a scoreboard or an item shop
 			//following code checks if its a scoreboard if an item shop or sb is passed in
@@ -232,6 +257,7 @@ int main(int argc, char* argv[])
 				printf("bottom bar: %d\n", getScoreboardBottom(&image));
 			}
 		}
+		*/
 	}
 
 	return 0;	

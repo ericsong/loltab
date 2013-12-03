@@ -88,6 +88,8 @@ int main(int argc, char* argv[])
 			int a = getA(&imglab, x, y);
 			int b = getB(&imglab, x, y);
 
+			printf("%d\n", l);
+
 			//calc mean
 			Rsum += R;
 			Gsum += G;
@@ -183,7 +185,7 @@ int main(int argc, char* argv[])
 	printf("Range/Low/High blue: %d, %d, %d\n\n", highest_B - lowest_B, lowest_B, highest_B);
 
 	printf("lab stats...\n");	
-	printf("Average/std l: %f, %f\n", (double)l_mean/255*100, l_std);
+	printf("Average/std l: %f, %f\n", l_mean, l_std);
 	printf("Average/std a: %f, %f\n", a_mean, a_std);
 	printf("Average/std b: %f, %f\n", b_mean, b_std);
 	printf("Range/Low/High l: %f, %f, %f\n", (double) (highest_l - lowest_l) / 255 * 100, (double)lowest_R/255*100, (double)highest_R/255*100);

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project( statgen )
+project( detect_sb )
 find_package( OpenCV REQUIRED )
-add_executable( statgen statgen.cpp )
-target_link_libraries( statgen ${OpenCV_LIBS} )
+add_executable( detect_sb detect_sb.cpp )
+target_link_libraries( detect_sb ${OpenCV_LIBS} )
