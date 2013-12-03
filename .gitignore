@@ -1,5 +1,5 @@
 server/node_modules/
-imgproc/detection/img/*.jpg
+imgproc/detection/img/
 
 imgproc/main/CMakeFiles/
 imgproc/detection/main/CMakeFiles/
@@ -9,6 +9,8 @@ Makefile
 
 detect_sb
 test_cv
+testcv
+statgen
 
 stream_parser/lolkingparser/node_modules/
 .nfs*
