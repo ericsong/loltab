@@ -36,18 +36,66 @@ int main(int argc, char* argv[])
 
 			count++;	
 		}
+	
+		//checks if top border is found	
 		avgdiff = avgdiff/count;
-		
 		if(avgdiff < 20){
 			sb_found = true;
+
+			//accounts for cases where detection also picks up item shops, menus, etc
+			int checklength;
+			if(image.rows == 1080)
+				checklength = 100;
+			else if(image.rows == 720)
+				checklength = 75;
+
+
+			int bluecount = 0;
+			int redcount = 0;	
+
+			for(int yi = y; yi < y + checklength; yi++){
+				for(int xi = x_low; xi < x_high; xi++){
+					int l = getl(&imglab, xi, yi);
+					int a = geta(&imglab, xi, yi);
+					int b = getb(&imglab, xi, yi);
+				
+					double bluediff;
+					double reddiff;
+
+					if(image.rows == 1080){
+						bluediff = calcColorDiff(SB_1080_BLUE_l, SB_1080_BLUE_a, SB_1080_BLUE_b, l, a, b);
+						reddiff = calcColorDiff(SB_1080_RED_l, SB_1080_RED_a, SB_1080_RED_b, l, a, b);
+					}else if(image.rows == 720){
+						bluediff = calcColorDiff(SB_720_BLUE_l, SB_720_BLUE_a, SB_720_BLUE_b, l, a, b);
+						reddiff = calcColorDiff(SB_720_RED_l, SB_720_RED_a, SB_720_RED_b, l, a, b);
+					}
+
+					if(bluediff < 20){
+						bluecount++;
+					}
+	
+					if(reddiff < 20){
+						redcount++;
+					}
+				}
+			}
+
+			if(!(bluecount > 10 && redcount > 10))
+				sb_found = false;	
+
+			break;
 		}
 	}
 	
 	if(sb_found){
-		printf("scoreboard top:    %d\n", getScoreboardTop(&imglab, -1));
-		printf("scoreboard left:   %d\n", getScoreboardLeft(&imglab, -1));
-		printf("scoreboard right:  %d\n", getScoreboardRight(&imglab, -1));
-		printf("scoreboard bottom: %d\n", getScoreboardBottom(&imglab, -1));
+		int toppos = getScoreboardTop(&imglab, -1);	
+		int leftpos = getScoreboardLeft(&imglab, -1);	
+		int rightpos = getScoreboardRight(&imglab, -1);	
+		int bottompos = getScoreboardBottom(&imglab, -1);	
+		
+		printf("%d,%d,%d,%d\n", toppos, leftpos, rightpos, bottompos);
+	}else{
+		printf("scoreboard not found\n");
 	}
 
 	return 0;	

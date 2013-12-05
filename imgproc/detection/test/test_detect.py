@@ -1,9 +1,10 @@
 import os
 import subprocess
 
-for img in os.listdir('../img/720p'):
-    imgpath = '../img/720p/' + img
+for img in os.listdir('/home/reggi/tmp/froggen720p/'):
+    imgpath = '/home/reggi/tmp/froggen720p/' + img
 
     output = subprocess.check_output(['./detect_sb', imgpath]).decode('utf-8')
 
-    print(output)
+    if('scoreboard' not in output):
+        print(img + ":   " + output)
