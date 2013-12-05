@@ -84,23 +84,31 @@ int getScoreboardLeft(Mat *image, int guess = -1){
 	int y_low = .2 * image->rows;
 	int y_high = .8 * image->rows;
 
-	int highest_count = -1;
-	int pos;
+	int pos = 10;
+	double lowest_val = 999999999;
 
 	for(int x = x_low; x < x_high; x++){
 		int count = 0;
+		double avgdiff = 0;
+
 		for(int y = y_low; y < y_high; y++){
-			int r = getRed(image, x, y);
-			int g = getGreen(image, x, y);
-			int b = getBlue(image, x, y);
+			int l = getl(image, x, y);
+			int a = geta(image, x, y);
+			int b = getb(image, x, y);
 
-			if( (r > LEFT_RED_LOW && r < LEFT_RED_HIGH) && (b > LEFT_BLUE_LOW && b < LEFT_BLUE_HIGH) && (g > LEFT_GREEN_LOW && g < LEFT_GREEN_HIGH) )
-				count++;
+                        if(image->rows == 1080)
+				avgdiff += calcColorDiff(LEFT_1080_l_MEAN, LEFT_1080_a_MEAN, LEFT_1080_b_MEAN, l, a, b);
+                        else if(image->rows == 720)
+                                avgdiff += calcColorDiff(LEFT_720_l_MEAN, LEFT_720_a_MEAN, LEFT_720_b_MEAN, l, a, b);
+
+			count++;
 		}
+		
+		avgdiff = avgdiff/count;
 
-		if(count > highest_count){
-			highest_count = count;
-			pos = x;	
+		if(avgdiff < lowest_val){
+			lowest_val = avgdiff;
+			pos = x;
 		}
 	}	
 
@@ -108,32 +116,41 @@ int getScoreboardLeft(Mat *image, int guess = -1){
 }
 
 int getScoreboardTop(Mat *image, int guess = -1){
-	int x_low = 0;
-	int x_high = .5 * image->cols;
-	int y_low = .2 * image->rows;
-	int y_high = .8 * image->rows;
+	int x_low = .25 * image->cols;
+	int x_high = .75 * image->cols;
+	int y_low = 0;
+	int y_high = .5 * image->rows;
 
-	int highest_count = -1;
-	int leftpos;
+	int pos;
 
-	for(int x = x_low; x < x_high; x++){
+	double lowest_val = 999999999;
+
+	for(int y = y_low; y < y_high; y++){
 		int count = 0;
-		for(int y = y_low; y < y_high; y++){
-			int r = getRed(image, x, y);
-			int g = getGreen(image, x, y);
-			int b = getBlue(image, x, y);
+		double avgdiff = 0;
 
-			if( (r > LEFT_RED_LOW && r < LEFT_RED_HIGH) && (b > LEFT_BLUE_LOW && b < LEFT_BLUE_HIGH) && (g > LEFT_GREEN_LOW && g < LEFT_GREEN_HIGH) )
-				count++;
-		}
+		for(int x = x_low; x < x_high; x++){
+			int l = getl(image, x, y);
+			int a = geta(image, x, y);
+			int b = getb(image, x, y);
 
-		if(count > highest_count){
-			highest_count = count;
-			leftpos = x;	
+                        if(image->rows == 1080)
+				avgdiff += calcColorDiff(TOP_1080_l_MEAN, TOP_1080_a_MEAN, TOP_1080_b_MEAN, l, a, b);
+                        else if(image->rows == 720)
+                                avgdiff += calcColorDiff(TOP_720_l_MEAN, TOP_720_a_MEAN, TOP_720_b_MEAN, l, a, b);
+
+			count++;
 		}
+		
+		avgdiff = avgdiff/count;
+	
+		if(avgdiff < lowest_val){
+			lowest_val = avgdiff;
+			pos = y;
+		}	
 	}	
 
-	return leftpos;
+	return pos;
 }
 
 int getScoreboardRight(Mat *image, int guess = -1){
@@ -142,25 +159,33 @@ int getScoreboardRight(Mat *image, int guess = -1){
 	int y_low = .2 * image->rows;
 	int y_high = .8 * image->rows;
 
-	int highest_count = -1;
 	int pos;
-
+	double lowest_val = 999999999;
+	
 	for(int x = x_low; x < x_high; x++){
 		int count = 0;
+		double avgdiff = 0;
+
 		for(int y = y_low; y < y_high; y++){
-			int r = getRed(image, x, y);
-			int g = getGreen(image, x, y);
-			int b = getBlue(image, x, y);
+			int l = getl(image, x, y);
+			int a = geta(image, x, y);
+			int b = getb(image, x, y);
 
-			if( (r > RIGHT_RED_LOW && r < RIGHT_RED_HIGH) && (b > RIGHT_BLUE_LOW && b < RIGHT_BLUE_HIGH) && (g > RIGHT_GREEN_LOW && g < RIGHT_GREEN_HIGH) )
-				count++;
-		}
+                        if(image->rows == 1080)
+				avgdiff += calcColorDiff(RIGHT_1080_l_MEAN, RIGHT_1080_a_MEAN, RIGHT_1080_b_MEAN, l, a, b);
+                        else if(image->rows == 720)
+                                avgdiff += calcColorDiff(RIGHT_720_l_MEAN, RIGHT_720_a_MEAN, RIGHT_720_b_MEAN, l, a, b);
 
-		if(count > highest_count){
-			highest_count = count;
-			pos = x;	
+			count++;
 		}
-	}	
+		
+		avgdiff = avgdiff/count;
+
+		if(avgdiff < lowest_val){
+			lowest_val = avgdiff;
+			pos = x;
+		}	
+	}
 
 	return pos;
 }
@@ -171,24 +196,33 @@ int getScoreboardBottom(Mat *image, int guess = -1){
 	int y_low = .5 * image->rows;
 	int y_high = image->rows;
 
-	int highest_count = -1;
 	int pos;
+
+	double lowest_val = 999999999;
 
 	for(int y = y_low; y < y_high; y++){
 		int count = 0;
+		double avgdiff = 0;
+
 		for(int x = x_low; x < x_high; x++){
-			int r = getRed(image, x, y);
-			int g = getGreen(image, x, y);
-			int b = getBlue(image, x, y);
+			int l = getl(image, x, y);
+			int a = geta(image, x, y);
+			int b = getb(image, x, y);
 
-			if( (r > BOTTOM_RED_LOW && r < BOTTOM_RED_HIGH) && (b > BOTTOM_BLUE_LOW && b < BOTTOM_BLUE_HIGH) && (g > BOTTOM_GREEN_LOW && g < BOTTOM_GREEN_HIGH) )
-				count++;
-		}
+                        if(image->rows == 1080)
+				avgdiff += calcColorDiff(BOTTOM_1080_l_MEAN, BOTTOM_1080_a_MEAN, BOTTOM_1080_b_MEAN, l, a, b);
+                        else if(image->rows == 720)
+                                avgdiff += calcColorDiff(BOTTOM_720_l_MEAN, BOTTOM_720_a_MEAN, BOTTOM_720_b_MEAN, l, a, b);
 
-		if(count > highest_count){
-			highest_count = count;
-			pos = y;	
+			count++;
 		}
+		
+		avgdiff = avgdiff/count;
+	
+		if(avgdiff < lowest_val){
+			lowest_val = avgdiff;
+			pos = y;
+		}	
 	}	
 
 	return pos;

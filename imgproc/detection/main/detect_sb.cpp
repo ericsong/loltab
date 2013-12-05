@@ -13,6 +13,8 @@ int main(int argc, char* argv[])
 	Mat imglab;
 	cvtColor(image, imglab, CV_BGR2Lab);
 
+	bool sb_found = false;
+
 	int x_low = .25 * image.cols;
 	int x_high = .75 * image.cols;
 	int y_low = 0;
@@ -36,9 +38,16 @@ int main(int argc, char* argv[])
 		}
 		avgdiff = avgdiff/count;
 		
-		if(avgdiff < 20)
-			printf("scoreboard top border found at  %d\n", y);
-
+		if(avgdiff < 20){
+			sb_found = true;
+		}
+	}
+	
+	if(sb_found){
+		printf("scoreboard top:    %d\n", getScoreboardTop(&imglab, -1));
+		printf("scoreboard left:   %d\n", getScoreboardLeft(&imglab, -1));
+		printf("scoreboard right:  %d\n", getScoreboardRight(&imglab, -1));
+		printf("scoreboard bottom: %d\n", getScoreboardBottom(&imglab, -1));
 	}
 
 	return 0;	
