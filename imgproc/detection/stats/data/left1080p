@@ -1,0 +1,72 @@
+Pixel count: 650
+RGB stats...
+Average/std Red: 225.104615, 6.277922
+Average/std Green: 199.364615, 7.127412
+Average/std Blue: 163.261538, 7.909488
+Range/Low/High red: 34, 211, 245
+Range/Low/High green: 33, 184, 217
+Range/Low/High blue: 42, 147, 189
+
+lab stats...
+Average/std l: 208.473846, 6.140784
+Average/std a: 131.638462, 1.273396
+Average/std b: 149.287692, 1.816590
+Range/Low/High l: 10.980392, 82.745098, 96.078431
+Range/Low/High a: 10, -2, 8
+Range/Low/High b: 18, 13, 31
+
+****************************
+Pixel count: 650
+RGB stats...
+Average/std Red: 230.696923, 3.394113
+Average/std Green: 189.126154, 2.095783
+Average/std Blue: 137.526154, 4.415706
+Range/Low/High red: 29, 214, 243
+Range/Low/High green: 13, 181, 194
+Range/Low/High blue: 17, 128, 145
+
+lab stats...
+Average/std l: 202.121538, 1.475440
+Average/std a: 136.073846, 1.845160
+Average/std b: 159.713846, 1.713296
+Range/Low/High l: 5.882353, 83.921569, 95.294118
+Range/Low/High a: 9, 4, 13
+Range/Low/High b: 6, 29, 35
+
+****************************
+Pixel count: 650
+RGB stats...
+Average/std Red: 225.238462, 7.051023
+Average/std Green: 197.756923, 6.755624
+Average/std Blue: 151.630769, 9.481804
+Range/Low/High red: 101, 135, 236
+Range/Low/High green: 97, 111, 208
+Range/Low/High blue: 112, 51, 163
+
+lab stats...
+Average/std l: 206.812308, 6.330391
+Average/std a: 131.058462, 0.782501
+Average/std b: 154.787692, 1.915122
+Range/Low/High l: 36.862745, 52.941176, 92.549020
+Range/Low/High a: 3, 1, 4
+Range/Low/High b: 11, 25, 36
+
+****************************
+Pixel count: 600
+RGB stats...
+Average/std Red: 209.956667, 5.655234
+Average/std Green: 195.095000, 5.387021
+Average/std Blue: 129.976667, 6.290999
+Range/Low/High red: 27, 197, 224
+Range/Low/High green: 26, 183, 209
+Range/Low/High blue: 34, 110, 144
+
+lab stats...
+Average/std l: 200.711667, 5.013149
+Average/std a: 123.975000, 0.461880
+Average/std b: 162.631667, 1.489966
+Range/Low/High l: 9.803922, 77.254902, 87.843137
+Range/Low/High a: 4, -6, -2
+Range/Low/High b: 9, 30, 39
+
+****************************

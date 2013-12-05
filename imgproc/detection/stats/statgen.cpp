@@ -88,8 +88,6 @@ int main(int argc, char* argv[])
 			int a = getA(&imglab, x, y);
 			int b = getB(&imglab, x, y);
 
-			printf("%d\n", l);
-
 			//calc mean
 			Rsum += R;
 			Gsum += G;

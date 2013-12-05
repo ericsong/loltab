@@ -1,42 +1,12 @@
 #ifndef __SBCOLORS_H_INCLUDED__
 #define __SBCOLORS_H_INCLUDED__
 
-#define LEFT_RED_LOW 214
-#define LEFT_RED_HIGH 243
-#define LEFT_GREEN_LOW 181 
-#define LEFT_GREEN_HIGH 194
-#define LEFT_BLUE_LOW 128
-#define LEFT_BLUE_HIGH 145
-
-#define TOP_RED_LOW 122
-#define TOP_RED_HIGH 184
-#define TOP_GREEN_LOW 128
-#define TOP_GREEN_HIGH 180
-#define TOP_BLUE_LOW 137
-#define TOP_BLUE_HIGH 185
-#define RIGHT_RED_LOW 178
-#define RIGHT_RED_HIGH 218
-#define RIGHT_GREEN_LOW 167
-#define RIGHT_GREEN_HIGH 206
-#define RIGHT_BLUE_LOW 105
-#define RIGHT_BLUE_HIGH 148
-
-#define BOTTOM_RED_LOW 171
-#define BOTTOM_RED_HIGH 196
-#define BOTTOM_GREEN_LOW 175
-#define BOTTOM_GREEN_HIGH 200
-#define BOTTOM_BLUE_LOW 172
-#define BOTTOM_BLUE_HIGH 201
-
-/*
- * 1080p
-#define TOP_l_MEAN 165.66
-#define TOP_l_DIFF 10
-#define TOP_a_MEAN 126.849 
-#define TOP_a_DIFF 6
-#define TOP_b_MEAN 129.915
-#define TOP_b_DIFF 6
-*/
+#define TOP_1080_l_MEAN 165.67
+#define TOP_1080_l_DIFF 10
+#define TOP_1080_a_MEAN 127.065
+#define TOP_1080_a_DIFF 5
+#define TOP_1080_b_MEAN 129.22
+#define TOP_1080_b_DIFF 5
 
 #define TOP_720_l_MEAN 145.07906
 #define TOP_720_l_DIFF 10
@@ -45,11 +15,20 @@
 #define TOP_720_b_MEAN 129.915
 #define TOP_720_b_DIFF 5
 
-#define TOP_1080_l_MEAN 165.67
-#define TOP_1080_l_DIFF 10
-#define TOP_1080_a_MEAN 127.065
-#define TOP_1080_a_DIFF 5
-#define TOP_1080_b_MEAN 129.22
-#define TOP_1080_b_DIFF 5
+#define LEFT_1080_l_MEAN 204.53
+#define LEFT_1080_l_DIFF 18
+#define LEFT_1080_a_MEAN 130.686
+#define LEFT_1080_a_DIFF 5
+#define LEFT_1080_b_MEAN 156.605
+#define LEFT_1080_b_DIFF 5
+
+#define LEFT_720_l_MEAN 145.07906
+#define LEFT_720_l_DIFF 10
+#define LEFT_720_a_MEAN 126.849 
+#define LEFT_720_a_DIFF 5
+#define LEFT_720_b_MEAN 129.915
+#define LEFT_720_b_DIFF 5
+
+
 
 #endif

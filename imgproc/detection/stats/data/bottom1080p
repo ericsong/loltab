@@ -1,0 +1,72 @@
+Pixel count: 710
+RGB stats...
+Average/std Red: 178.843662, 6.919456
+Average/std Green: 181.949296, 7.070271
+Average/std Blue: 178.543662, 6.517798
+Range/Low/High red: 36, 161, 197
+Range/Low/High green: 36, 166, 202
+Range/Low/High blue: 31, 165, 196
+
+lab stats...
+Average/std l: 188.053521, 6.354216
+Average/std a: 126.292958, 1.370720
+Average/std b: 129.152113, 1.079254
+Range/Low/High l: 12.156863, 63.137255, 77.254902
+Range/Low/High a: 15, -9, 6
+Range/Low/High b: 11, -4, 7
+
+****************************
+Pixel count: 650
+RGB stats...
+Average/std Red: 182.601538, 4.578377
+Average/std Green: 185.296923, 3.986516
+Average/std Blue: 185.492308, 4.295436
+Range/Low/High red: 25, 171, 196
+Range/Low/High green: 25, 175, 200
+Range/Low/High blue: 29, 172, 201
+
+lab stats...
+Average/std l: 191.523077, 3.759092
+Average/std a: 127.141538, 0.868243
+Average/std b: 127.541538, 0.606376
+Range/Low/High l: 9.019608, 67.058824, 76.862745
+Range/Low/High a: 6, -3, 3
+Range/Low/High b: 3, -1, 2
+
+****************************
+Pixel count: 700
+RGB stats...
+Average/std Red: 168.874286, 4.694374
+Average/std Green: 172.567143, 4.546113
+Average/std Blue: 170.081429, 5.366829
+Range/Low/High red: 27, 159, 186
+Range/Low/High green: 31, 161, 192
+Range/Low/High blue: 31, 159, 190
+
+lab stats...
+Average/std l: 179.184286, 4.143153
+Average/std a: 126.112857, 1.490925
+Average/std b: 128.681429, 1.287855
+Range/Low/High l: 10.980392, 62.352941, 72.941176
+Range/Low/High a: 8, -5, 3
+Range/Low/High b: 8, -3, 5
+
+****************************
+Pixel count: 600
+RGB stats...
+Average/std Red: 188.885000, 2.936835
+Average/std Green: 188.436667, 2.990819
+Average/std Blue: 185.946667, 2.910040
+Range/Low/High red: 18, 177, 195
+Range/Low/High green: 20, 176, 196
+Range/Low/High blue: 19, 174, 193
+
+lab stats...
+Average/std l: 194.848333, 2.641654
+Average/std a: 127.803333, 0.371932
+Average/std b: 129.160000, 0.000000
+Range/Low/High l: 7.058824, 69.411765, 76.470588
+Range/Low/High a: 4, -4, 0
+Range/Low/High b: 1, 1, 2
+
+****************************
