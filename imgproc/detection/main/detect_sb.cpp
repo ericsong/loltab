@@ -13,6 +13,15 @@ int main(int argc, char* argv[])
 	Mat imglab;
 	cvtColor(image, imglab, CV_BGR2Lab);
 
+	//extract filename
+	int filenamepos = 0;
+	for(int i = 0; argv[1][i] != '\0'; i++){
+		if(argv[1][i] == '/')
+			filenamepos = i;	
+	}
+	std::string filename = std::string(argv[1]).substr(filenamepos+1);
+	std::string write_filename = "./scoreboards/" + filename;
+
 	bool sb_found = false;
 
 	int x_low = .25 * image.cols;
@@ -94,6 +103,10 @@ int main(int argc, char* argv[])
 		int bottompos = getScoreboardBottom(&imglab, -1);	
 		
 		printf("%d,%d,%d,%d\n", toppos, leftpos, rightpos, bottompos);
+
+		Rect sbregion(leftpos, toppos, rightpos - leftpos, bottompos - toppos);
+		Mat sb = image(sbregion);
+		imwrite(write_filename, sb);	
 	}else{
 		printf("scoreboard not found\n");
 	}

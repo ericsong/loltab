@@ -1,8 +1,11 @@
 import os
+import sys
 import subprocess
 
-for img in os.listdir('/home/reggi/tmp/froggen720p/'):
-    imgpath = '/home/reggi/tmp/froggen720p/' + img
+imgdir = sys.argv[1];
+
+for img in os.listdir(imgdir):
+    imgpath = imgdir + img
 
     output = subprocess.check_output(['./detect_sb', imgpath]).decode('utf-8')
 

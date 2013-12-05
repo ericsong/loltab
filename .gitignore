@@ -9,10 +9,13 @@ cmake_install.cmake
 Makefile
 *.a
 
+imgproc/detection/test/scoreboards/
+
 detect_sb
 test_cv
 testcv
 statgen
+DisplayImage
 
 stream_parser/lolkingparser/node_modules/
 .nfs*
