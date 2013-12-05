@@ -1,0 +1,72 @@
+Pixel count: 430
+RGB stats...
+Average/std Red: 158.300000, 2.592924
+Average/std Green: 160.044186, 2.437593
+Average/std Blue: 157.462791, 3.144208
+Range/Low/High red: 16, 148, 164
+Range/Low/High green: 13, 153, 166
+Range/Low/High blue: 21, 144, 165
+
+lab stats...
+Average/std l: 167.737209, 2.214120
+Average/std a: 126.925581, 0.409197
+Average/std b: 128.886047, 0.754829
+Range/Low/High l: 5.098039, 58.039216, 64.313725
+Range/Low/High a: 4, -4, 0
+Range/Low/High b: 5, 0, 5
+
+****************************
+Pixel count: 480
+RGB stats...
+Average/std Red: 156.554167, 3.663730
+Average/std Green: 159.650000, 2.993047
+Average/std Blue: 156.291667, 3.099731
+Range/Low/High red: 27, 146, 173
+Range/Low/High green: 16, 152, 168
+Range/Low/High blue: 17, 148, 165
+
+lab stats...
+Average/std l: 166.950000, 2.779388
+Average/std a: 126.350000, 0.605530
+Average/std b: 129.056250, 0.270031
+Range/Low/High l: 6.274510, 57.254902, 67.843137
+Range/Low/High a: 5, -3, 2
+Range/Low/High b: 6, 0, 6
+
+****************************
+Pixel count: 580
+RGB stats...
+Average/std Red: 157.651724, 2.932576
+Average/std Green: 161.372414, 2.599403
+Average/std Blue: 160.136207, 2.914589
+Range/Low/High red: 14, 153, 167
+Range/Low/High green: 19, 152, 171
+Range/Low/High blue: 30, 140, 170
+
+lab stats...
+Average/std l: 168.429310, 2.621200
+Average/std a: 126.096552, 0.313490
+Average/std b: 128.146552, 0.660460
+Range/Low/High l: 7.058824, 60.000000, 65.490196
+Range/Low/High a: 4, -3, 1
+Range/Low/High b: 7, 0, 7
+
+****************************
+Pixel count: 490
+RGB stats...
+Average/std Red: 157.430612, 4.781128
+Average/std Green: 160.504082, 4.259443
+Average/std Blue: 158.732653, 3.982615
+Range/Low/High red: 42, 131, 173
+Range/Low/High green: 53, 122, 175
+Range/Low/High blue: 53, 117, 170
+
+lab stats...
+Average/std l: 167.883673, 4.011209
+Average/std a: 126.648980, 0.526831
+Average/std b: 128.291837, 0.954046
+Range/Low/High l: 19.607843, 51.372549, 67.843137
+Range/Low/High a: 6, -3, 3
+Range/Low/High b: 11, -1, 10
+
+****************************
