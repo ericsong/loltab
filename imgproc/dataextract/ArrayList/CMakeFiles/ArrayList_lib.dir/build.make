@@ -49,47 +49,47 @@ include ArrayList/CMakeFiles/ArrayList_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include ArrayList/CMakeFiles/ArrayList_lib.dir/flags.make
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o: ArrayList/CMakeFiles/ArrayList_lib.dir/flags.make
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o: ArrayList/ArrayList.c
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o: ArrayList/CMakeFiles/ArrayList_lib.dir/flags.make
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o: ArrayList/ArrayList.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/timothy/lol_bar/cpp/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o"
-	cd /home/timothy/lol_bar/cpp/ArrayList && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/ArrayList_lib.dir/ArrayList.c.o   -c /home/timothy/lol_bar/cpp/ArrayList/ArrayList.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o"
+	cd /home/timothy/lol_bar/cpp/ArrayList && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o -c /home/timothy/lol_bar/cpp/ArrayList/ArrayList.cpp
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ArrayList_lib.dir/ArrayList.c.i"
-	cd /home/timothy/lol_bar/cpp/ArrayList && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/timothy/lol_bar/cpp/ArrayList/ArrayList.c > CMakeFiles/ArrayList_lib.dir/ArrayList.c.i
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.i"
+	cd /home/timothy/lol_bar/cpp/ArrayList && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/timothy/lol_bar/cpp/ArrayList/ArrayList.cpp > CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.i
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ArrayList_lib.dir/ArrayList.c.s"
-	cd /home/timothy/lol_bar/cpp/ArrayList && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/timothy/lol_bar/cpp/ArrayList/ArrayList.c -o CMakeFiles/ArrayList_lib.dir/ArrayList.c.s
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.s"
+	cd /home/timothy/lol_bar/cpp/ArrayList && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/timothy/lol_bar/cpp/ArrayList/ArrayList.cpp -o CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.s
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.requires:
-.PHONY : ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.requires
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.requires:
+.PHONY : ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.requires
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.provides: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.requires
-	$(MAKE) -f ArrayList/CMakeFiles/ArrayList_lib.dir/build.make ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.provides.build
-.PHONY : ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.provides
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.provides: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.requires
+	$(MAKE) -f ArrayList/CMakeFiles/ArrayList_lib.dir/build.make ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.provides.build
+.PHONY : ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.provides
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.provides.build: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o
+ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.provides.build: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o
 
 # Object files for target ArrayList_lib
 ArrayList_lib_OBJECTS = \
-"CMakeFiles/ArrayList_lib.dir/ArrayList.c.o"
+"CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o"
 
 # External object files for target ArrayList_lib
 ArrayList_lib_EXTERNAL_OBJECTS =
 
-libs/libArrayList_lib.so: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o
+libs/libArrayList_lib.so: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o
 libs/libArrayList_lib.so: ArrayList/CMakeFiles/ArrayList_lib.dir/build.make
 libs/libArrayList_lib.so: ArrayList/CMakeFiles/ArrayList_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C shared library ../libs/libArrayList_lib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../libs/libArrayList_lib.so"
 	cd /home/timothy/lol_bar/cpp/ArrayList && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ArrayList_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 ArrayList/CMakeFiles/ArrayList_lib.dir/build: libs/libArrayList_lib.so
 .PHONY : ArrayList/CMakeFiles/ArrayList_lib.dir/build
 
-ArrayList/CMakeFiles/ArrayList_lib.dir/requires: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.c.o.requires
+ArrayList/CMakeFiles/ArrayList_lib.dir/requires: ArrayList/CMakeFiles/ArrayList_lib.dir/ArrayList.cpp.o.requires
 .PHONY : ArrayList/CMakeFiles/ArrayList_lib.dir/requires
 
 ArrayList/CMakeFiles/ArrayList_lib.dir/clean:

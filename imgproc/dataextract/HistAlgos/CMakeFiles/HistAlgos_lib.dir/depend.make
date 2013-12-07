@@ -13,7 +13,7 @@ HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: /usr/local/include/openc
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: /usr/local/include/opencv2/highgui/highgui_c.h
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: /usr/local/include/opencv2/imgproc/imgproc.hpp
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: /usr/local/include/opencv2/imgproc/types_c.h
-HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: ArrayList/ArrayList.h
+HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: ArrayList/ArrayList.hpp
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: ImageAlgos/ImageAlgos.hpp
-HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: StringAlgos/StringAlgos.h
+HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: StringAlgos/StringAlgos.hpp
 

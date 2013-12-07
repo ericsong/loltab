@@ -49,47 +49,47 @@ include StringAlgos/CMakeFiles/StringAlgos_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include StringAlgos/CMakeFiles/StringAlgos_lib.dir/flags.make
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o: StringAlgos/CMakeFiles/StringAlgos_lib.dir/flags.make
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o: StringAlgos/StringAlgos.c
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o: StringAlgos/CMakeFiles/StringAlgos_lib.dir/flags.make
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o: StringAlgos/StringAlgos.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/timothy/lol_bar/cpp/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o"
-	cd /home/timothy/lol_bar/cpp/StringAlgos && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o   -c /home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o"
+	cd /home/timothy/lol_bar/cpp/StringAlgos && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o -c /home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.cpp
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.i"
-	cd /home/timothy/lol_bar/cpp/StringAlgos && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.c > CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.i
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.i"
+	cd /home/timothy/lol_bar/cpp/StringAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.cpp > CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.i
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.s"
-	cd /home/timothy/lol_bar/cpp/StringAlgos && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.c -o CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.s
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.s"
+	cd /home/timothy/lol_bar/cpp/StringAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.cpp -o CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.s
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.requires:
-.PHONY : StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.requires
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.requires:
+.PHONY : StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.requires
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.provides: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.requires
-	$(MAKE) -f StringAlgos/CMakeFiles/StringAlgos_lib.dir/build.make StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.provides.build
-.PHONY : StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.provides
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.provides: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.requires
+	$(MAKE) -f StringAlgos/CMakeFiles/StringAlgos_lib.dir/build.make StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.provides.build
+.PHONY : StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.provides
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.provides.build: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.provides.build: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o
 
 # Object files for target StringAlgos_lib
 StringAlgos_lib_OBJECTS = \
-"CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o"
+"CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o"
 
 # External object files for target StringAlgos_lib
 StringAlgos_lib_EXTERNAL_OBJECTS =
 
-libs/libStringAlgos_lib.so: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o
+libs/libStringAlgos_lib.so: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o
 libs/libStringAlgos_lib.so: StringAlgos/CMakeFiles/StringAlgos_lib.dir/build.make
 libs/libStringAlgos_lib.so: StringAlgos/CMakeFiles/StringAlgos_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C shared library ../libs/libStringAlgos_lib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../libs/libStringAlgos_lib.so"
 	cd /home/timothy/lol_bar/cpp/StringAlgos && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/StringAlgos_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 StringAlgos/CMakeFiles/StringAlgos_lib.dir/build: libs/libStringAlgos_lib.so
 .PHONY : StringAlgos/CMakeFiles/StringAlgos_lib.dir/build
 
-StringAlgos/CMakeFiles/StringAlgos_lib.dir/requires: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.c.o.requires
+StringAlgos/CMakeFiles/StringAlgos_lib.dir/requires: StringAlgos/CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o.requires
 .PHONY : StringAlgos/CMakeFiles/StringAlgos_lib.dir/requires
 
 StringAlgos/CMakeFiles/StringAlgos_lib.dir/clean:

@@ -14,5 +14,5 @@ ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o
  /usr/local/include/opencv2/highgui/highgui_c.h
  /usr/local/include/opencv2/imgproc/imgproc.hpp
  /usr/local/include/opencv2/imgproc/types_c.h
- ArrayList/ArrayList.h
- StringAlgos/StringAlgos.h
+ ArrayList/ArrayList.hpp
+ StringAlgos/StringAlgos.hpp

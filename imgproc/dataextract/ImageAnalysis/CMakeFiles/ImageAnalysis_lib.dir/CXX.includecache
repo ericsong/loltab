@@ -17,8 +17,8 @@ opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
 -
-ImageAlgos/ImageAlgos.hpp
-/home/timothy/lol_bar/cpp/ImageAnalysis/ImageAlgos/ImageAlgos.hpp
+ImageAlgos.hpp
+/home/timothy/lol_bar/cpp/ImageAnalysis/ImageAlgos.hpp
 
 /usr/local/include/opencv2/core/core.hpp
 opencv2/core/types_c.h
@@ -122,7 +122,7 @@ opencv2/imgproc/types_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/imgproc/opencv2/core/core_c.h
 
-ArrayList/ArrayList.h
+ArrayList/ArrayList.hpp
 stdlib.h
 -
 
@@ -133,12 +133,12 @@ opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
 -
-ArrayList/ArrayList.h
-ImageAlgos/ArrayList/ArrayList.h
-StringAlgos/StringAlgos.h
-ImageAlgos/StringAlgos/StringAlgos.h
+ArrayList.hpp
+ImageAlgos/ArrayList.hpp
+StringAlgos.hpp
+ImageAlgos/StringAlgos.hpp
 
-StringAlgos/StringAlgos.h
+StringAlgos/StringAlgos.hpp
 stdlib.h
 -
 

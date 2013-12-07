@@ -13,6 +13,6 @@ ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/op
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/highgui/highgui_c.h
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/imgproc/imgproc.hpp
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/imgproc/types_c.h
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ArrayList/ArrayList.h
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: StringAlgos/StringAlgos.h
+ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ArrayList/ArrayList.hpp
+ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: StringAlgos/StringAlgos.hpp
 

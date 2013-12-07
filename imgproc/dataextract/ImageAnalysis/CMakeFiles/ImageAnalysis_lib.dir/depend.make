@@ -13,7 +13,7 @@ ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: /usr/local/i
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: /usr/local/include/opencv2/highgui/highgui_c.h
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: /usr/local/include/opencv2/imgproc/imgproc.hpp
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: /usr/local/include/opencv2/imgproc/types_c.h
-ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: ArrayList/ArrayList.h
+ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: ArrayList/ArrayList.hpp
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: ImageAlgos/ImageAlgos.hpp
-ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: StringAlgos/StringAlgos.h
+ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: StringAlgos/StringAlgos.hpp
 

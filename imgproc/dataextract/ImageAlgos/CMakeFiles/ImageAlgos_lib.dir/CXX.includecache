@@ -17,10 +17,10 @@ opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
 -
-ArrayList/ArrayList.h
-/home/timothy/lol_bar/cpp/ImageAlgos/ArrayList/ArrayList.h
-StringAlgos/StringAlgos.h
-/home/timothy/lol_bar/cpp/ImageAlgos/StringAlgos/StringAlgos.h
+ArrayList.hpp
+/home/timothy/lol_bar/cpp/ImageAlgos/ArrayList.hpp
+StringAlgos.hpp
+/home/timothy/lol_bar/cpp/ImageAlgos/StringAlgos.hpp
 
 /usr/local/include/opencv2/core/core.hpp
 opencv2/core/types_c.h
@@ -124,11 +124,11 @@ opencv2/imgproc/types_c.h
 opencv2/core/core_c.h
 /usr/local/include/opencv2/imgproc/opencv2/core/core_c.h
 
-ArrayList/ArrayList.h
+ArrayList/ArrayList.hpp
 stdlib.h
 -
 
-StringAlgos/StringAlgos.h
+StringAlgos/StringAlgos.hpp
 stdlib.h
 -
 

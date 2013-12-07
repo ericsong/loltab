@@ -4,8 +4,8 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "ArrayList/ArrayList.h"
-#include "StringAlgos/StringAlgos.h"
+#include "ArrayList.hpp"
+#include "StringAlgos.hpp"
 
 using namespace cv;
 

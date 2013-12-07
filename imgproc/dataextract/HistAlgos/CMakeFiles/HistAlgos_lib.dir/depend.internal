@@ -14,6 +14,6 @@ HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o
  /usr/local/include/opencv2/highgui/highgui_c.h
  /usr/local/include/opencv2/imgproc/imgproc.hpp
  /usr/local/include/opencv2/imgproc/types_c.h
- ArrayList/ArrayList.h
+ ArrayList/ArrayList.hpp
  ImageAlgos/ImageAlgos.hpp
- StringAlgos/StringAlgos.h
+ StringAlgos/StringAlgos.hpp
