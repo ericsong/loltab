@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC    -shared -Wl,-soname,libArrayList_lib.so -o ../libs/libArrayList_lib.so CMakeFiles/ArrayList_lib.dir/ArrayList.c.o 

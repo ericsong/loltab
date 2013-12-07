@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.c
+StringAlgos.h
+/home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.h
+
+/home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.h
+stdlib.h
+-
+

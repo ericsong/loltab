@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/timothy/lol_bar/cpp/ArrayList/ArrayList.c
+ArrayList.h
+/home/timothy/lol_bar/cpp/ArrayList/ArrayList.h
+
+/home/timothy/lol_bar/cpp/ArrayList/ArrayList.h
+stdlib.h
+-
+

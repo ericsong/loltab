@@ -1,0 +1,5 @@
+find_package( OpenCV REQUIRED )
+add_library(HistAlgos_lib SHARED HistAlgos.cpp)
+target_link_libraries( HistAlgos_lib ImageAlgos_lib ${OpenCV_LIBS} )
+set_target_properties(HistAlgos_lib PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
+set_target_properties(HistAlgos_lib PROPERTIES OUTPUT_NAME HistAlgos_lib${BUILD_POSTFIX})

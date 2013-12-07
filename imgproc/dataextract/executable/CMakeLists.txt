@@ -1,0 +1,5 @@
+find_package( OpenCV REQUIRED )
+add_executable(extract_data extract_data.cpp)
+target_link_libraries(extract_data ImageAnalysis_lib HistAlgos_lib StringAlgos_lib ${OpenCV_LIBS})
+set_target_properties(extract_data PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+set_target_properties(extract_data PROPERTIES OUTPUT_NAME extract_data${BUILD_POSTFIX})
