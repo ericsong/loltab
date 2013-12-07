@@ -72,7 +72,7 @@ void display(Mat image) {
 
 int main(int argc, char **argv) {
 	char buffer[100];
-	if (argc != 5) {
+	if (argc != 2) {
 		cout << "Bad args.\n";
 		return 1;
 	}
@@ -93,9 +93,9 @@ int main(int argc, char **argv) {
 
 
 	int *coords = (int *)calloc(2, sizeof(int));
-	coords[0] = atoi(argv[2]);
-	coords[1] = atoi(argv[3]);
-	int rightSideValue = atoi(argv[4]);
+	coords[0] = 0;
+	coords[1] = 0;
+	int rightSideValue = image.cols;
 	//printf("COORDS: %d %d\n", coords[0], coords[1]);
 	int found = coords[0] != -1 && coords[1] != -1;
 	if (found) {
@@ -885,7 +885,7 @@ int rightBar(Mat image) {
 }
 
 char *identifyItem(Mat image) {
-//	display(image);
+	display(image);
 	char *itemName = "";
 	float total_error = 1.0;
 	for (int i = 0; i < ITEMS_LENGTH; i++) {
