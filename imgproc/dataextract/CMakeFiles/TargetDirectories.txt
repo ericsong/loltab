@@ -1,1 +1,0 @@
-/home/timothy/loltab/imgproc/main/CMakeFiles/DisplayImage.dir

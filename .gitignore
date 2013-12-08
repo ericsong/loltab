@@ -4,6 +4,7 @@ imgproc/detection/img/dyrus_1080p/
 imgproc/main/CMakeFiles/
 imgproc/detection/main/CMakeFiles/
 imgproc/detection/stats/CMakeFiles/
+imgproc/dataextract/CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
