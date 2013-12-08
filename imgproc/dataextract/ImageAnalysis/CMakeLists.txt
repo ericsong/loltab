@@ -1,0 +1,5 @@
+find_package( OpenCV REQUIRED )
+add_library(ImageAnalysis_lib SHARED ImageAnalysis.cpp)
+target_link_libraries(ImageAnalysis_lib ImageAlgos_lib ${OpenCV_LIBS})
+set_target_properties(ImageAnalysis_lib PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
+set_target_properties(ImageAnalysis_lib PROPERTIES OUTPUT_NAME ImageAnalysis_lib${BUILD_POSTFIX})

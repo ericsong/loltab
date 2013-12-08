@@ -1,0 +1,5 @@
+find_package( OpenCV REQUIRED )
+add_library(ImageAlgos_lib SHARED ImageAlgos.cpp)
+target_link_libraries(ImageAlgos_lib StringAlgos_lib ArrayList_lib ${OpenCV_LIBS})
+set_target_properties(ImageAlgos_lib PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs)
+set_target_properties(ImageAlgos_lib PROPERTIES OUTPUT_NAME ImageAlgos_lib${BUILD_POSTFIX})

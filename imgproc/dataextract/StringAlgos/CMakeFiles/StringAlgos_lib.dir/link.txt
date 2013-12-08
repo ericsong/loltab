@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC    -shared -Wl,-soname,libStringAlgos_lib.so -o ../libs/libStringAlgos_lib.so CMakeFiles/StringAlgos_lib.dir/StringAlgos.cpp.o 
