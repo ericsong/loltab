@@ -34,11 +34,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/timothy/lol_bar/cpp
+CMAKE_SOURCE_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/timothy/lol_bar/cpp
+CMAKE_BINARY_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # Include any dependencies generated for this target.
 include ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/depend.make
@@ -51,17 +54,17 @@ include ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/flags.make
 
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/flags.make
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o: ImageAnalysis/ImageAnalysis.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/timothy/lol_bar/cpp/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/reggi/c0dez/loltab/imgproc/dataextract/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o"
-	cd /home/timothy/lol_bar/cpp/ImageAnalysis && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o -c /home/timothy/lol_bar/cpp/ImageAnalysis/ImageAnalysis.cpp
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o -c /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis/ImageAnalysis.cpp
 
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.i"
-	cd /home/timothy/lol_bar/cpp/ImageAnalysis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/timothy/lol_bar/cpp/ImageAnalysis/ImageAnalysis.cpp > CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.i
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis/ImageAnalysis.cpp > CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.i
 
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.s"
-	cd /home/timothy/lol_bar/cpp/ImageAnalysis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/timothy/lol_bar/cpp/ImageAnalysis/ImageAnalysis.cpp -o CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.s
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis/ImageAnalysis.cpp -o CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.s
 
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o.requires:
 .PHONY : ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o.requires
@@ -82,44 +85,50 @@ ImageAnalysis_lib_EXTERNAL_OBJECTS =
 libs/libImageAnalysis_lib.so: ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/ImageAnalysis.cpp.o
 libs/libImageAnalysis_lib.so: ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/build.make
 libs/libImageAnalysis_lib.so: libs/libImageAlgos_lib.so
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_videostab.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_video.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_ts.a
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_superres.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_stitching.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_photo.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_ocl.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_objdetect.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_nonfree.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_ml.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_legacy.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_imgproc.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_highgui.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_gpu.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_flann.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_features2d.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_core.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_contrib.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_calib3d.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_nonfree.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_ocl.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_gpu.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_photo.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_objdetect.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_legacy.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_video.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_ml.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_calib3d.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_features2d.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_highgui.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_imgproc.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_flann.so.2.4.7
-libs/libImageAnalysis_lib.so: /usr/local/lib/libopencv_core.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_videostab.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_video.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_ts.a
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_superres.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_stitching.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_photo.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_ocl.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_objdetect.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_nonfree.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_ml.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_legacy.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_imgproc.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_highgui.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_gpu.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_flann.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_features2d.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_core.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_contrib.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_calib3d.so.2.4.7
+libs/libImageAnalysis_lib.so: /lib64/libGLU.so
+libs/libImageAnalysis_lib.so: /lib64/libGL.so
+libs/libImageAnalysis_lib.so: /lib64/libSM.so
+libs/libImageAnalysis_lib.so: /lib64/libICE.so
+libs/libImageAnalysis_lib.so: /lib64/libX11.so
+libs/libImageAnalysis_lib.so: /lib64/libXext.so
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_nonfree.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_ocl.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_gpu.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_photo.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_objdetect.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_legacy.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_video.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_ml.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_calib3d.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_features2d.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_highgui.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_imgproc.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_flann.so.2.4.7
+libs/libImageAnalysis_lib.so: /usr/lib/libopencv_core.so.2.4.7
 libs/libImageAnalysis_lib.so: libs/libStringAlgos_lib.so
 libs/libImageAnalysis_lib.so: libs/libArrayList_lib.so
 libs/libImageAnalysis_lib.so: ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../libs/libImageAnalysis_lib.so"
-	cd /home/timothy/lol_bar/cpp/ImageAnalysis && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageAnalysis_lib.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageAnalysis_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/build: libs/libImageAnalysis_lib.so
@@ -129,10 +138,10 @@ ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/requires: ImageAnalysis/CMakeFile
 .PHONY : ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/requires
 
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/clean:
-	cd /home/timothy/lol_bar/cpp/ImageAnalysis && $(CMAKE_COMMAND) -P CMakeFiles/ImageAnalysis_lib.dir/cmake_clean.cmake
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis && $(CMAKE_COMMAND) -P CMakeFiles/ImageAnalysis_lib.dir/cmake_clean.cmake
 .PHONY : ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/clean
 
 ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/depend:
-	cd /home/timothy/lol_bar/cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/ImageAnalysis /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/ImageAnalysis /home/timothy/lol_bar/cpp/ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir/depend
 

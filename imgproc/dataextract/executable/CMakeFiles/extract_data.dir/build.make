@@ -34,11 +34,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/timothy/lol_bar/cpp
+CMAKE_SOURCE_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/timothy/lol_bar/cpp
+CMAKE_BINARY_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # Include any dependencies generated for this target.
 include executable/CMakeFiles/extract_data.dir/depend.make
@@ -51,17 +54,17 @@ include executable/CMakeFiles/extract_data.dir/flags.make
 
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: executable/CMakeFiles/extract_data.dir/flags.make
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: executable/extract_data.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/timothy/lol_bar/cpp/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/reggi/c0dez/loltab/imgproc/dataextract/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object executable/CMakeFiles/extract_data.dir/extract_data.cpp.o"
-	cd /home/timothy/lol_bar/cpp/executable && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/extract_data.dir/extract_data.cpp.o -c /home/timothy/lol_bar/cpp/executable/extract_data.cpp
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/executable && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/extract_data.dir/extract_data.cpp.o -c /home/reggi/c0dez/loltab/imgproc/dataextract/executable/extract_data.cpp
 
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/extract_data.dir/extract_data.cpp.i"
-	cd /home/timothy/lol_bar/cpp/executable && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/timothy/lol_bar/cpp/executable/extract_data.cpp > CMakeFiles/extract_data.dir/extract_data.cpp.i
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/executable && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/reggi/c0dez/loltab/imgproc/dataextract/executable/extract_data.cpp > CMakeFiles/extract_data.dir/extract_data.cpp.i
 
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/extract_data.dir/extract_data.cpp.s"
-	cd /home/timothy/lol_bar/cpp/executable && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/timothy/lol_bar/cpp/executable/extract_data.cpp -o CMakeFiles/extract_data.dir/extract_data.cpp.s
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/executable && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/reggi/c0dez/loltab/imgproc/dataextract/executable/extract_data.cpp -o CMakeFiles/extract_data.dir/extract_data.cpp.s
 
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o.requires:
 .PHONY : executable/CMakeFiles/extract_data.dir/extract_data.cpp.o.requires
@@ -83,50 +86,56 @@ bin/extract_data: executable/CMakeFiles/extract_data.dir/extract_data.cpp.o
 bin/extract_data: executable/CMakeFiles/extract_data.dir/build.make
 bin/extract_data: libs/libImageAnalysis_lib.so
 bin/extract_data: libs/libHistAlgos_lib.so
-bin/extract_data: /usr/local/lib/libopencv_videostab.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_video.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_ts.a
-bin/extract_data: /usr/local/lib/libopencv_superres.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_stitching.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_photo.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_ocl.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_objdetect.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_nonfree.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_ml.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_legacy.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_imgproc.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_highgui.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_gpu.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_flann.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_features2d.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_core.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_contrib.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_calib3d.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_videostab.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_video.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_ts.a
+bin/extract_data: /usr/lib/libopencv_superres.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_stitching.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_photo.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_ocl.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_objdetect.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_nonfree.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_ml.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_legacy.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_imgproc.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_highgui.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_gpu.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_flann.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_features2d.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_core.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_contrib.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_calib3d.so.2.4.7
 bin/extract_data: libs/libImageAlgos_lib.so
-bin/extract_data: /usr/local/lib/libopencv_videostab.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_ts.a
-bin/extract_data: /usr/local/lib/libopencv_superres.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_stitching.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_contrib.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_nonfree.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_ocl.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_gpu.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_photo.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_objdetect.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_legacy.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_video.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_ml.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_calib3d.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_features2d.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_highgui.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_imgproc.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_flann.so.2.4.7
-bin/extract_data: /usr/local/lib/libopencv_core.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_videostab.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_ts.a
+bin/extract_data: /lib64/libGLU.so
+bin/extract_data: /lib64/libGL.so
+bin/extract_data: /lib64/libSM.so
+bin/extract_data: /lib64/libICE.so
+bin/extract_data: /lib64/libX11.so
+bin/extract_data: /lib64/libXext.so
+bin/extract_data: /usr/lib/libopencv_superres.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_stitching.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_contrib.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_nonfree.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_ocl.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_gpu.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_photo.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_objdetect.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_legacy.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_video.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_ml.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_calib3d.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_features2d.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_highgui.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_imgproc.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_flann.so.2.4.7
+bin/extract_data: /usr/lib/libopencv_core.so.2.4.7
 bin/extract_data: libs/libStringAlgos_lib.so
 bin/extract_data: libs/libArrayList_lib.so
 bin/extract_data: executable/CMakeFiles/extract_data.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/extract_data"
-	cd /home/timothy/lol_bar/cpp/executable && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/extract_data.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/executable && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/extract_data.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 executable/CMakeFiles/extract_data.dir/build: bin/extract_data
@@ -136,10 +145,10 @@ executable/CMakeFiles/extract_data.dir/requires: executable/CMakeFiles/extract_d
 .PHONY : executable/CMakeFiles/extract_data.dir/requires
 
 executable/CMakeFiles/extract_data.dir/clean:
-	cd /home/timothy/lol_bar/cpp/executable && $(CMAKE_COMMAND) -P CMakeFiles/extract_data.dir/cmake_clean.cmake
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/executable && $(CMAKE_COMMAND) -P CMakeFiles/extract_data.dir/cmake_clean.cmake
 .PHONY : executable/CMakeFiles/extract_data.dir/clean
 
 executable/CMakeFiles/extract_data.dir/depend:
-	cd /home/timothy/lol_bar/cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/executable /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/executable /home/timothy/lol_bar/cpp/executable/CMakeFiles/extract_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/executable /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/executable /home/reggi/c0dez/loltab/imgproc/dataextract/executable/CMakeFiles/extract_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : executable/CMakeFiles/extract_data.dir/depend
 

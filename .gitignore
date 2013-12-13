@@ -1,4 +1,5 @@
 server/node_modules/
+name_scraper/node_modules/
 imgproc/detection/img/dyrus_1080p/
 
 imgproc/main/CMakeFiles/

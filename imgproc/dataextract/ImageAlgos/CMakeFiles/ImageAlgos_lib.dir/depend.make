@@ -3,16 +3,6 @@
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ImageAlgos/ImageAlgos.cpp
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ImageAlgos/ImageAlgos.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/core/core.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/core/core_c.h
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/core/mat.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/core/operations.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/core/types_c.h
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/core/version.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/highgui/highgui.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/highgui/highgui_c.h
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/imgproc/imgproc.hpp
-ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: /usr/local/include/opencv2/imgproc/types_c.h
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ArrayList/ArrayList.hpp
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: StringAlgos/StringAlgos.hpp
 

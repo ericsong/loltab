@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.cpp
+/home/reggi/c0dez/loltab/imgproc/dataextract/StringAlgos/StringAlgos.cpp
 StringAlgos.hpp
-/home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.hpp
+/home/reggi/c0dez/loltab/imgproc/dataextract/StringAlgos/StringAlgos.hpp
 
-/home/timothy/lol_bar/cpp/StringAlgos/StringAlgos.hpp
+/home/reggi/c0dez/loltab/imgproc/dataextract/StringAlgos/StringAlgos.hpp
 stdlib.h
 -
 

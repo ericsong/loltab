@@ -3,16 +3,6 @@
 
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: executable/extract_data.cpp
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: executable/extract_data.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/core/core.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/core/core_c.h
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/core/mat.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/core/operations.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/core/types_c.h
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/core/version.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/highgui/highgui.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/highgui/highgui_c.h
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/imgproc/imgproc.hpp
-executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: /usr/local/include/opencv2/imgproc/types_c.h
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: ArrayList/ArrayList.hpp
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: HistAlgos/HistAlgos.hpp
 executable/CMakeFiles/extract_data.dir/extract_data.cpp.o: ImageAlgos/ImageAlgos.hpp

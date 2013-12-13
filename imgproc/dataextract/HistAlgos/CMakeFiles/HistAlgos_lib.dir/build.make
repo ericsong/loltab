@@ -34,11 +34,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/timothy/lol_bar/cpp
+CMAKE_SOURCE_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/timothy/lol_bar/cpp
+CMAKE_BINARY_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # Include any dependencies generated for this target.
 include HistAlgos/CMakeFiles/HistAlgos_lib.dir/depend.make
@@ -51,17 +54,17 @@ include HistAlgos/CMakeFiles/HistAlgos_lib.dir/flags.make
 
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: HistAlgos/CMakeFiles/HistAlgos_lib.dir/flags.make
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o: HistAlgos/HistAlgos.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/timothy/lol_bar/cpp/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/reggi/c0dez/loltab/imgproc/dataextract/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o"
-	cd /home/timothy/lol_bar/cpp/HistAlgos && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o -c /home/timothy/lol_bar/cpp/HistAlgos/HistAlgos.cpp
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o -c /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos/HistAlgos.cpp
 
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.i"
-	cd /home/timothy/lol_bar/cpp/HistAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/timothy/lol_bar/cpp/HistAlgos/HistAlgos.cpp > CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.i
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos/HistAlgos.cpp > CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.i
 
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.s"
-	cd /home/timothy/lol_bar/cpp/HistAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/timothy/lol_bar/cpp/HistAlgos/HistAlgos.cpp -o CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.s
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos/HistAlgos.cpp -o CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.s
 
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o.requires:
 .PHONY : HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o.requires
@@ -82,44 +85,50 @@ HistAlgos_lib_EXTERNAL_OBJECTS =
 libs/libHistAlgos_lib.so: HistAlgos/CMakeFiles/HistAlgos_lib.dir/HistAlgos.cpp.o
 libs/libHistAlgos_lib.so: HistAlgos/CMakeFiles/HistAlgos_lib.dir/build.make
 libs/libHistAlgos_lib.so: libs/libImageAlgos_lib.so
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_videostab.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_video.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_ts.a
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_superres.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_stitching.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_photo.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_ocl.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_objdetect.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_nonfree.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_ml.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_legacy.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_imgproc.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_highgui.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_gpu.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_flann.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_features2d.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_core.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_contrib.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_calib3d.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_nonfree.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_ocl.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_gpu.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_photo.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_objdetect.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_legacy.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_video.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_ml.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_calib3d.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_features2d.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_highgui.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_imgproc.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_flann.so.2.4.7
-libs/libHistAlgos_lib.so: /usr/local/lib/libopencv_core.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_videostab.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_video.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_ts.a
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_superres.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_stitching.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_photo.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_ocl.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_objdetect.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_nonfree.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_ml.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_legacy.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_imgproc.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_highgui.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_gpu.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_flann.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_features2d.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_core.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_contrib.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_calib3d.so.2.4.7
+libs/libHistAlgos_lib.so: /lib64/libGLU.so
+libs/libHistAlgos_lib.so: /lib64/libGL.so
+libs/libHistAlgos_lib.so: /lib64/libSM.so
+libs/libHistAlgos_lib.so: /lib64/libICE.so
+libs/libHistAlgos_lib.so: /lib64/libX11.so
+libs/libHistAlgos_lib.so: /lib64/libXext.so
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_nonfree.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_ocl.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_gpu.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_photo.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_objdetect.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_legacy.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_video.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_ml.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_calib3d.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_features2d.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_highgui.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_imgproc.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_flann.so.2.4.7
+libs/libHistAlgos_lib.so: /usr/lib/libopencv_core.so.2.4.7
 libs/libHistAlgos_lib.so: libs/libStringAlgos_lib.so
 libs/libHistAlgos_lib.so: libs/libArrayList_lib.so
 libs/libHistAlgos_lib.so: HistAlgos/CMakeFiles/HistAlgos_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../libs/libHistAlgos_lib.so"
-	cd /home/timothy/lol_bar/cpp/HistAlgos && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HistAlgos_lib.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HistAlgos_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/build: libs/libHistAlgos_lib.so
@@ -129,10 +138,10 @@ HistAlgos/CMakeFiles/HistAlgos_lib.dir/requires: HistAlgos/CMakeFiles/HistAlgos_
 .PHONY : HistAlgos/CMakeFiles/HistAlgos_lib.dir/requires
 
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/clean:
-	cd /home/timothy/lol_bar/cpp/HistAlgos && $(CMAKE_COMMAND) -P CMakeFiles/HistAlgos_lib.dir/cmake_clean.cmake
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos && $(CMAKE_COMMAND) -P CMakeFiles/HistAlgos_lib.dir/cmake_clean.cmake
 .PHONY : HistAlgos/CMakeFiles/HistAlgos_lib.dir/clean
 
 HistAlgos/CMakeFiles/HistAlgos_lib.dir/depend:
-	cd /home/timothy/lol_bar/cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/HistAlgos /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/HistAlgos /home/timothy/lol_bar/cpp/HistAlgos/CMakeFiles/HistAlgos_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos /home/reggi/c0dez/loltab/imgproc/dataextract/HistAlgos/CMakeFiles/HistAlgos_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : HistAlgos/CMakeFiles/HistAlgos_lib.dir/depend
 

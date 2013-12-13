@@ -34,11 +34,14 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/timothy/lol_bar/cpp
+CMAKE_SOURCE_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/timothy/lol_bar/cpp
+CMAKE_BINARY_DIR = /home/reggi/c0dez/loltab/imgproc/dataextract
 
 # Include any dependencies generated for this target.
 include ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/depend.make
@@ -51,17 +54,17 @@ include ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/flags.make
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/flags.make
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o: ImageAlgos/ImageAlgos.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/timothy/lol_bar/cpp/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/reggi/c0dez/loltab/imgproc/dataextract/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o"
-	cd /home/timothy/lol_bar/cpp/ImageAlgos && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o -c /home/timothy/lol_bar/cpp/ImageAlgos/ImageAlgos.cpp
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o -c /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos/ImageAlgos.cpp
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.i"
-	cd /home/timothy/lol_bar/cpp/ImageAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/timothy/lol_bar/cpp/ImageAlgos/ImageAlgos.cpp > CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.i
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos/ImageAlgos.cpp > CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.i
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.s"
-	cd /home/timothy/lol_bar/cpp/ImageAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/timothy/lol_bar/cpp/ImageAlgos/ImageAlgos.cpp -o CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.s
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos/ImageAlgos.cpp -o CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.s
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o.requires:
 .PHONY : ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.cpp.o.requires
@@ -83,42 +86,48 @@ libs/libImageAlgos_lib.so: ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/ImageAlgos.c
 libs/libImageAlgos_lib.so: ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/build.make
 libs/libImageAlgos_lib.so: libs/libStringAlgos_lib.so
 libs/libImageAlgos_lib.so: libs/libArrayList_lib.so
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_videostab.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_video.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_ts.a
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_superres.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_stitching.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_photo.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_ocl.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_objdetect.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_nonfree.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_ml.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_legacy.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_imgproc.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_highgui.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_gpu.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_flann.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_features2d.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_core.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_contrib.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_calib3d.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_nonfree.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_ocl.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_gpu.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_photo.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_objdetect.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_legacy.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_video.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_ml.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_calib3d.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_features2d.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_highgui.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_imgproc.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_flann.so.2.4.7
-libs/libImageAlgos_lib.so: /usr/local/lib/libopencv_core.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_videostab.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_video.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_ts.a
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_superres.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_stitching.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_photo.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_ocl.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_objdetect.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_nonfree.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_ml.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_legacy.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_imgproc.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_highgui.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_gpu.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_flann.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_features2d.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_core.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_contrib.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_calib3d.so.2.4.7
+libs/libImageAlgos_lib.so: /lib64/libGLU.so
+libs/libImageAlgos_lib.so: /lib64/libGL.so
+libs/libImageAlgos_lib.so: /lib64/libSM.so
+libs/libImageAlgos_lib.so: /lib64/libICE.so
+libs/libImageAlgos_lib.so: /lib64/libX11.so
+libs/libImageAlgos_lib.so: /lib64/libXext.so
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_nonfree.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_ocl.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_gpu.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_photo.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_objdetect.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_legacy.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_video.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_ml.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_calib3d.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_features2d.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_highgui.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_imgproc.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_flann.so.2.4.7
+libs/libImageAlgos_lib.so: /usr/lib/libopencv_core.so.2.4.7
 libs/libImageAlgos_lib.so: ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../libs/libImageAlgos_lib.so"
-	cd /home/timothy/lol_bar/cpp/ImageAlgos && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageAlgos_lib.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ImageAlgos_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/build: libs/libImageAlgos_lib.so
@@ -128,10 +137,10 @@ ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/requires: ImageAlgos/CMakeFiles/ImageAl
 .PHONY : ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/requires
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/clean:
-	cd /home/timothy/lol_bar/cpp/ImageAlgos && $(CMAKE_COMMAND) -P CMakeFiles/ImageAlgos_lib.dir/cmake_clean.cmake
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos && $(CMAKE_COMMAND) -P CMakeFiles/ImageAlgos_lib.dir/cmake_clean.cmake
 .PHONY : ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/clean
 
 ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/depend:
-	cd /home/timothy/lol_bar/cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/ImageAlgos /home/timothy/lol_bar/cpp /home/timothy/lol_bar/cpp/ImageAlgos /home/timothy/lol_bar/cpp/ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/reggi/c0dez/loltab/imgproc/dataextract && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos /home/reggi/c0dez/loltab/imgproc/dataextract /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos /home/reggi/c0dez/loltab/imgproc/dataextract/ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : ImageAlgos/CMakeFiles/ImageAlgos_lib.dir/depend
 
