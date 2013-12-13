@@ -1,18 +1,20 @@
 server/node_modules/
 imgproc/detection/img/dyrus_1080p/
 
-imgproc/main/CMakeFiles/
-imgproc/detection/main/CMakeFiles/
-imgproc/detection/stats/CMakeFiles/
-imgproc/dataextract/CMakeFiles/
+CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+bin/
+*.so
 *.a
 
 imgproc/detection/test/scoreboards/
 
+imgproc/resources/tmp/
+
 detect_sb
+extract_data
 test_cv
 testcv
 statgen
