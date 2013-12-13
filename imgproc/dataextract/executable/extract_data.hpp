@@ -12,12 +12,12 @@
 #include "ImageAnalysis.hpp"
 #include "HistAlgos.hpp"
 
-#define characters_directory		"../../characters/"
-#define faded_characters_directory	"../../faded_characters/"
-#define items_directory				"../../items/"
-#define faded_items_directory		"../../faded_items/"
-#define summoners_directory			"../../summoners/"
-#define faded_summoners_directory	"../../faded_summoners/"
+#define characters_directory		"../../resources/characters/"
+#define faded_characters_directory	"../../resources/faded_characters/"
+#define items_directory				"../../resources/items/"
+#define faded_items_directory		"../../resources/faded_items/"
+#define summoners_directory			"../../resources/summoners/"
+#define faded_summoners_directory	"../../resources/faded_summoners/"
 
 using namespace cv;
 
