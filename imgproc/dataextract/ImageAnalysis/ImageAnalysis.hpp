@@ -9,7 +9,7 @@
 using namespace cv;
 
 char *readSubExpression(Mat image, int faded);
-char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded, int *index);
+char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded);
 char *searchCache(Mat *cache, int length, char *names[], Mat image);
 char *identifyItem(Mat image);
 char *identifyFadedItem(Mat image);

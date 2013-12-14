@@ -18,7 +18,7 @@ int averageColor(Mat image);
 double compareImage(Mat image1, Mat image2);
 void blit(Mat screen, Mat image, int xOffset, int yOffset);
 int *getBlob(Mat image, int x, int y, char **visited);
-void display(Mat image);
+void display(Mat image, char *name);
 
 Mat CHARACTERS[11][20];
 Mat FADED_CHARACTERS[11][20];

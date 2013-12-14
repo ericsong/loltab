@@ -1,4 +1,6 @@
 #include "ImageAnalysis.hpp"
+#include <stdio.h>
+
 
 char *readSubExpression(Mat image, int faded) {
 	char *expression = (char *)calloc(4, sizeof(char));
@@ -37,7 +39,7 @@ char *readSubExpression(Mat image, int faded) {
 	return expression;
 }
 
-char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded, int *indexER) {
+char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded) {
 	Mat new_image;
 	int brightness = 0;
 	float contrast = 1.5;
@@ -48,9 +50,6 @@ char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded, int 
 	} else {
 		new_image = extremifyImage(new_image, 64);
 	}
-		
-	char fname[] = "00000000.bmp";
-	int index = *indexER;
 	char **visited = (char **)calloc(new_image.rows, sizeof(char *));
 	for (int i = 0; i < new_image.rows; i++) {
 		visited[i] = (char *)calloc(new_image.cols, sizeof(char));
@@ -59,33 +58,27 @@ char *readExpression(Mat image, int x1, int y1, int x2, int y2, char faded, int 
 	buffer[24] = '\0';
 	int offset = 0;
 	for (int x = 0; x < new_image.cols; x++) {
-		for (int y = 0; y < new_image.rows; y++) {
-			if (!visited[y][x] && (
-				new_image.at<Vec3b>(y, x)[0] == 255 ||
-				new_image.at<Vec3b>(y, x)[1] == 255 ||
-				new_image.at<Vec3b>(y, x)[2] == 255)) {
-					int *coords = getBlob(new_image, x, y, visited);
-					Mat pnum = subImage(image, x1 + coords[0], y1 + coords[1], x1 + coords[2], y1 + coords[3]);
-					if (pnum.rows < 4 || pnum.cols > 20) {
-						continue;
-					}
-					char *n = readSubExpression(pnum, faded);
-					for (int i = 0; n[i] != '\0'; i++) {
+		int y = (y2 - y1) / 2;
+		if (!visited[y][x] && (
+			new_image.at<Vec3b>(y, x)[0] == 255 &&
+			new_image.at<Vec3b>(y, x)[1] == 255 &&
+			new_image.at<Vec3b>(y, x)[2] == 255)) {
+				int *coords = getBlob(new_image, x, y, visited);
+				Mat pnum = subImage(image, x1 + coords[0], y1 + coords[1], x1 + coords[2], y1 + coords[3]);
+				if (pnum.rows < 4 || pnum.cols > 20) {
+					continue;
+				}
+				char *n = readSubExpression(pnum, faded);
+				for (int i = 0; n[i] != '\0'; i++) {
+					if (offset == 0 || n[i] != '\\' || buffer[offset - 1] != '\\') {
 						buffer[offset] = n[i];
 						offset++;
 					}
-					index++;
-					int temp = index;
-					for (int i = 0; i < 8; i++) {
-						fname[7 - i] = temp % 10 + '0';
-						temp /= 10;
-					}
-			}
-			visited[y][x] = 1;
+				}
 		}
+		visited[y][x] = 1;
 	}
 	buffer[offset] = '\0';
-	*indexER = index;
 	return buffer;
 }
 
@@ -110,10 +103,12 @@ char *searchCache(Mat cache[], int cacheLength, char *names[], Mat image) {
 	float total_error = 1.0;
 	Mat new_image = image;
 	for (int i = 0; i < cacheLength; i++) {
-		if (new_image.rows != cache[i].rows || new_image.cols != cache[i].cols) {
-			new_image = resizeImage(new_image, cache[i].cols, cache[i].rows);
+		Mat target_image = cache[i];
+		if (new_image.rows != target_image.rows || new_image.cols != target_image.cols) {
+			target_image = resizeImage(target_image, new_image.cols, new_image.rows);
+			cache[i] = target_image;
 		}
-		float error = compareImage(cache[i], image);
+		float error = compareImage(target_image, new_image);
 		if (error < total_error) {
 			total_error = error;
 			name = names[i];
