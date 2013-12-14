@@ -1,5 +1,4 @@
-server/node_modules/
-name_scraper/node_modules/
+node_modules/
 imgproc/detection/img/dyrus_1080p/
 
 CMakeFiles/
@@ -22,7 +21,6 @@ testcv
 statgen
 DisplayImage
 
-stream_parser/lolkingparser/node_modules/
 .nfs*
 *.swp
 *.flv
