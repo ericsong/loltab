@@ -10,13 +10,21 @@
 
 using namespace cv;
 
-int getMax(int *array, int length);
 int *getXHist(Mat image);
 int *getYHist(Mat image);
-void plotHist(int *array, int length, int scale);
-int *findAverages(int *histogram, int length);
-int mean(int *array);
-int MUL(float x, float y);
-int DIV(float x, float y);
+void plotHist(int *array, int length, char *name);
+void printHist(int *array, int length);
+int getMax(int *array, int length);
+int *subArray(int *array, int beg, int end);
+int *findLength(int *histogram, int length);
+int *distribute (int *dataset, int size, int length);
+int *getDimensions(Mat image);
+char *getExpression(Mat image, int faded);
+char matchImage(Mat image, int faded);
+int getMean(int *array, int length);
+int getSum(int *array, int length);
+float multiply(float x, float y);
+float divide(float x, float y);
+int round(float x);
 
 #endif

@@ -1,9 +1,26 @@
 #include "ImageAlgos.hpp"
 
-void display(Mat image) {
-	namedWindow("asdf", CV_WINDOW_AUTOSIZE);
-	imshow("asdf", image);
+void display(Mat image, char *name) {
+	namedWindow(name, CV_WINDOW_AUTOSIZE);
+	Mat new_image = createImage(image.cols, image.rows, image.channels());
+	for (int y = 0; y < image.rows; y++) {
+		for (int x = 0; x < image.cols; x++) {
+			for (int c = 0; c < image.channels(); c++) {
+				new_image.at<Vec3b>(y, x)[c] = image.at<Vec3b>(y, x)[c];
+			}
+		}
+	}
+	imshow(name, new_image);
 	waitKey(0);
+	destroyWindow(name);
+	for (int y = 0; y < image.rows; y++) {
+		for (int x = 0; x < image.cols; x++) {
+			for (int c = 0; c < image.channels(); c++) {
+				new_image.at<Vec3b>(y, x)[c] = 0;
+			}
+		}
+	}
+	new_image.release();
 }
 
 Mat createImage(int width, int height, int channels) {
@@ -86,7 +103,7 @@ double compareImage(Mat image1, Mat image2) {
 
 Mat extremifyImage(Mat image, int tolerance) {
 	unsigned char lookup[256];
-	for (int i = 0; i < tolerance; i++) {
+	for (int i = 0; i < tolerance && tolerance <= 256; i++) {
 		lookup[i] = 0;
 	}
 	for (int i = tolerance; i < 256; i++) {
