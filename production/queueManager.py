@@ -37,7 +37,7 @@ class Queue():
 		if (self.front == None):
 			return None
 		else:
-			data = self.front.data
+			data = (self.front.data, self.front.timestamp)
 			self.front = self.front.Next
 			self.size -= 1
 			return data
@@ -45,7 +45,7 @@ class Queue():
 		if (self.front == None):
 			return None
 		else:
-			return self.front.data
+			return (self.front.data, self.front.timestamp)
 
 class DataObject():
 	def __init__(self):
@@ -88,21 +88,21 @@ class ScoreboardDetect(threading.Thread):
 			self.imageQueue.lock.acquire()
 			imageFilename = self.imageQueue.dequeue()
 			self.imageQueue.lock.release()
-			if time.time() - imageFilename.timestamp > time_interval:
-				continue
 			if imageFilename != None:
+				if time.time() - imageFilename[1] > time_interval:
+					continue
 				try:
 					global detection_program
-					output = subprocess.check_output([detection_program, imageFilename]).decode("utf-8")
+					output = subprocess.check_output([detection_program, imageFilename[0]]).decode("utf-8")
 					if not "scoreboard" in output:
 						self.extractQueue.lock.acquire()
-						self.extractQueue.enqueue("./scoreboards/" + imageFilename[1:]) # this is an error in the filename, please resolve later in detect_sb.cpp
+						self.extractQueue.enqueue("./scoreboards/" + imageFilename[0][1:]) # this is an error in the filename, please resolve later in detect_sb.cpp
 						self.extractQueue.lock.release()
 				except Exception, e:
-					print "\nError has occurred within the second thread's subprocess", imageFilename
+					print "\nError has occurred within the second thread's subprocess", imageFilename[0]
 					print str(e)
 					print ""
-				os.system("rm " + imageFilename) # clears the folder
+				os.system("rm " + imageFilename[0]) # clears the folder
 
 class DataExtract(threading.Thread):
 	def __init__(self, threadID, extractQueue, dataObject):
@@ -116,12 +116,12 @@ class DataExtract(threading.Thread):
 			self.extractQueue.lock.acquire()
 			imageFilename = self.extractQueue.dequeue()
 			self.extractQueue.lock.release()
-			if time.time() - imageFilename.timestamp > time_interval:
-				continue
 			if imageFilename != None:
+				if time.time() - imageFilename[1] > time_interval:
+					continue
 				try:
 					global dataExtract_program
-					output = subprocess.check_output([dataExtract_program, imageFilename, "gameData.txt"]).decode("utf-8")
+					output = subprocess.check_output([dataExtract_program, imageFilename[0], "gameData.txt"]).decode("utf-8")
 					# be sure to output the game data
 					while not "gameData.txt" in os.listdir("."):
 						continue
@@ -132,7 +132,7 @@ class DataExtract(threading.Thread):
 					FILE.close()
 					os.system("rm gameData.txt")
 				except Exception, e:
-					print "\nError has occurred within the third thread's subprocess", imageFilename
+					print "\nError has occurred within the third thread's subprocess", imageFilename[0]
 					print str(e)
 					print ""
 				#os.system("rm " + imageFilename)
