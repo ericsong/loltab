@@ -11,11 +11,13 @@ signal_file = "signals.txt"
 detection_program = "./detect_sb"
 dataExtract_program = "./extract_data"
 exitFlag = 0 # be sure to set global exitFlag
+time_interval = 90
 
 class QueueNode():
-	def __init__(self, data = None, Next = None):
+	def __init__(self, data = None, Next = None, timestamp = time.time()):
 		self.data = data
 		self.Next = Next
+		self.timestamp = timestamp
 
 class Queue():
 	def __init__(self):
@@ -67,7 +69,7 @@ class ImageBuilder(threading.Thread):
 			# once image has been found, add to queue, as well as remove extra stuff
 			self.queue.lock.acquire()
 			self.queue.enqueue(imageFilename)
-			while (self.queue.size > 100):
+			if (self.queue.size > 100):
 				fname = self.queue.dequeue()
 				if fname in os.listdir("."):
 					os.system("rm " + fname) # clears the folder
@@ -86,6 +88,8 @@ class ScoreboardDetect(threading.Thread):
 			self.imageQueue.lock.acquire()
 			imageFilename = self.imageQueue.dequeue()
 			self.imageQueue.lock.release()
+			if time.time() - imageFilename.timestamp > time_interval:
+				continue
 			if imageFilename != None:
 				try:
 					global detection_program
@@ -112,6 +116,8 @@ class DataExtract(threading.Thread):
 			self.extractQueue.lock.acquire()
 			imageFilename = self.extractQueue.dequeue()
 			self.extractQueue.lock.release()
+			if time.time() - imageFilename.timestamp > time_interval:
+				continue
 			if imageFilename != None:
 				try:
 					global dataExtract_program
