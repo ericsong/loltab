@@ -11,17 +11,11 @@ then
 fi
 mkdir $1
 cd ../../imgproc/dataextract/
-if [ -f "$cacheName"]
-then
-	rm $cacheName
-fi
+rm -f $cachename
 cmake . && make
 cp bin/extract_data ../../production/streams/$1/
 cd ../detection/main/
-if [ -f "$cacheName" ]
-then
-	rm $cacheName
-fi
+rm -f $cacheName
 cp detect_sb ../../../production/streams/$1/
 cd ../../../production/
 cp queueManager.py streams/$1/

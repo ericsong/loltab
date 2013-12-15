@@ -12,9 +12,10 @@ detection_program = "./detect_sb"
 dataExtract_program = "./extract_data"
 exitFlag = 0 # be sure to set global exitFlag
 time_interval = 90
+previousWrite = ""
 
 class QueueNode():
-	def __init__(self, data = None, Next = None, timestamp = time.time()):
+	def __init__(self, data = None, Next = None, timestamp = 0):
 		self.data = data
 		self.Next = Next
 		self.timestamp = timestamp
@@ -27,10 +28,10 @@ class Queue():
 		self.lock = threading.Lock()
 	def enqueue(self, data):
 		if (self.front == None):
-			self.front = QueueNode(data)
+			self.front = QueueNode(data, None, time.time())
 			self.back = self.front
 		else:
-			self.back.Next = QueueNode(data)
+			self.back.Next = QueueNode(data, None, time.time())
 			self.back = self.back.Next
 		self.size += 1
 	def dequeue(self):
@@ -63,6 +64,11 @@ class ImageBuilder(threading.Thread):
 			imageFilename = "img" + str(self.index) + ".jpg"
 
 			# hold and wait for a new image
+			global previousWrite
+			write = str(os.listdir("."))
+			if write != previousWrite:
+				print write
+				previousWrite = write
 			if not imageFilename in os.listdir("."):
 				continue
 
@@ -89,7 +95,8 @@ class ScoreboardDetect(threading.Thread):
 			imageFilename = self.imageQueue.dequeue()
 			self.imageQueue.lock.release()
 			if imageFilename != None:
-				if time.time() - imageFilename[1] > time_interval:
+				if (time.time() - imageFilename[1]) > time_interval:
+					print "ERROR: time issue", time.time() - imageFilename[1]
 					continue
 				try:
 					global detection_program
@@ -153,6 +160,9 @@ def main():
 	
 	if signal_file not in os.listdir("."):
 		os.system("touch " + signal_file)
+	if (scoreboards not in os.listdir("."):
+		os.system("mkdir scoreboards")
+		print "made scoreboards")
 
 	buildingThread = ImageBuilder(1, image_queue)
 	detectionThread = ScoreboardDetect(2, image_queue, extract_queue)
