@@ -21,6 +21,17 @@ char *concatStr(char *str1, char *str2) {
 	return str3;
 }
 
+char *append(char *str, char c) {
+	char *new_str = (char *)calloc(lenStr(str) + 1, sizeof(char));
+	int i;
+	for (i = 0; str[i] != '\0'; i++) {
+		new_str[i] = str[i];
+	}
+	new_str[i++] = c;
+	new_str[i] = '\0';
+	return new_str;
+}
+
 char *subStr(char *str, int beg, int end) {
 	char *new_s = (char *)calloc(end - beg + 1, sizeof(char));
 	int i;
@@ -47,4 +58,26 @@ char *copyStr(char *str) {
 	}
 	new_str[length] = '\0';
 	return new_str;
+}
+
+int strEquals(char *c1, char *c2) {
+	if (lenStr(c1) != lenStr(c2)) {
+		return 0;
+	}
+	for (int i = 0; i < lenStr(c1); i++) {
+		if (c1[i] != c2[i]) {
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int indexOf(char *str, char c) {
+	int length = lenStr(str);
+	for (int i = 0; i < length; i++) {
+		if (str[i] == c) {
+			return i;
+		}
+	}
+	return -1;
 }

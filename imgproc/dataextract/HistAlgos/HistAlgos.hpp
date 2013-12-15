@@ -26,5 +26,6 @@ int getSum(int *array, int length);
 float multiply(float x, float y);
 float divide(float x, float y);
 int round(float x);
+int ceiling(float x);
 
 #endif

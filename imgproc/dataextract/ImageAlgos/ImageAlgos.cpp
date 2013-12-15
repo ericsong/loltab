@@ -1,4 +1,6 @@
 #include "ImageAlgos.hpp"
+#include <stdio.h>
+
 
 void display(Mat image, char *name) {
 	namedWindow(name, CV_WINDOW_AUTOSIZE);
@@ -49,17 +51,7 @@ Mat subImage(Mat image, int x1, int y1, int x2, int y2) {
 
 Mat resizeImage(Mat image, int width, int height) {
 	Mat new_image = createImage(width, height, image.channels());
-	float xscale = (((float)width) / ((float)image.cols));
-	float yscale = (((float)height) / ((float)image.rows));
-	for (int y = 0; y < height; y++) {
-		for (int x = 0; x < width; x++) {
-			for (int c = 0; c < image.channels(); c++) {
-				new_image.at<Vec3b>(y, x)[c] = image.at<Vec3b>(
-					(int)(((float)y) / yscale),
-					(int)(((float)x) / xscale))[c];
-			}
-		}
-	}
+	resize(image, new_image, new_image.size(), 0, 0, INTER_AREA);
 	return new_image;
 }
 
@@ -89,6 +81,9 @@ Mat recolorImage(Mat image, int brightness, float contrast) {
 }
 
 double compareImage(Mat image1, Mat image2) {
+	if (image1.rows != image2.rows || image1.cols != image2.cols) {
+		printf("WTFFFFFFF\n");
+	}
 	double error = 0.00, max_error = image1.rows * image1.cols * 255.0 * 255.0 * image1.channels();
 	for (int y = 0; y < image1.rows; y++) {
 		for (int x = 0; x < image1.cols; x++) {

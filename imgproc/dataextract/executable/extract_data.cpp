@@ -2,15 +2,24 @@
 
 int main(int argc, char **argv) {
 	char buffer[100];
-	if (argc != 2) {
-		fprintf(stderr, "Incorrect usage. Proper usage: ./extract_data <image_name>\n");
+	if (argc != 3) {
+		fprintf(stderr, "Incorrect usage. Proper usage: ./extract_data <image_name> <name of output file>. To output to stdout, declare name of output file to be \"stdout\"\n");
 		return 1;
 	}
 	Mat image = imread(argv[1], 1);
+	FILE *outputFile;
+	char *outputFilename;
 	if (!image.data) {
 		fprintf(stderr, "No image here.\n");
 		return 1;
 	}
+	outputFilename = argv[2];
+	if (strEquals(outputFilename, "stdout")) {
+		outputFile = stdout;
+	} else {
+		outputFile = fopen(outputFilename, "w");
+	}
+
 	DIR *dp;
 	struct dirent *dirItem;
 	char *charDir = concatStr(characters_directory, "?/");
@@ -88,6 +97,9 @@ int main(int argc, char **argv) {
 	}
 	char **summoners = (char **)calloc(20, sizeof(char *));
 	char **items = (char **)calloc(70, sizeof(char *));
+	int *kills = (int *)calloc(10, sizeof(int));
+	int *deaths = (int *)calloc(10, sizeof(int));
+	int *assists = (int *)calloc(10, sizeof(int));
 	for (int i = 0; i < 10; i++) {
 		if (dimensions[20 + i]) {
 			summoners[i * 2] = identifySummoner(subImage(itemSubImage,
@@ -128,21 +140,68 @@ int main(int argc, char **argv) {
 		}
 	}
 
+
 	char **scores = (char **)calloc(10, sizeof(char *));
-	char **creeps = (char **)calloc(10, sizeof(char *));
+	int *creeps = (int *)calloc(10, sizeof(int));
 	for (int i = 0; i < 10; i++) {
-		scores[i] = getExpression(subImage(image, round(multiply(SRX2, image.cols)),
-		//scores[i] = readExpression(image, round(multiply(SRX2, image.cols)),
+		//scores[i] = getExpression(subImage(image, round(multiply(SRX2, image.cols)),
+		scores[i] = readExpression(image, round(multiply(SRX2, image.cols)),
 											subImageOffset_y + dimensions[i],
 											round(multiply(SRX3, image.cols)),
 											subImageOffset_y + dimensions[i] + size),
-										!dimensions[20 + i]);
-		creeps[i] = getExpression(subImage(image, round(multiply(SRX4, image.cols)),
-		//creeps[i] = readExpression(image, round(multiply(SRX4, image.cols)),
+											!dimensions[20 + i]);
+		int slashIndex1 = indexOf(scores[i], '/');
+		int slashIndex2 = indexOf(subStr(	scores[i],
+											slashIndex1 + 1,
+											lenStr(scores[i])),
+								  '/') + slashIndex1 + 1;
+		if (slashIndex1 != -1 && slashIndex2 != -1) {
+			kills[i] = atoi(subStr(scores[i], 0, slashIndex1));
+			if (kills[i] > 100) {
+				kills[i] = -1; //error
+			}
+			deaths[i] = atoi(subStr(scores[i], slashIndex1 + 1, slashIndex2));
+			if (deaths[i] > 100) {
+				deaths[i] = -1; //error
+			}
+			assists[i] = atoi(subStr(scores[i], slashIndex2 + 1, lenStr(scores[i])));
+			if (assists[i] > 100) {
+				assists[i] = -1; //error 
+			}
+		}
+		//creeps[i] = atoi(getExpression(subImage(image, round(multiply(SRX4, image.cols)),
+		creeps[i] = readExpression(image, round(multiply(SRX4, image.cols)),
 											subImageOffset_y + dimensions[i],
 											round(multiply(SRX5, image.cols)),
 											subImageOffset_y + dimensions[i] + size),
-										!dimensions[20 + i]);
+											!dimensions[20 + i]));
+	}
+	char **players = (char **)calloc(10, sizeof(char *));
+
+	// output the data to a text file
+	for (int i = 0; i < 10; i++) {
+		fprintf(outputFile, "\t\t\"name\": \"%s\",\n", append("player", i + '0'));
+		fprintf(outputFile, "\t\t\"champion\": \"%s\",\n", append("champion", i + '0'));
+		fprintf(outputFile, "\t\t\"level\": \"%s\",\n", append("level :( unknown", i + '0'));
+		fprintf(outputFile, "\t\t\"spell1\": \"%s\",\n", summoners[i * 2]);
+		fprintf(outputFile, "\t\t\"spell2\": \"%s\",\n", summoners[i * 2 + 1]);
+		fprintf(outputFile, "\t\t\"kills\": \"%d\",\n", kills[i]);
+		fprintf(outputFile, "\t\t\"deaths\": \"%d\",\n", deaths[i]);
+		fprintf(outputFile, "\t\t\"assists\": \"%d\",\n", assists[i]);
+		fprintf(outputFile, "\t\t\"cs\": \"%d\",\n", creeps[i]);
+		fprintf(outputFile, "\t\t\"items\": [\n");
+		for (int n = 0; n < 7; n++) {
+			fprintf(outputFile, "\t\t\t\"%s\"", items[n + i * 7]);
+			if (n != 6) {
+				fprintf(outputFile, ",");
+			}
+			fprintf(outputFile, "\n");
+		}
+		fprintf(outputFile, "\t\t]");
+		if (i != 9) {
+			fprintf(outputFile, ",");
+		}
+		fprintf(outputFile, "\n");
 	}
 
 	return 0;

@@ -171,7 +171,7 @@ int *getDimensions(Mat image) {
 char *getExpression(Mat image, int faded) {
 	//obtain the y1 and y2 of the image
 	int *yhist = getYHist(image);
-	int peakAverage = getMean(yhist, image.rows);
+	int peakAverage = ceiling(divide(getSum(yhist, image.rows), image.rows));
 	for (int i = 0; i < image.rows; i++) {
 		yhist[i] -= peakAverage;
 		if (yhist[i] < 0) {
@@ -217,7 +217,9 @@ char *getExpression(Mat image, int faded) {
 			deltawye = 0;
 			Mat test_image = subImage(image, startpoints[index], start_y, x, start_y + length_y);
 			char c = matchImage(test_image, faded);
-			buffer[buffer_n++] = c;
+			if (buffer_n == 0 || c != '/' || buffer[buffer_n - 1] != '/') {
+				buffer[buffer_n++] = c;
+			}
 			index++;
 		}
 	}
@@ -232,7 +234,8 @@ char matchImage(Mat image, int faded) {
 	for (int i = 0; i < 11; i++) {
 		if (faded) {
 			for (int n = 0; n < FADED_CHARACTERS_LENGTH[i]; n++) {
-				Mat compareToImage = resizeImage(FADED_CHARACTERS[i][n], image.cols, image.rows);
+				Mat compareToImage = FADED_CHARACTERS[i][n];
+				compareToImage = resizeImage(compareToImage, image.cols, image.rows);
 				double interim_error = compareImage(compareToImage, image);
 				if (interim_error <= error) {
 					error = interim_error;
@@ -241,7 +244,8 @@ char matchImage(Mat image, int faded) {
 			}
 		} else {
 			for (int n = 0; n < CHARACTERS_LENGTH[i]; n++) {
-				Mat compareToImage = resizeImage(CHARACTERS[i][n], image.cols, image.rows);
+				Mat compareToImage = CHARACTERS[i][n];
+				compareToImage = resizeImage(compareToImage, image.cols, image.rows);
 				double interim_error = compareImage(compareToImage, image);
 				if (interim_error <= error) {
 					error = interim_error;
@@ -262,6 +266,10 @@ char matchImage(Mat image, int faded) {
 
 int getMean(int *array, int length) {
 	return round(divide(getSum(array, length), length));
+}
+
+int ceiling(float x) {
+	return (x - (int)x == 0.0) ? ((int)x) : ((int)x + 1);
 }
 
 int getSum(int *array, int length) {

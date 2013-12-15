@@ -12,12 +12,12 @@
 #include "ImageAnalysis.hpp"
 #include "HistAlgos.hpp"
 
-#define characters_directory		"../../characters/"
-#define faded_characters_directory	"../../faded_characters/"
-#define items_directory				"../../items/"
-#define faded_items_directory		"../../faded_items/"
-#define summoners_directory			"../../summoners/"
-#define faded_summoners_directory	"../../faded_summoners/"
+#define characters_directory		"../../../imgproc/resources/characters/"
+#define faded_characters_directory	"../../../imgproc/resources/faded_characters/"
+#define items_directory				"../../../imgproc/resources/items/"
+#define faded_items_directory		"../../../imgproc/resources/faded_items/"
+#define summoners_directory			"../../../imgproc/resources/summoners/"
+#define faded_summoners_directory	"../../../imgproc/resources/faded_summoners/"
 
 #define SRX1 0.367
 #define SRX2 0.71
