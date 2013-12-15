@@ -12,7 +12,6 @@ detection_program = "./detect_sb"
 dataExtract_program = "./extract_data"
 exitFlag = 0 # be sure to set global exitFlag
 time_interval = 90
-previousWrite = ""
 
 class QueueNode():
 	def __init__(self, data = None, Next = None, timestamp = 0):
@@ -64,11 +63,6 @@ class ImageBuilder(threading.Thread):
 			imageFilename = "img" + str(self.index) + ".jpg"
 
 			# hold and wait for a new image
-			global previousWrite
-			write = str(os.listdir("."))
-			if write != previousWrite:
-				print write
-				previousWrite = write
 			if not imageFilename in os.listdir("."):
 				continue
 
@@ -160,9 +154,8 @@ def main():
 	
 	if signal_file not in os.listdir("."):
 		os.system("touch " + signal_file)
-	if (scoreboards not in os.listdir("."):
+	if "scoreboards" not in os.listdir("."):
 		os.system("mkdir scoreboards")
-		print "made scoreboards")
 
 	buildingThread = ImageBuilder(1, image_queue)
 	detectionThread = ScoreboardDetect(2, image_queue, extract_queue)
