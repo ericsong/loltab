@@ -1,4 +1,4 @@
-# Install script for directory: /home/timothy/lol_bar/cpp/ImageAnalysis
+# Install script for directory: /home/timothy/temp/loltab/imgproc/dataextract/ImageAnalysis
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

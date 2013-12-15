@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/timothy/lol_bar/cpp/executable/extract_data.cpp
+/home/timothy/temp/loltab/imgproc/dataextract/executable/extract_data.cpp
 extract_data.hpp
-/home/timothy/lol_bar/cpp/executable/extract_data.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/executable/extract_data.hpp
 
-/home/timothy/lol_bar/cpp/executable/extract_data.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/executable/extract_data.hpp
 stdio.h
 -
 stdlib.h
@@ -28,9 +28,9 @@ opencv2/imgproc/imgproc.hpp
 opencv2/highgui/highgui.hpp
 -
 ImageAnalysis.hpp
-/home/timothy/lol_bar/cpp/executable/ImageAnalysis.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/executable/ImageAnalysis.hpp
 HistAlgos.hpp
-/home/timothy/lol_bar/cpp/executable/HistAlgos.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/executable/HistAlgos.hpp
 
 /usr/local/include/opencv2/core/core.hpp
 opencv2/core/types_c.h

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/timothy/lol_bar/cpp/HistAlgos/HistAlgos.cpp
+/home/timothy/temp/loltab/imgproc/dataextract/HistAlgos/HistAlgos.cpp
 HistAlgos.hpp
-/home/timothy/lol_bar/cpp/HistAlgos/HistAlgos.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/HistAlgos/HistAlgos.hpp
 
-/home/timothy/lol_bar/cpp/HistAlgos/HistAlgos.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/HistAlgos/HistAlgos.hpp
 stdlib.h
 -
 stdio.h
@@ -22,7 +22,7 @@ opencv2/highgui/highgui.hpp
 opencv2/imgproc/imgproc.hpp
 -
 ImageAlgos.hpp
-/home/timothy/lol_bar/cpp/HistAlgos/ImageAlgos.hpp
+/home/timothy/temp/loltab/imgproc/dataextract/HistAlgos/ImageAlgos.hpp
 
 /usr/local/include/opencv2/core/core.hpp
 opencv2/core/types_c.h

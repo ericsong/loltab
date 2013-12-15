@@ -144,8 +144,8 @@ int main(int argc, char **argv) {
 	char **scores = (char **)calloc(10, sizeof(char *));
 	int *creeps = (int *)calloc(10, sizeof(int));
 	for (int i = 0; i < 10; i++) {
-		//scores[i] = getExpression(subImage(image, round(multiply(SRX2, image.cols)),
-		scores[i] = readExpression(image, round(multiply(SRX2, image.cols)),
+		scores[i] = getExpression(subImage(image, round(multiply(SRX2, image.cols)),
+		//scores[i] = readExpression(image, round(multiply(SRX2, image.cols)),
 											subImageOffset_y + dimensions[i],
 											round(multiply(SRX3, image.cols)),
 											subImageOffset_y + dimensions[i] + size),
@@ -169,8 +169,8 @@ int main(int argc, char **argv) {
 				assists[i] = -1; //error 
 			}
 		}
-		//creeps[i] = atoi(getExpression(subImage(image, round(multiply(SRX4, image.cols)),
-		creeps[i] = readExpression(image, round(multiply(SRX4, image.cols)),
+		creeps[i] = atoi(getExpression(subImage(image, round(multiply(SRX4, image.cols)),
+		//creeps[i] = readExpression(image, round(multiply(SRX4, image.cols)),
 											subImageOffset_y + dimensions[i],
 											round(multiply(SRX5, image.cols)),
 											subImageOffset_y + dimensions[i] + size),

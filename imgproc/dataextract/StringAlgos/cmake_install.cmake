@@ -1,4 +1,4 @@
-# Install script for directory: /home/timothy/lol_bar/cpp/StringAlgos
+# Install script for directory: /home/timothy/temp/loltab/imgproc/dataextract/StringAlgos
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

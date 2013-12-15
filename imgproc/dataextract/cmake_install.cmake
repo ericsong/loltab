@@ -1,4 +1,4 @@
-# Install script for directory: /home/timothy/lol_bar/cpp
+# Install script for directory: /home/timothy/temp/loltab/imgproc/dataextract
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/timothy/lol_bar/cpp/ArrayList/cmake_install.cmake")
-  INCLUDE("/home/timothy/lol_bar/cpp/StringAlgos/cmake_install.cmake")
-  INCLUDE("/home/timothy/lol_bar/cpp/ImageAlgos/cmake_install.cmake")
-  INCLUDE("/home/timothy/lol_bar/cpp/ImageAnalysis/cmake_install.cmake")
-  INCLUDE("/home/timothy/lol_bar/cpp/HistAlgos/cmake_install.cmake")
-  INCLUDE("/home/timothy/lol_bar/cpp/executable/cmake_install.cmake")
+  INCLUDE("/home/timothy/temp/loltab/imgproc/dataextract/ArrayList/cmake_install.cmake")
+  INCLUDE("/home/timothy/temp/loltab/imgproc/dataextract/StringAlgos/cmake_install.cmake")
+  INCLUDE("/home/timothy/temp/loltab/imgproc/dataextract/ImageAlgos/cmake_install.cmake")
+  INCLUDE("/home/timothy/temp/loltab/imgproc/dataextract/ImageAnalysis/cmake_install.cmake")
+  INCLUDE("/home/timothy/temp/loltab/imgproc/dataextract/HistAlgos/cmake_install.cmake")
+  INCLUDE("/home/timothy/temp/loltab/imgproc/dataextract/executable/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -49,7 +49,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/timothy/lol_bar/cpp/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/timothy/temp/loltab/imgproc/dataextract/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/timothy/lol_bar/cpp/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/timothy/temp/loltab/imgproc/dataextract/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
