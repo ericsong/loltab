@@ -22,7 +22,7 @@ detection_program = "./detect_sb"
 dataExtract_program = "./extract_data"
 exitFlag = 0 # be sure to set global exitFlag
 time_interval = 90
-inGame = False
+inGame = True
 
 def exit(msg):
 	sys.exit()
@@ -226,6 +226,7 @@ class ImageBuilder(threading.Thread):
 				#print ("Found " + imageFilename)
 				if not inGame:
 					output = subprocess.check_output([alert_program, imageFilename]).decode("utf-8")
+					print("not in game")
 					if "true" in output:
 						inGame = True
 						# need generation of the names.txt file via something (a call possibly?)
@@ -264,6 +265,7 @@ class ScoreboardDetect(threading.Thread):
 					global detection_program
 					output = subprocess.check_output([detection_program, imageFilename[0]]).decode("utf-8")
 					if not "scoreboard" in output:
+						print("SCOREBOARD FOUND")
 						self.extractQueue.lock.acquire()
 						self.extractQueue.enqueue("./scoreboards/" + imageFilename[0])
 						self.extractQueue.lock.release()
@@ -352,7 +354,7 @@ def main():
 	while True:
 		#signalsFile = open(signal_file, "r")
 		#if signalsFile != None:
-		signals = input(">> ")
+		signals = input("$ ")
 			#signalsFile.close()
 			#signalsFile = open(signal_file, "w")
 			#signalsFile.write("")
@@ -365,6 +367,7 @@ def main():
 				buildingThread.join()
 				detectionThread.join()
 				extractionThread.join()
+				player.stop()
 				print ("Done closing threads. Exiting.")
 				break
 		dataObject.lock.acquire()
@@ -375,7 +378,8 @@ def main():
 				outputFile.write(dataObject.data)
 			dataObject.data = "None"
 		dataObject.lock.release()
-	outputFile.close()
+	if outputFile != None:
+		outputFile.close()
 
 if __name__ == "__main__":
 	main()
