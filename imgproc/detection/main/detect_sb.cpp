@@ -14,12 +14,19 @@ int main(int argc, char* argv[])
 	cvtColor(image, imglab, CV_BGR2Lab);
 
 	//extract filename
-	int filenamepos = 0;
+	int filenamepos = -1;
 	for(int i = 0; argv[1][i] != '\0'; i++){
 		if(argv[1][i] == '/')
 			filenamepos = i;	
 	}
-	std::string filename = std::string(argv[1]).substr(filenamepos+1);
+
+	std::string filename;
+
+	if(filenamepos == -1)
+		filename = std::string(argv[1]);
+	else
+		filename = std::string(argv[1]).substr(filenamepos+1);
+
 	std::string write_filename = "./scoreboards/" + filename;
 
 	bool sb_found = false;

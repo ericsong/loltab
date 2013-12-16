@@ -8,15 +8,13 @@ import subprocess
 # program usage: python queueManager.py <input file> <output file>
 
 signal_file = "signals.txt"
-alert_program = "./alert"
 detection_program = "./detect_sb"
 dataExtract_program = "./extract_data"
 exitFlag = 0 # be sure to set global exitFlag
 time_interval = 90
-inGame = False
 
 class QueueNode():
-	def __init__(self, data = None, Next = None, timestamp = 0):
+	def __init__(self, data = None, Next = None, timestamp = time.time()):
 		self.data = data
 		self.Next = Next
 		self.timestamp = timestamp
@@ -29,17 +27,17 @@ class Queue():
 		self.lock = threading.Lock()
 	def enqueue(self, data):
 		if (self.front == None):
-			self.front = QueueNode(data, None, time.time())
+			self.front = QueueNode(data)
 			self.back = self.front
 		else:
-			self.back.Next = QueueNode(data, None, time.time())
+			self.back.Next = QueueNode(data)
 			self.back = self.back.Next
 		self.size += 1
 	def dequeue(self):
 		if (self.front == None):
 			return None
 		else:
-			data = (self.front.data, self.front.timestamp)
+			data = self.front.data
 			self.front = self.front.Next
 			self.size -= 1
 			return data
@@ -47,7 +45,7 @@ class Queue():
 		if (self.front == None):
 			return None
 		else:
-			return (self.front.data, self.front.timestamp)
+			return self.front.data
 
 class DataObject():
 	def __init__(self):
@@ -59,7 +57,6 @@ class ImageBuilder(threading.Thread):
 		threading.Thread.__init__(self)
 		self.index = 0
 		self.queue = queue
-		self.threadID = threadID
 	def run(self):
 		global exitFlag
 		while not exitFlag:
@@ -68,30 +65,16 @@ class ImageBuilder(threading.Thread):
 			# hold and wait for a new image
 			if not imageFilename in os.listdir("."):
 				continue
-			else:
-				self.index += 1
 
-			try:
-				global inGame
-				global alert_program
-				if not inGame:
-					output = subprocess.check_output([alert_program, imageFilename]).decode("utf-8")
-					if "true" in output:
-						inGame = True
-						# need generation of the names.txt file via something (a call possibly?)
-				else:
-					# once image has been found, add to queue, as well as remove extra stuff
-					self.queue.lock.acquire()
-					self.queue.enqueue(imageFilename)
-					if (self.queue.size > 100):
-						fname = self.queue.dequeue()
-						if fname in os.listdir("."):
-							os.system("rm " + fname) # clears the folder
-					self.queue.lock.release()
-			except Exception, e:
-				print "\nError has occurred within the first thread's subprocess", imageFilename
-				print str(e)
-				print "\n"
+			# once image has been found, add to queue, as well as remove extra stuff
+			self.queue.lock.acquire()
+			self.queue.enqueue(imageFilename)
+			if (self.queue.size > 100):
+				fname = self.queue.dequeue()
+				if fname in os.listdir("."):
+					os.system("rm " + fname) # clears the folder
+			self.queue.lock.release()
+			self.index += 1
 
 class ScoreboardDetect(threading.Thread):
 	def __init__(self, threadID, imageQueue, extractQueue):
@@ -105,22 +88,21 @@ class ScoreboardDetect(threading.Thread):
 			self.imageQueue.lock.acquire()
 			imageFilename = self.imageQueue.dequeue()
 			self.imageQueue.lock.release()
+			if time.time() - imageFilename.timestamp > time_interval:
+				continue
 			if imageFilename != None:
-				if (time.time() - imageFilename[1]) > time_interval:
-					print "ERROR: time issue", time.time() - imageFilename[1]
-					continue
 				try:
 					global detection_program
-					output = subprocess.check_output([detection_program, imageFilename[0]]).decode("utf-8")
+					output = subprocess.check_output([detection_program, imageFilename]).decode("utf-8")
 					if not "scoreboard" in output:
 						self.extractQueue.lock.acquire()
-						self.extractQueue.enqueue("./scoreboards/" + imageFilename[0])
+						self.extractQueue.enqueue("./scoreboards/" + imageFilename[1:]) # this is an error in the filename, please resolve later in detect_sb.cpp
 						self.extractQueue.lock.release()
 				except Exception, e:
-					print "\nError has occurred within the second thread's subprocess", imageFilename[0]
+					print "\nError has occurred within the second thread's subprocess", imageFilename
 					print str(e)
 					print ""
-				os.system("rm " + imageFilename[0]) # clears the folder
+				os.system("rm " + imageFilename) # clears the folder
 
 class DataExtract(threading.Thread):
 	def __init__(self, threadID, extractQueue, dataObject):
@@ -134,12 +116,12 @@ class DataExtract(threading.Thread):
 			self.extractQueue.lock.acquire()
 			imageFilename = self.extractQueue.dequeue()
 			self.extractQueue.lock.release()
+			if time.time() - imageFilename.timestamp > time_interval:
+				continue
 			if imageFilename != None:
-				if time.time() - imageFilename[1] > time_interval:
-					continue
 				try:
 					global dataExtract_program
-					output = subprocess.check_output([dataExtract_program, imageFilename[0], "gameData.txt"]).decode("utf-8")
+					output = subprocess.check_output([dataExtract_program, imageFilename, "gameData.txt"]).decode("utf-8")
 					# be sure to output the game data
 					while not "gameData.txt" in os.listdir("."):
 						continue
@@ -150,7 +132,7 @@ class DataExtract(threading.Thread):
 					FILE.close()
 					os.system("rm gameData.txt")
 				except Exception, e:
-					print "\nError has occurred within the third thread's subprocess", imageFilename[0]
+					print "\nError has occurred within the third thread's subprocess", imageFilename
 					print str(e)
 					print ""
 				#os.system("rm " + imageFilename)
@@ -171,8 +153,6 @@ def main():
 	
 	if signal_file not in os.listdir("."):
 		os.system("touch " + signal_file)
-	if "scoreboards" not in os.listdir("."):
-		os.system("mkdir scoreboards")
 
 	buildingThread = ImageBuilder(1, image_queue)
 	detectionThread = ScoreboardDetect(2, image_queue, extract_queue)

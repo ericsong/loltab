@@ -25,21 +25,21 @@ int main(int argc, char **argv) {
 	// get three lines
 	int line1 = image.rows / 4;
 	int line2 = image.rows / 2;
-	int line3 = image.rows * 3 / 4;
+	int line3 = image.rows * 5 / 8;
 	int isBlack1[image.cols];
 	int isBlack2[image.cols];
 	int isBlack3[image.cols];
 
 	for (int x = 0; x < image.cols; x++) {
-		isBlack1[x] =	image.at<Vec3b>(line1, x)[0] == 0 &&
-						image.at<Vec3b>(line1, x)[1] == 0 &&
-						image.at<Vec3b>(line1, x)[2] == 0;
-		isBlack2[x] =	image.at<Vec3b>(line2, x)[0] == 0 &&
-						image.at<Vec3b>(line2, x)[1] == 0 &&
-						image.at<Vec3b>(line2, x)[2] == 0;
-		isBlack3[x] =	image.at<Vec3b>(line3, x)[0] == 0 &&
-						image.at<Vec3b>(line3, x)[1] == 0 &&
-						image.at<Vec3b>(line3, x)[2] == 0;
+		isBlack1[x] =	image.at<Vec3b>(line1, x)[0] < 2 &&
+						image.at<Vec3b>(line1, x)[1] < 2 &&
+						image.at<Vec3b>(line1, x)[2] < 2;
+		isBlack2[x] =	image.at<Vec3b>(line2, x)[0] < 2 &&
+						image.at<Vec3b>(line2, x)[1] < 2 &&
+						image.at<Vec3b>(line2, x)[2] < 2;
+		isBlack3[x] =	image.at<Vec3b>(line3, x)[0] < 2 &&
+						image.at<Vec3b>(line3, x)[1] < 2 &&
+						image.at<Vec3b>(line3, x)[2] < 2;
 	}
 
 	int left1 = 0, right1 = image.cols;
@@ -66,28 +66,16 @@ int main(int argc, char **argv) {
 
 	int width1 = right1 - left1;
 	int width2 = right2 - left2;
-	if (width2 == 0) {
+	if (width2 == 0 || width2 > (width1 / 3)) {
 		puts("false");
 		return 0;
 	}
 
 	if (abs(left1 - left3) < 5 && abs(right1 - right3) < 5) {
-		float error = ((float)abs(width1 / 5 - width2)) / ((float)width2);
-		if (width2 > 20 && error < 0.23 && error > 0.20) {
-			int passed = 1;
-			/*int delta = (width1 * 1.005) / 5;
-			for (int i = 0; i < 4; i++) {
-				if (!isBlack2[left2 + delta * i]) {
-					passed = 0;
-					break;
-				}
-			}*/
-			if (passed) {
-				puts("true");
-				return 0;
-			}
-		}
+		puts("true");
+		return 0;
 	}
+
 	puts("false");
 	return 0;
 }

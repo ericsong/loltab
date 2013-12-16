@@ -14,12 +14,15 @@ imgproc/detection/main/scoreboards/
 
 imgproc/resources/tmp/
 
+production/streams/reggi/scoreboards/
+
 detect_sb
 extract_data
 test_cv
 testcv
 statgen
 DisplayImage
+alert
 
 .nfs*
 *.swp

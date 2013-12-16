@@ -1,7 +1,11 @@
+import sys
+
 from livestreamer import Livestreamer
 livestreamer = Livestreamer()
 
-plugin = livestreamer.resolve_url("http://twitch.tv/froggen")
+streamer = "http://twitch.tv/" + sys.argv[1]
+
+plugin = livestreamer.resolve_url(streamer)
 
 streams = plugin.get_streams()
 stream = streams.get('best')

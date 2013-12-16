@@ -1,6 +1,0 @@
-/home/timothy/temp/loltab/imgproc/dataextract/ArrayList/CMakeFiles/ArrayList_lib.dir
-/home/timothy/temp/loltab/imgproc/dataextract/HistAlgos/CMakeFiles/HistAlgos_lib.dir
-/home/timothy/temp/loltab/imgproc/dataextract/ImageAlgos/CMakeFiles/ImageAlgos_lib.dir
-/home/timothy/temp/loltab/imgproc/dataextract/ImageAnalysis/CMakeFiles/ImageAnalysis_lib.dir
-/home/timothy/temp/loltab/imgproc/dataextract/StringAlgos/CMakeFiles/StringAlgos_lib.dir
-/home/timothy/temp/loltab/imgproc/dataextract/executable/CMakeFiles/extract_data.dir
