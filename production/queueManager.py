@@ -97,7 +97,7 @@ class ScoreboardDetect(threading.Thread):
 					output = subprocess.check_output([detection_program, imageFilename[0]]).decode("utf-8")
 					if not "scoreboard" in output:
 						self.extractQueue.lock.acquire()
-						self.extractQueue.enqueue("./scoreboards/" + imageFilename[0][1:]) # this is an error in the filename, please resolve later in detect_sb.cpp
+						self.extractQueue.enqueue("./scoreboards/" + imageFilename[0]) # this is an error in the filename, please resolve later in detect_sb.cpp
 						self.extractQueue.lock.release()
 				except Exception, e:
 					print "\nError has occurred within the second thread's subprocess", imageFilename[0]
