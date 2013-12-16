@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( ALERT )
+find_package( OpenCV REQUIRED )
+include_directories("${PROJECT_BINARY_DIR}")
+add_executable(alert alert.cpp)
+target_link_libraries(alert ${OpenCV_LIBS})
