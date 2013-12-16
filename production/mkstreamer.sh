@@ -17,7 +17,10 @@ cp bin/extract_data ../../production/streams/$1/
 cd ../detection/main/
 rm -f $cacheName
 cp detect_sb ../../../production/streams/$1/
-cd ../../../production/
+cd ../../alert/ && ls
+cmake . && make
+cp alert ../../production/streams/$1/
+cd ../../production/
 cp queueManager.py streams/$1/
 cd streams/$1/
 mkdir $scoreboards

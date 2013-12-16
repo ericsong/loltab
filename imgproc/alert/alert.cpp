@@ -30,16 +30,18 @@ int main(int argc, char **argv) {
 	int isBlack2[image.cols];
 	int isBlack3[image.cols];
 
+	int const_tolerance = 20;
+
 	for (int x = 0; x < image.cols; x++) {
-		isBlack1[x] =	image.at<Vec3b>(line1, x)[0] < 2 &&
-						image.at<Vec3b>(line1, x)[1] < 2 &&
-						image.at<Vec3b>(line1, x)[2] < 2;
-		isBlack2[x] =	image.at<Vec3b>(line2, x)[0] < 2 &&
-						image.at<Vec3b>(line2, x)[1] < 2 &&
-						image.at<Vec3b>(line2, x)[2] < 2;
-		isBlack3[x] =	image.at<Vec3b>(line3, x)[0] < 2 &&
-						image.at<Vec3b>(line3, x)[1] < 2 &&
-						image.at<Vec3b>(line3, x)[2] < 2;
+		isBlack1[x] =	image.at<Vec3b>(line1, x)[0] < const_tolerance &&
+						image.at<Vec3b>(line1, x)[1] < const_tolerance &&
+						image.at<Vec3b>(line1, x)[2] < const_tolerance;
+		isBlack2[x] =	image.at<Vec3b>(line2, x)[0] < const_tolerance &&
+						image.at<Vec3b>(line2, x)[1] < const_tolerance &&
+						image.at<Vec3b>(line2, x)[2] < const_tolerance;
+		isBlack3[x] =	image.at<Vec3b>(line3, x)[0] < const_tolerance &&
+						image.at<Vec3b>(line3, x)[1] < const_tolerance &&
+						image.at<Vec3b>(line3, x)[2] < const_tolerance;
 	}
 
 	int left1 = 0, right1 = image.cols;
