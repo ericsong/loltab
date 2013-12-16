@@ -291,6 +291,7 @@ class DataExtract(threading.Thread):
 					continue
 				try:
 					global dataExtract_program
+					print("GRABBED SCOREBOARD TO ANALYZE")
 					output = subprocess.check_output([dataExtract_program, imageFilename[0], "gameData.txt"]).decode("utf-8")
 					# be sure to output the game data
 					while not "gameData.txt" in os.listdir("."):
@@ -301,6 +302,7 @@ class DataExtract(threading.Thread):
 					self.dataObject.lock.release()
 					FILE.close()
 					os.system("rm gameData.txt")
+					print("FINISHED ANALYSIS")
 				except Exception, e:
 					print ("\nError has occurred within the third thread's subprocess", imageFilename[0])
 					print (str(e) + "\n")
@@ -352,14 +354,14 @@ def main():
 	player.play(stream)
 
 	while True:
-		#signalsFile = open(signal_file, "r")
-		#if signalsFile != None:
-		signals = input("$ ")
-			#signalsFile.close()
-			#signalsFile = open(signal_file, "w")
-			#signalsFile.write("")
-			#signalsFile.close()
-		if "kill" in signals:
+		signalsFile = open(signal_file, "r")
+		if signalsFile != None:
+			signals = signalsFile.read()
+			signalsFile.close()
+			signalsFile = open(signal_file, "w")
+			signalsFile.write("")
+			signalsFile.close()
+			if "kill" in signals:
 				# close the threads
 				print ("Closing threads...")
 				global exitFlag
