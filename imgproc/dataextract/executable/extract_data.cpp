@@ -88,10 +88,10 @@ int main(int argc, char **argv) {
 								subImageOffset_y,
 								round(multiply(SRX2, image.cols)),
 								round(multiply(SRY2, image.rows)));
-	display(itemSubImage, "subby");
+	//display(itemSubImage, "subby");
 	Mat test_image = extremifyImage(itemSubImage, 72);
 	int *dimensions = getDimensions(test_image);
-	Mat display_image = createImage(test_image.cols, test_image.rows, 3);
+	/*Mat display_image = createImage(test_image.cols, test_image.rows, 3);
 	for (int y = 0; y < 10; y++) {
 		for (int x = 10; x < 18; x++) {
 			for (int r = dimensions[y]; r < dimensions[y] + dimensions[19]; r++) {
@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
 		}
 	}
 	display(display_image, "asdfaf");
-	printHist(dimensions, 20);
+	printHist(dimensions, 20);*/
 	int size = dimensions[19];
 	if (size == 0) {
 		fprintf(stderr, "Got a size of 0\n");
@@ -195,6 +195,9 @@ int main(int argc, char **argv) {
 											round(multiply(SRXR, image.cols)),
 											subImageOffset_y + dimensions[i] + size),
 											!dimensions[20 + i]));
+		if (levels[i] < 1 || levels[i] > 18) {
+			levels[i] = 0;
+		}
 	}
 	char **players = (char **)calloc(10, sizeof(char *));
 
