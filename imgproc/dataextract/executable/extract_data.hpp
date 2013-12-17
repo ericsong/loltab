@@ -24,6 +24,8 @@
 #define SRX3 0.78
 #define SRX4 0.81
 #define SRX5 0.875
+#define SRXL 0.1167
+#define SRXR 0.1444
 #define SRY1 0.218
 #define SRY2 0.95
 

@@ -16,7 +16,7 @@ void plotHist(int *array, int length, char *name);
 void printHist(int *array, int length);
 int getMax(int *array, int length);
 int *subArray(int *array, int beg, int end);
-int *findLength(int *histogram, int length);
+int *findLength(int *histogram, int length, int tolerance);
 int *distribute (int *dataset, int size, int length);
 int *getDimensions(Mat image);
 char *getExpression(Mat image, int faded);

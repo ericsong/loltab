@@ -88,8 +88,22 @@ int main(int argc, char **argv) {
 								subImageOffset_y,
 								round(multiply(SRX2, image.cols)),
 								round(multiply(SRY2, image.rows)));
+	display(itemSubImage, "subby");
 	Mat test_image = extremifyImage(itemSubImage, 72);
 	int *dimensions = getDimensions(test_image);
+	Mat display_image = createImage(test_image.cols, test_image.rows, 3);
+	for (int y = 0; y < 10; y++) {
+		for (int x = 10; x < 18; x++) {
+			for (int r = dimensions[y]; r < dimensions[y] + dimensions[19]; r++) {
+				for (int c = dimensions[x]; c < dimensions[x] + dimensions[19]; c++) {
+					display_image.at<Vec3b>(r, c)[0] = 255;
+					display_image.at<Vec3b>(r, c)[1] = 255;
+				}
+			}
+		}
+	}
+	display(display_image, "asdfaf");
+	printHist(dimensions, 20);
 	int size = dimensions[19];
 	if (size == 0) {
 		fprintf(stderr, "Got a size of 0\n");
@@ -97,9 +111,6 @@ int main(int argc, char **argv) {
 	}
 	char **summoners = (char **)calloc(20, sizeof(char *));
 	char **items = (char **)calloc(70, sizeof(char *));
-	int *kills = (int *)calloc(10, sizeof(int));
-	int *deaths = (int *)calloc(10, sizeof(int));
-	int *assists = (int *)calloc(10, sizeof(int));
 	for (int i = 0; i < 10; i++) {
 		if (dimensions[20 + i]) {
 			summoners[i * 2] = identifySummoner(subImage(itemSubImage,
@@ -142,7 +153,11 @@ int main(int argc, char **argv) {
 
 
 	char **scores = (char **)calloc(10, sizeof(char *));
+	int *kills = (int *)calloc(10, sizeof(int));
+	int *deaths = (int *)calloc(10, sizeof(int));
+	int *assists = (int *)calloc(10, sizeof(int));
 	int *creeps = (int *)calloc(10, sizeof(int));
+	int *levels = (int *)calloc(10, sizeof(int));
 	for (int i = 0; i < 10; i++) {
 		scores[i] = getExpression(subImage(image, round(multiply(SRX2, image.cols)),
 		//scores[i] = readExpression(image, round(multiply(SRX2, image.cols)),
@@ -175,6 +190,11 @@ int main(int argc, char **argv) {
 											round(multiply(SRX5, image.cols)),
 											subImageOffset_y + dimensions[i] + size),
 											!dimensions[20 + i]));
+		levels[i] = atoi(getExpression(subImage(image, round(multiply(SRXL, image.cols)),
+											subImageOffset_y + dimensions[i],
+											round(multiply(SRXR, image.cols)),
+											subImageOffset_y + dimensions[i] + size),
+											!dimensions[20 + i]));
 	}
 	char **players = (char **)calloc(10, sizeof(char *));
 
@@ -182,7 +202,7 @@ int main(int argc, char **argv) {
 	for (int i = 0; i < 10; i++) {
 		fprintf(outputFile, "\t\t\"name\": \"%s\",\n", append("player", i + '0'));
 		fprintf(outputFile, "\t\t\"champion\": \"%s\",\n", append("champion", i + '0'));
-		fprintf(outputFile, "\t\t\"level\": \"%s\",\n", append("level :( unknown", i + '0'));
+		fprintf(outputFile, "\t\t\"level\": \"%d\",\n", levels[i]);
 		fprintf(outputFile, "\t\t\"spell1\": \"%s\",\n", summoners[i * 2]);
 		fprintf(outputFile, "\t\t\"spell2\": \"%s\",\n", summoners[i * 2 + 1]);
 		fprintf(outputFile, "\t\t\"kills\": \"%d\",\n", kills[i]);
