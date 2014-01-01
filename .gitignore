@@ -9,6 +9,9 @@ bin/
 *.so
 *.a
 
+*.tar
+production/streams/
+
 imgproc/detection/test/scoreboards/
 imgproc/detection/main/scoreboards/
 

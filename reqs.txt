@@ -13,4 +13,28 @@ gstreamer
   -ffmpeg
 
 openCV
+  yum
+    opencv-devel
+    opencv-core
+    opencv
+
 cmake
+  yum
+    cmake
+
+pygobject
+  yum
+    pygobject
+
+pygst
+  yum
+    gstreamer-python
+    gstreamer-python-devel
+
+virtualenv (2.7)
+  yum
+    python-virtualenv
+
+
+**Red Hat only**
+openssl-devel (yum)
