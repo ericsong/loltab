@@ -16,8 +16,10 @@ cmake . && make
 cp bin/extract_data ../../production/streams/$1/
 cd ../detection/main/
 rm -f $cacheName
+cmake . && make
 cp detect_sb ../../../production/streams/$1/
-cd ../../alert/ && ls
+cd ../../alert/
+rm -f $cacheName
 cmake . && make
 cp alert ../../production/streams/$1/
 cd ../../production/
