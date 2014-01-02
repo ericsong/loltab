@@ -117,37 +117,30 @@ int *distribute(int *dataset, int size, int length) {
 }
 
 int *getDimensions(Mat image) {
-	int *y_heights = getYHist(image);
-	int *x_heights = getXHist(image);
+	int *yHist = getYHist(image);
+	int *xHist = getXHist(image);
 
 	// calculate the sub(middleman) yaxis and xaxis, these are 20 long
-	int *sub_yaxis = findLength(y_heights, image.rows, getMax(y_heights, image.rows) / 15);
-	int mMax = getMax(subArray(x_heights, 0, 10), 10);
-	int *sub_xaxis = findLength(x_heights, image.cols, mMax + getMax(x_heights, image.cols) / 15);
+	int *y_beg_length = findLength(yHist, image.rows, getMax(yHist, image.rows) / 15);
+	int mMax = getMax(subArray(xHist, 0, 10), 10);
+	int *x_beg_length = findLength(xHist, image.cols, mMax);
 	//printf("subxaxis before; ");
-	//printHist(sub_xaxis, 20);
-	int size = getMean(sub_yaxis, 10);
-	sub_yaxis = distribute(sub_yaxis, size, 10);
-	sub_xaxis = distribute(sub_xaxis, size, 10);
+	//printHist(x_beg_length, 20);
+	int size = getMean(y_beg_length, 10);
+	y_beg_length = distribute(y_beg_length, size, 10);
+	x_beg_length = distribute(x_beg_length, size, 10);
 	//printf("subxaxis after; ");
-	//printHist(sub_xaxis, 20);
-	//plotHist(x_heights, image.cols, "x_heights");
-	/*int *aaaa = (int *)calloc(image.cols, sizeof(int));
-	for (int i = 0; i < 9; i++) {
-		for (int n = 0; n < size; n++) {
-			aaaa[sub_xaxis[i + 10] + n] = x_heights[sub_xaxis[i + 10] + n];
-		}
-	}
-	int *bbbb = (int *)calloc(image.cols, sizeof(int));*/
+	//printHist(x_beg_length, 20);
+	//plotHist(xHist, image.cols, "xHist");
 
 	// normalize the yaxis
 	int *startpoints = (int *)calloc(30, sizeof(int));
 	for (int i = 0; i < 10; i++) {
-		int midPoint = size / 2 + sub_yaxis[i + 10];
+		int midPoint = size / 2 + y_beg_length[i + 10];
 		int start = midPoint;
 		int end = midPoint;
 		for (int cap = 0; cap < size; cap++) {
-			if (y_heights[start - 1] > y_heights[end]) {
+			if (yHist[start - 1] > yHist[end]) {
 				start--;
 			} else {
 				end++;
@@ -159,11 +152,15 @@ int *getDimensions(Mat image) {
 
 	// normalize the xaxis
 	for (int i = 0; i < 9; i++) {
-		int midPoint = size / 2 + sub_xaxis[i + 10];
+		if (x_beg_length[i + 10] == 0) {
+			startpoints[10 + i] = 0;
+			continue;
+		}
+		int midPoint = size / 2 + x_beg_length[i + 10];
 		int start = midPoint;
 		int end = midPoint;
 		for (int cap = 0; cap < size; cap++) {
-			if (x_heights[start - 1] > x_heights[end]) {
+			if (xHist[start - 1] > xHist[end]) {
 				start--;
 			} else {
 				end++;
@@ -172,14 +169,15 @@ int *getDimensions(Mat image) {
 		startpoints[10 + i] = start;// + 1;
 		//bbbb[midPoint] = 5000;
 	}
-	//plotHist(aaaa, image.cols, "aaaa");
-	//plotHist(bbbb, image.cols, "aaaa");
 
 	startpoints[19] = size;// - 2;
-	int fadePoint = getMax(y_heights, image.rows) / 2; // this might cause some errors, probably have to change in the future
+	int fadePoint = getMax(yHist, image.rows) / 2; // this might cause some errors, probably have to change in the future
 	for (int i = 0; i < 10; i++) {
-		startpoints[i + 20] = getMean(subArray(y_heights, startpoints[i], startpoints[i] + size), size) > fadePoint;
+		startpoints[i + 20] = getMean(subArray(yHist, startpoints[i], startpoints[i] + size), size) > fadePoint;
 	}
+
+	//printf("Format: [yaxis, 10] [xaxis, 9] [size] [fade, 10]\n");
+	//printHist(startpoints, 30);
 
 	return startpoints;
 }

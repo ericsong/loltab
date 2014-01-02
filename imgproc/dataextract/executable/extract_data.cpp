@@ -88,7 +88,6 @@ int main(int argc, char **argv) {
 								subImageOffset_y,
 								round(multiply(SRX2, image.cols)),
 								round(multiply(SRY2, image.rows)));
-	//display(itemSubImage, "subby");
 	Mat test_image = extremifyImage(itemSubImage, 72);
 	int *dimensions = getDimensions(test_image);
 	/*Mat display_image = createImage(test_image.cols, test_image.rows, 3);
@@ -123,12 +122,23 @@ int main(int argc, char **argv) {
 										dimensions[i],
 										dimensions[11] + size,
 										dimensions[i] + size));
+			// THIS IS A SMALL BUG WHICH IS BEING ACCOUNTED FOR (not all the time, of course)
+			if (strEquals(summoners[i * 2 + 1], "Barrier.png")) {
+				summoners[i * 2 + 1] = "Flash.png";
+			}
+			if (strEquals(summoners[i * 2], "Barrier.png") && !strEquals(summoners[i * 2 + 1], "Flash.png")) {
+				summoners[i * 2] = "Flash.png";
+			}
 			for (int n = 0; n < 7; n++) {
-				items[i * 7 + n] = identifyItem(subImage(itemSubImage,
+				if (dimensions[12 + n] != 0) {
+					items[i * 7 + n] = identifyItem(subImage(itemSubImage,
 										dimensions[12 + n],
 										dimensions[i],
 										dimensions[12 + n] + size,
 										dimensions[i] + size));
+				} else {
+					items[i * 7 + n] = "NA.png";
+				}
 			}
 		} else {
 			summoners[i * 2] = identifyFadedSummoner(subImage(itemSubImage,
@@ -141,12 +151,23 @@ int main(int argc, char **argv) {
 										dimensions[i],
 										dimensions[11] + size,
 										dimensions[i] + size));
+			// THIS IS A SMALL BUG WHICH IS BEING ACCOUNTED FOR (not all the time, of course)
+			if (strEquals(summoners[i * 2 + 1], "Barrier.png")) {
+				summoners[i * 2 + 1] = "Flash.png";
+			}
+			if (strEquals(summoners[i * 2], "Barrier.png") && !strEquals(summoners[i * 2 + 1], "Flash.png")) {
+				summoners[i * 2] = "Flash.png";
+			}
 			for (int n = 0; n < 7; n++) {
-				items[i * 7 + n] = identifyFadedItem(subImage(itemSubImage,
+				if (dimensions[12 + n] != 0) {
+					items[i * 7 + n] = identifyFadedItem(subImage(itemSubImage,
 										dimensions[12 + n],
 										dimensions[i],
 										dimensions[12 + n] + size,
 										dimensions[i] + size));
+				} else {
+					items[i * 7 + n] = "NA.png";
+				}
 			}
 		}
 	}
