@@ -1,0 +1,206 @@
+!!!START!!!
+{
+	"players": [
+		{
+			"name": "player0",
+			"champion": "champion0",
+			"level": "10",
+			"spell1": "Ignite.png",
+			"spell2": "Barrier.png",
+			"kills": "1",
+			"deaths": "5",
+			"assists": "2",
+			"cs": "113",
+			"items": [
+				"Doran's Ring.png",
+				"Doran's Ring.png",
+				"Lich Bane.png",
+				"Boots of Speed.png",
+				"Amplifying Tome.png",
+				"NA.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player1",
+			"champion": "champion1",
+			"level": "13",
+			"spell1": "Barrier.png",
+			"spell2": "Ignite.png",
+			"kills": "9",
+			"deaths": "2",
+			"assists": "3",
+			"cs": "146",
+			"items": [
+				"Doran's Blade.png",
+				"Youmuu's Ghostblade.png",
+				"Blade of the Ruined King.png",
+				"Doran's Blade.png",
+				"Berserker's Greaves.png",
+				"Ruby Crystal.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player2",
+			"champion": "champion2",
+			"level": "11",
+			"spell1": "Barrier.png",
+			"spell2": "Smite.png",
+			"kills": "1",
+			"deaths": "2",
+			"assists": "0",
+			"cs": "93",
+			"items": [
+				"Vision Ward.png",
+				"Spirit of the Elder Lizard.png",
+				"Mercury's Treads.png",
+				"Long Sword.png",
+				"Ruby Crystal.png",
+				"Long Sword.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player3",
+			"champion": "champion3",
+			"level": "0",
+			"spell1": "Ignite.png",
+			"spell2": "Barrier.png",
+			"kills": "2",
+			"deaths": "1",
+			"assists": "4",
+			"cs": "95",
+			"items": [
+				"Doran's Blade.png",
+				"Infinity Edge.png",
+				"Doran's Blade.png",
+				"Dagger.png",
+				"NA.png",
+				"Boots of Speed.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player4",
+			"champion": "champion4",
+			"level": "10",
+			"spell1": "Barrier.png",
+			"spell2": "Ignite.png",
+			"kills": "1",
+			"deaths": "3",
+			"assists": "5",
+			"cs": "32",
+			"items": [
+				"Doran's Shield.png",
+				"Ruby Sightstone.png",
+				"Faerie Charm.png",
+				"NA.png",
+				"Boots of Mobility.png",
+				"Nomad's Medallion.png",
+				"Greater Lens (Trinket).png"
+			]
+		},
+		{
+			"name": "player5",
+			"champion": "champion5",
+			"level": "0",
+			"spell1": "Heal.png",
+			"spell2": "Ignite.png",
+			"kills": "2",
+			"deaths": "1",
+			"assists": "3",
+			"cs": "127",
+			"items": [
+				"Health Potion.png",
+				"Mana Potion.png",
+				"Doran's Blade.png",
+				"Trinity Force.png",
+				"Berserker's Greaves.png",
+				"Long Sword.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player6",
+			"champion": "champion6",
+			"level": "12",
+			"spell1": "Smite.png",
+			"spell2": "Ignite.png",
+			"kills": "5",
+			"deaths": "2",
+			"assists": "1",
+			"cs": "92",
+			"items": [
+				"Hunter's Machete.png",
+				"Berserker's Greaves.png",
+				"Doran's Blade.png",
+				"Ravenous Hydra (Melee Only).png",
+				"Vision Ward.png",
+				"NA.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player7",
+			"champion": "champion7",
+			"level": "11",
+			"spell1": "Heal.png",
+			"spell2": "Ignite.png",
+			"kills": "1",
+			"deaths": "0",
+			"assists": "41",
+			"cs": "113",
+			"items": [
+				"Doran's Shield.png",
+				"Doran's Blade.png",
+				"Berserker's Greaves.png",
+				"Statikk Shiv.png",
+				"Hunter's Machete.png",
+				"NA.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player8",
+			"champion": "champion8",
+			"level": "12",
+			"spell1": "Barrier.png",
+			"spell2": "Ignite.png",
+			"kills": "4",
+			"deaths": "4",
+			"assists": "2",
+			"cs": "130",
+			"items": [
+				"Doran's Ring.png",
+				"Doran's Ring.png",
+				"Deathfire Grasp.png",
+				"Health Potion.png",
+				"Sorcerer's Shoes.png",
+				"Amplifying Tome.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player9",
+			"champion": "champion9",
+			"level": "0",
+			"spell1": "Heal.png",
+			"spell2": "Exhaust.png",
+			"kills": "1",
+			"deaths": "3",
+			"assists": "6",
+			"cs": "8",
+			"items": [
+				"Talisman of Ascension.png",
+				"Vision Ward.png",
+				"Poro-Snax.png",
+				"Sightstone.png",
+				"Boots of Mobility.png",
+				"NA.png",
+				"Greater Lens (Trinket).png"
+			]
+		}
+	]
+}
+!!!END!!!

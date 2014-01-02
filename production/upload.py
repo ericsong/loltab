@@ -10,8 +10,9 @@ while True:
     jsonstring = ""
     for line in f.readlines():
         if("!!!!!" in line):
-            decoded = json.loads(jsonstring)
-            print(scoreboards.insert(decoded))
+            decoded = json.loads(jsonstring.strip())
+            print(decoded)
+            #print(scoreboards.insert(decoded))
             jsonstring = ""
         else:
             jsonstring += line
