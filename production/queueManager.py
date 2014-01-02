@@ -294,7 +294,7 @@ class DataExtract(threading.Thread):
 				except Exception, e:
 					print ("\nError has occurred within the third thread's subprocess", imageFilename[0])
 					print (str(e) + "\n")
-				os.system("rm " + imageFilename)
+				os.system("rm " + imageFilename[0])
 
 def main():
 	args = [arg for arg in sys.argv]
