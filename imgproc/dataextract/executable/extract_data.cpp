@@ -202,30 +202,34 @@ int main(int argc, char **argv) {
 	char **players = (char **)calloc(10, sizeof(char *));
 
 	// output the data to a text file
+	fprintf(outputFile, "!!!START!!!\n{\n");
+	fprintf(outputFile, "\t\"players\": [\n");
 	for (int i = 0; i < 10; i++) {
-		fprintf(outputFile, "\t\t\"name\": \"%s\",\n", append("player", i + '0'));
-		fprintf(outputFile, "\t\t\"champion\": \"%s\",\n", append("champion", i + '0'));
-		fprintf(outputFile, "\t\t\"level\": \"%d\",\n", levels[i]);
-		fprintf(outputFile, "\t\t\"spell1\": \"%s\",\n", summoners[i * 2]);
-		fprintf(outputFile, "\t\t\"spell2\": \"%s\",\n", summoners[i * 2 + 1]);
-		fprintf(outputFile, "\t\t\"kills\": \"%d\",\n", kills[i]);
-		fprintf(outputFile, "\t\t\"deaths\": \"%d\",\n", deaths[i]);
-		fprintf(outputFile, "\t\t\"assists\": \"%d\",\n", assists[i]);
-		fprintf(outputFile, "\t\t\"cs\": \"%d\",\n", creeps[i]);
-		fprintf(outputFile, "\t\t\"items\": [\n");
+		fprintf(outputFile, "\t\t{\n");
+		fprintf(outputFile, "\t\t\t\"name\": \"%s\",\n", append("player", i + '0'));
+		fprintf(outputFile, "\t\t\t\"champion\": \"%s\",\n", append("champion", i + '0'));
+		fprintf(outputFile, "\t\t\t\"level\": \"%d\",\n", levels[i]);
+		fprintf(outputFile, "\t\t\t\"spell1\": \"%s\",\n", summoners[i * 2]);
+		fprintf(outputFile, "\t\t\t\"spell2\": \"%s\",\n", summoners[i * 2 + 1]);
+		fprintf(outputFile, "\t\t\t\"kills\": \"%d\",\n", kills[i]);
+		fprintf(outputFile, "\t\t\t\"deaths\": \"%d\",\n", deaths[i]);
+		fprintf(outputFile, "\t\t\t\"assists\": \"%d\",\n", assists[i]);
+		fprintf(outputFile, "\t\t\t\"cs\": \"%d\",\n", creeps[i]);
+		fprintf(outputFile, "\t\t\t\"items\": [\n");
 		for (int n = 0; n < 7; n++) {
-			fprintf(outputFile, "\t\t\t\"%s\"", items[n + i * 7]);
+			fprintf(outputFile, "\t\t\t\t\"%s\"", items[n + i * 7]);
 			if (n != 6) {
 				fprintf(outputFile, ",");
 			}
 			fprintf(outputFile, "\n");
 		}
-		fprintf(outputFile, "\t\t]");
+		fprintf(outputFile, "\t\t\t]\n\t\t}");
 		if (i != 9) {
 			fprintf(outputFile, ",");
 		}
 		fprintf(outputFile, "\n");
 	}
+	fprintf(outputFile, "\t]\n}\n!!!END!!!\n");
 
 	return 0;
 }
