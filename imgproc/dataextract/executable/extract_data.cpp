@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 	if (strEquals(outputFilename, "stdout")) {
 		outputFile = stdout;
 	} else {
-		outputFile = fopen(outputFilename, "w");
+		outputFile = fopen("temp.txt", "w");
 	}
 
 	DIR *dp;
@@ -251,6 +251,11 @@ int main(int argc, char **argv) {
 		fprintf(outputFile, "\n");
 	}
 	fprintf(outputFile, "\t]\n}\n!!!END!!!\n");
+	fclose(outputFile);
+	if (!strEquals(outputFilename, stdout)) {
+		system(concatStr("cat temp.txt > ", outputFilename));
+		system("rm temp.txt");
+	}
 
 	return 0;
 }
