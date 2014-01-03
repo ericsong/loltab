@@ -186,11 +186,6 @@ class Queue():
 		else:
 			return (self.front.data, self.front.timestamp)
 
-class DataObject():
-	def __init__(self):
-		self.data = "None"
-		self.lock = threading.Lock()
-
 class ImageBuilder(threading.Thread):
 	def __init__(self, threadID, queue):
 		threading.Thread.__init__(self)
@@ -263,11 +258,11 @@ class ScoreboardDetect(threading.Thread):
 				os.system("rm " + imageFilename[0]) # clears the folder"""
 
 class DataExtract(threading.Thread):
-	def __init__(self, threadID, extractQueue, dataObject):
+	def __init__(self, threadID, extractQueue, outputFilename):
 		threading.Thread.__init__(self)
 		self.threadID = threadID
 		self.extractQueue = extractQueue
-		self.dataObject = dataObject
+		self.outputFilename = outputFilename
 	def run(self):
 		global exitFlag
 		while not exitFlag:
@@ -280,16 +275,10 @@ class DataExtract(threading.Thread):
 				try:
 					global dataExtract_program
 					print("GRABBED SCOREBOARD TO ANALYZE")
-					output = subprocess.check_output([dataExtract_program, imageFilename[0], "gameData.txt"]).decode("utf-8")
+					output = subprocess.check_output([dataExtract_program, imageFilename[0], self.outputFilename]).decode("utf-8")
 					# be sure to output the game data
-					while not "gameData.txt" in os.listdir("."):
+					while not self.outputFilename in os.listdir("."):
 						continue
-					FILE = open("gameData.txt", "r")
-					self.dataObject.lock.acquire()
-					self.dataObject.data = FILE.read()
-					self.dataObject.lock.release()
-					FILE.close()
-					os.system("rm gameData.txt")
 					print("FINISHED ANALYSIS")
 				except Exception, e:
 					print ("\nError has occurred within the third thread's subprocess", imageFilename[0])
@@ -306,9 +295,6 @@ def main():
 	quality = args[2]
 
 	outputFilename = args[3]
-	outputFile = None
-	if outputFilename != "stdout":
-		outputFile = open(outputFilename, "w")
 
 	if len(args) == 5:
 		global inGame
@@ -316,7 +302,6 @@ def main():
 
 	image_queue = Queue()
 	extract_queue = Queue()
-	dataObject = DataObject()
 	
 	if signal_file not in os.listdir("."):
 		os.system("touch " + signal_file)
@@ -325,7 +310,7 @@ def main():
 
 	buildingThread = ImageBuilder(1, image_queue)
 	detectionThread = ScoreboardDetect(2, image_queue, extract_queue)
-	extractionThread = DataExtract(3, extract_queue, dataObject)
+	extractionThread = DataExtract(3, extract_queue, outputFilename)
 
 	# start the threads
 	buildingThread.start()
@@ -360,16 +345,6 @@ def main():
 				player.stop()
 				print ("Done closing threads. Exiting.")
 				break
-		dataObject.lock.acquire()
-		if dataObject.data != "None":
-			if outputFile == None:
-				print (dataObject.data)
-			else:
-				outputFile.write(dataObject.data)
-			dataObject.data = "None"
-		dataObject.lock.release()
-	if outputFile != None:
-		outputFile.close()
 
 if __name__ == "__main__":
 	main()
