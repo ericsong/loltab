@@ -9,6 +9,10 @@ int main(int argc, char **argv) {
 	Mat image = imread(argv[1], 1);
 	FILE *outputFile;
 	char *outputFilename;
+	char *tempfilename;
+
+	tempfilename = concatStr(argv[1], "_temp");
+
 	if (!image.data) {
 		fprintf(stderr, "No image here.\n");
 		return 1;
@@ -17,7 +21,7 @@ int main(int argc, char **argv) {
 	if (strEquals(outputFilename, "stdout")) {
 		outputFile = stdout;
 	} else {
-		outputFile = fopen("temp.txt", "w");
+		outputFile = fopen(tempfilename, "w");
 	}
 
 	DIR *dp;
@@ -252,9 +256,9 @@ int main(int argc, char **argv) {
 	}
 	fprintf(outputFile, "\t]\n}\n!!!END!!!\n");
 	fclose(outputFile);
-	if (!strEquals(outputFilename, stdout)) {
-		system(concatStr("cat temp.txt > ", outputFilename));
-		system("rm temp.txt");
+	if (!strEquals(outputFilename, "stdout")) {
+		system(concatStr("cat ",concatStr(tempfilename,concatStr(" > ", outputFilename))));
+		system(concatStr("rm ", tempfilename));
 	}
 
 	return 0;
