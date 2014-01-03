@@ -1,0 +1,206 @@
+!!!START!!!
+{
+	"players": [
+		{
+			"name": "player0",
+			"champion": "champion0",
+			"level": "8",
+			"spell1": "Clairvoyance.png",
+			"spell2": "Ghost.png",
+			"kills": "14",
+			"deaths": "9",
+			"assists": "-1",
+			"cs": "214",
+			"items": [
+				"Chain Vest.png",
+				"Hunter's Machete.png",
+				"Hunter's Machete.png",
+				"Last Whisper.png",
+				"Guardian Angel.png",
+				"The Bloodthirster.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player1",
+			"champion": "champion1",
+			"level": "1",
+			"spell1": "Exhaust.png",
+			"spell2": "Clairvoyance.png",
+			"kills": "8",
+			"deaths": "7",
+			"assists": "19",
+			"cs": "270",
+			"items": [
+				"Negatron Cloak.png",
+				"Negatron Cloak.png",
+				"NA.png",
+				"Sorcerer's Shoes.png",
+				"Liandry's Torment.png",
+				"Void Staff.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player2",
+			"champion": "champion2",
+			"level": "0",
+			"spell1": "Ignite.png",
+			"spell2": "Clairvoyance.png",
+			"kills": "14",
+			"deaths": "1",
+			"assists": "7",
+			"cs": "177",
+			"items": [
+				"Warmog's Armor.png",
+				"Relic Shield.png",
+				"Randuin's Omen.png",
+				"Zephyr.png",
+				"Haunting Guise.png",
+				"Rabadon's Deathcap.png",
+				"Oracle's Lens (Trinket).png"
+			]
+		},
+		{
+			"name": "player3",
+			"champion": "champion3",
+			"level": "16",
+			"spell1": "Ignite.png",
+			"spell2": "Smite.png",
+			"kills": "3",
+			"deaths": "7",
+			"assists": "21",
+			"cs": "15",
+			"items": [
+				"Locket of the Iron Solari.png",
+				"Talisman of Ascension.png",
+				"Randuin's Omen.png",
+				"Ruby Sightstone.png",
+				"Ninja Tabi.png",
+				"Giant's Belt.png",
+				"Greater Lens (Trinket).png"
+			]
+		},
+		{
+			"name": "player4",
+			"champion": "champion4",
+			"level": "18",
+			"spell1": "Barrier.png",
+			"spell2": "Ignite.png",
+			"kills": "5",
+			"deaths": "4",
+			"assists": "12",
+			"cs": "235",
+			"items": [
+				"Infinity Edge.png",
+				"Berserker's Greaves.png",
+				"Last Whisper.png",
+				"B. F. Sword.png",
+				"Vampiric Scepter.png",
+				"Trinity Force.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player5",
+			"champion": "champion5",
+			"level": "11",
+			"spell1": "Heal.png",
+			"spell2": "Cleanse.png",
+			"kills": "10",
+			"deaths": "7",
+			"assists": "11",
+			"cs": "338",
+			"items": [
+				"Relic Shield.png",
+				"The Bloodthirster.png",
+				"Will of the Ancients.png",
+				"Phantom Dancer.png",
+				"Banshee's Veil.png",
+				"Last Whisper.png",
+				"Greater Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player6",
+			"champion": "champion6",
+			"level": "18",
+			"spell1": "Exhaust.png",
+			"spell2": "Heal.png",
+			"kills": "4",
+			"deaths": "8",
+			"assists": "12",
+			"cs": "20",
+			"items": [
+				"Zeke's Herald.png",
+				"Sightstone.png",
+				"Sorcerer's Shoes.png",
+				"Doran's Shield.png",
+				"Talisman of Ascension.png",
+				"Giant's Belt.png",
+				"Oracle's Lens (Trinket).png"
+			]
+		},
+		{
+			"name": "player7",
+			"champion": "champion7",
+			"level": "18",
+			"spell1": "Ignite.png",
+			"spell2": "Heal.png",
+			"kills": "9",
+			"deaths": "13",
+			"assists": "4",
+			"cs": "258",
+			"items": [
+				"Doran's Blade.png",
+				"Nomad's Medallion.png",
+				"Negatron Cloak.png",
+				"Targon's Brace.png",
+				"NA.png",
+				"Giant's Belt.png",
+				"Warding Totem (Trinket).png"
+			]
+		},
+		{
+			"name": "player8",
+			"champion": "champion8",
+			"level": "18",
+			"spell1": "Smite.png",
+			"spell2": "Barrier.png",
+			"kills": "7",
+			"deaths": "5",
+			"assists": "14",
+			"cs": "100",
+			"items": [
+				"Ninja Tabi.png",
+				"Locket of the Iron Solari.png",
+				"Mikael's Crucible.png",
+				"Spirit of the Ancient Golem.png",
+				"Banshee's Veil.png",
+				"Hexdrinker.png",
+				"Greater Lens (Trinket).png"
+			]
+		},
+		{
+			"name": "player9",
+			"champion": "champion9",
+			"level": "17",
+			"spell1": "Barrier.png",
+			"spell2": "Ignite.png",
+			"kills": "5",
+			"deaths": "11",
+			"assists": "5",
+			"cs": "213",
+			"items": [
+				"Deathfire Grasp.png",
+				"Rabadon's Deathcap.png",
+				"Doran's Ring.png",
+				"Doran's Ring.png",
+				"Morellonomicon.png",
+				"Sorcerer's Shoes.png",
+				"Greater Totem (Trinket).png"
+			]
+		}
+	]
+}
+!!!END!!!

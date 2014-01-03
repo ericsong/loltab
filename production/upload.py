@@ -9,10 +9,12 @@ while True:
     f = open('upload_pipe')
     jsonstring = ""
     for line in f.readlines():
-        if("!!!!!" in line):
+        if("!!!END!!!" in line):
             decoded = json.loads(jsonstring.strip())
+            decoded['streamer'] = 'TheOddOne'
             print(decoded)
             #print(scoreboards.insert(decoded))
+        elif("!!!START!!!" in line):
             jsonstring = ""
         else:
             jsonstring += line

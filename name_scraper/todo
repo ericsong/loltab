@@ -1,0 +1,12 @@
+create schema for streamers and their names
+create simple script to upload a new streamer and add/(remove?) names
+
+
+//prereq: a game MUST be in session
+scraping algo...
+-get list of all names
+-run scraper on all names looking for a match
+-(if found):
+    update metdata file
+-(if not found):
+    text tim/eric
