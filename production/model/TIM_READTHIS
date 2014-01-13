@@ -1,0 +1,8 @@
+must have...
+C programs
+metadata.txt
+name_scraper.js
+queueManager.py
+scoreboards/
+upload_pipe ('mkfifo upload_pipe')
+upload.py
