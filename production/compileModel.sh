@@ -21,6 +21,6 @@ rm -rf $cachenae
 cmake . && make
 mv detect_sb ../../../production/model/
 cd ../../../production/
-cp queueManager.py model/
+cp ../managers/queueManager.py model/
 cd model/
 mkdir "scoreboards"
