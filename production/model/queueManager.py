@@ -303,8 +303,6 @@ def main():
 	image_queue = Queue()
 	extract_queue = Queue()
 	
-	if signal_file not in os.listdir("."):
-		os.system("touch " + signal_file)
 	if "scoreboards" not in os.listdir("."):
 		os.system("mkdir scoreboards")
 
