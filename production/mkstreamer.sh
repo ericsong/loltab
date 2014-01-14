@@ -10,8 +10,15 @@ then
 	rm -rf $1
 fi
 mkdir $1
-cp -rf ../model/* $1/
+for fname in ../model/*
+do
+	if [ -f "$fname" ]
+	then
+		ln -s ../model/$fname $1/
+	fi
+done
 cd $1/
+mkdir "scoreboards"
 if test "$2" != "stdout"
 then
 	touch $2
