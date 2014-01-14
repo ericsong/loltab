@@ -29,3 +29,4 @@ cp ../imgproc/upload/upload.py model/
 
 cd model/
 mkdir "scoreboards"
+mkfifo "upload_pipe"
