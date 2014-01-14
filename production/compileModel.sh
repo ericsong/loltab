@@ -2,9 +2,11 @@
 
 # USAGE: ./compileModel.sh
 
-# compile and move all programs to the model folder
+# compile and move all programs to the model folder !!! NOTE: THIS WILL REMOVE THE MODEL FOLDER !!!
 
 cacheName="CMakeCache.txt"
+rm -rf model/
+mkdir model
 cd ../imgproc/
 cd alert/
 rm -rf $cacheName
