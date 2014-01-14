@@ -24,3 +24,4 @@ cd ../../../production/
 cp ../managers/queueManager.py model/
 cd model/
 mkdir "scoreboards"
+touch "metadata.txt"
