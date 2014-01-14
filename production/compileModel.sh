@@ -22,6 +22,10 @@ cmake . && make
 mv detect_sb ../../../production/model/
 cd ../../../production/
 cp ../managers/queueManager.py model/
+
+cp ../name_scraper/name_scraper.js model/
+cp ../name_scraper/metadata.txt model/
+cp ../imgproc/upload/upload.py model/
+
 cd model/
 mkdir "scoreboards"
-touch "metadata.txt"
