@@ -27,6 +27,7 @@ class LivestreamerPlayer(object):
         self.mainloop = gobject.MainLoop()
 
         self.pipeline = gst.element_factory_make("playbin2", None)
+        self.pipeline.set_property("volume", 0.0)
         self.pipeline.set_property("uri", "appsrc://")
 
         self.parsebin = gst.Pipeline()
