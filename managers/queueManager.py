@@ -13,16 +13,19 @@ import thread, threading
 import sys
 import time
 import subprocess
+import signal
 
 # program usage: python queueManager.py <input file> <output file>
 
-signal_file = "signals.txt"
 alert_program = "./alert"
 detection_program = "./detect_sb"
 dataExtract_program = "./extract_data"
-exitFlag = 0 # be sure to set global exitFlag
+exitFlag = False # be sure to set global exitFlag
 time_interval = 90
+
+# FLAGS
 inGame = True
+stagnant = False
 
 def exit(msg):
     sys.exit()
@@ -213,7 +216,9 @@ class ImageBuilder(threading.Thread):
 					if "true" in output:
 						inGame = True
 						# need generation of the names.txt file via something (a call possibly?)
-					os.system("rm " + imageFilename)
+					global stagnant
+					if not stagnant:
+						os.system("rm " + imageFilename)
 				else:
 					# once image has been found, add to queue, as well as remove extra stuff
 					self.queue.lock.acquire()
@@ -255,7 +260,10 @@ class ScoreboardDetect(threading.Thread):
 				except Exception, e:
 					print ("\nError has occurred within the second thread's subprocess", imageFilename[0])
 					print (str(e) + "\n")
-				os.system("rm " + imageFilename[0]) # clears the folder"""
+				finally:
+					global stagnant
+					if not stagnant:
+						os.system("rm " + imageFilename[0]) # clears the folder"""
 
 class DataExtract(threading.Thread):
 	def __init__(self, threadID, extractQueue, outputFilename):
@@ -283,28 +291,38 @@ class DataExtract(threading.Thread):
 				except Exception, e:
 					print ("\nError has occurred within the third thread's subprocess", imageFilename[0])
 					print (str(e) + "\n")
-				os.system("rm " + imageFilename[0])
+				finally:
+					global stagnant
+					if not stagnant:
+						os.system("rm " + imageFilename[0])
 
 def main():
 	args = [arg for arg in sys.argv]
 
 	if len(args) < 4:
-		print ("Invalid usage: ./program <streamer name> <medium|high|best> <output file> [T(force ingame)]\n example: ./queueManager flosd best stdout T")
+		print ("Invalid usage: python queueManager.py <streamer name> <medium|high|best> <output file> [--force|-f] [--stagnant|-s]\n example: ./queueManager flosd best stdout -f -s\n\nOptions:\n\t--force, -f\tForce ingame status\n\t--stagnant, -s\tKeep all images acquired (do not delete)")
+		sys.exit(0)
 
 	url = "twitch.tv/" + args[1]
 	quality = args[2]
 
 	outputFilename = args[3]
 
-	if len(args) == 5:
-		global inGame
-		inGame = True
+	for i in range(4, len(args)):
+		if args[i] == "-f" or args[i] == "--force":
+			global inGame
+			inGame = True
+		elif args[i] == "-s" or args[i] == "--stagnant":
+			global stagnant
+			stagnant = True
 
 	image_queue = Queue()
 	extract_queue = Queue()
 	
 	if "scoreboards" not in os.listdir("."):
 		os.system("mkdir scoreboards")
+	
+	print("Starting threads and stream...")
 
 	buildingThread = ImageBuilder(1, image_queue)
 	detectionThread = ScoreboardDetect(2, image_queue, extract_queue)
@@ -324,25 +342,20 @@ def main():
 	# Blocks until playback is done
 	player.play(stream)
 
-	while True:
-		signalsFile = open(signal_file, "r")
-		if signalsFile != None:
-			signals = signalsFile.read()
-			signalsFile.close()
-			signalsFile = open(signal_file, "w")
-			signalsFile.write("")
-			signalsFile.close()
-			if "kill" in signals:
-				# close the threads
-				print ("Closing threads...")
-				global exitFlag
-				exitFlag = True
-				buildingThread.join()
-				detectionThread.join()
-				extractionThread.join()
-				player.stop()
-				print ("Done closing threads. Exiting.")
-				break
+	print("All threads and stream are now running")
+
+	try:
+		while True:
+			pass
+	except KeyboardInterrupt:
+		print("Closing threads...")
+		global exitFlag
+		exitFlag = True
+		buildingThread.join()
+		detectionThread.join()
+		extractionThread.join()
+		print("Threads closed")
+		sys.exit(0)
 
 if __name__ == "__main__":
 	main()
