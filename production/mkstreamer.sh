@@ -45,4 +45,5 @@ then
 else
 	mkfifo "upload_pipe"
 	echo "mkfifo upload_pipe"
+	echo ""
 fi
