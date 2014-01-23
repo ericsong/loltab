@@ -41,8 +41,11 @@ class LivestreamerPlayer(object):
         self.fd = None
         self.mainloop = gobject.MainLoop()
 
+        fakesink = gst.element_factory_make("fakesink", "my-fakesink")
+
         self.pipeline = gst.element_factory_make("playbin2", None)
         self.pipeline.set_property("uri", "appsrc://")
+        self.pipeline.set_property("audio-sink", fakesink)
 
         self.parsebin = gst.Pipeline()
         videorate = gst.element_factory_make("videorate", None)
