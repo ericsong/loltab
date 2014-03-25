@@ -288,9 +288,10 @@ class DataExtract(threading.Thread):
 					print("GRABBED SCOREBOARD TO ANALYZE")
 					output = subprocess.check_output([dataExtract_program, imageFilename[0], self.outputFilename]).decode("utf-8")
 					# be sure to output the game data
-					while not self.outputFilename in os.listdir("."):
-						continue
-					print("FINISHED ANALYSIS")
+					#while not self.outputFilename in os.listdir("."):
+				        #		continue
+			                print(output)	
+                                 	print("FINISHED ANALYSIS")
 				except Exception, e:
 					print ("\nError has occurred within the third thread's subprocess", imageFilename[0])
 					print (str(e) + "\n")
