@@ -263,6 +263,7 @@ void *extractionThread(void *args) {
 				unlink(image_name);
 			}
 		}
+		free(image_name);
 	}
 	pthread_exit(0);
 }
