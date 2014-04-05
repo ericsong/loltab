@@ -43,8 +43,8 @@ int main(int argc, char **argv) {
 	if (argc < 4) {
 		fprintf(stderr, "\
 Invalid usage: ./StreamManager <streamer name> <medium|high|best>\n\
-		<output file> [--force|-f] [--debug|-s]\n\n\
-	example: ./queueManager flosd best stdout -f -s\n\
+		<output file> [--force|-f] [--debug|-d]\n\n\
+	example: ./queueManager flosd best stdout -f -d\n\
 	Options:\n\
 		--force, -f\tForce ingame status\n\
 		--debug, -d\tDo not delete anything, print more messages\n");
