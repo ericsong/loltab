@@ -1,1 +1,1 @@
-The queueManager is outdated, the better (and less buggy) version is StreamManager.
+The queueManager is outdated, the theoretically faster version is StreamManager
