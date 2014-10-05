@@ -17,15 +17,15 @@ rm -rf $cacheName
 cmake . && make
 mv bin/extract_data ../../production/model/
 cd ../detection/main
-rm -rf $cachenae
+rm -rf $cacheName
 cmake . && make
 mv detect_sb ../../../production/model/
-cd ../../../production/
-cp ../managers/queueManager.py model/
+cd ../../../production/model/
+ln -s ../managers/queueManager.py
 
-cp ../name_scraper/name_scraper.js model/
-cp ../name_scraper/metadata.txt model/
-cp ../imgproc/upload/upload.py model/
+ln -s ../name_scraper/name_scraper.js
+ln -s ../name_scraper/metadata.txt
+ln -s ../imgproc/upload/upload.py
 
 cd model/
 mkdir "scoreboards"
