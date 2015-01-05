@@ -57,6 +57,7 @@ int main(int argc, char* argv[])
 		avgdiff = avgdiff/count;
 		if(avgdiff < 20){
 			sb_found = true;
+			printf("top border found with %d counts\n", avgdiff);
 
 			//accounts for cases where detection also picks up item shops, menus, etc
 			int checklength;
@@ -95,6 +96,9 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
+
+			printf("bluecount: %d\n", bluecount);
+			printf("redcount: %d\n", redcount);
 
 			if(!(bluecount > 10 && redcount > 10))
 				sb_found = false;	

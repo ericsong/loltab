@@ -1,13 +1,13 @@
 #ifndef __SBCOLORS_H_INCLUDED__
 #define __SBCOLORS_H_INCLUDED__
 
-#define SB_720_BLUE_l 168.3
-#define SB_720_BLUE_a 101
-#define SB_720_BLUE_b 104
+#define SB_720_BLUE_l 174.6666
+#define SB_720_BLUE_a 95.16666
+#define SB_720_BLUE_b 171.16666
 
-#define SB_1080_BLUE_l 187.92
-#define SB_1080_BLUE_a 91.65
-#define SB_1080_BLUE_b 114.84
+#define SB_1080_BLUE_l 66.12323795
+#define SB_1080_BLUE_a -28.87064414
+#define SB_1080_BLUE_b 39.2704457
 
 #define SB_720_RED_l 90
 #define SB_720_RED_a 175
